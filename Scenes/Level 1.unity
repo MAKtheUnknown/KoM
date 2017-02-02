@@ -1652,6 +1652,9 @@ MonoBehaviour:
   selectedTile: {fileID: 0}
   mode: 0
   chosenCharachter: {fileID: 0}
+  currentTeam: {fileID: 0}
+  possibleMovesHighlighters: {fileID: 1000012567804142, guid: 2e9db4ce222431e4bbe5a0a6e158e015,
+    type: 2}
 --- !u!23 &1997862389
 MeshRenderer:
   m_ObjectHideFlags: 0

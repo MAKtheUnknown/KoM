@@ -17,7 +17,7 @@ public class TeamManager : MonoBehaviour {
 	void Start () 
 	{
 		turn = 0;
-
+		map.highlighter.currentTeam = teams [turn];
 	}
 	
 	// Update is called once per frame
@@ -30,5 +30,6 @@ public class TeamManager : MonoBehaviour {
 	void rotate()
 	{
 		turn = (turn+1)%teams.Length;
+		map.highlighter.currentTeam = teams [turn];
 	}
 }

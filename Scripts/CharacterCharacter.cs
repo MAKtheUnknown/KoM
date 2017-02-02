@@ -2,10 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class CharacterCharacter : MonoBehaviour {
+public class CharacterCharacter : MonoBehaviour 
+{
 	
-	public Ability[] abilities;
-
 	public int maxHP;
 	public int currentHP;
 	public int maxXP;
@@ -21,9 +20,13 @@ public class CharacterCharacter : MonoBehaviour {
 
 	public Ability[] specialAbilities;
 
+	public ClassSpecifications type; 
+
 	void Awake()
 	{
 		team = GetComponentInParent<Team> ();
+		type = GetComponentInChildren<ClassSpecifications> ();
+		specialAbilities = GetComponentsInChildren<Ability> ();
 	}
 
 	// Use this for initialization
@@ -55,5 +58,15 @@ public class CharacterCharacter : MonoBehaviour {
 	void damage(int dmg)
 	{
 		currentHP-=dmg;
+	}
+
+	public void HighlightMoves()
+	{
+		List<TileAttributes> possibleMoves = type.movement.GetPossibleMoves ();
+
+		foreach (TileAttributes t in possibleMoves) 
+		{
+			Instantiate (t.map.highlighter.possibleMovesHighlighters, t.transform);
+		}
 	}
 }

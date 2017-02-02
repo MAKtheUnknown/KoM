@@ -21,6 +21,10 @@ public class Highlighter : MonoBehaviour {
 	public Stack<TileAttributes> chosenTiles; 
 	public CharacterCharacter chosenCharachter;
 
+	public Team currentTeam;
+
+	public GameObject possibleMovesHighlighters;
+
 	void Awake()
 	{
 		map = GetComponentInParent<TileArrangement> ();
@@ -126,18 +130,22 @@ public class Highlighter : MonoBehaviour {
 		switch (mode) 
 		{
 		case SelectionMode.PIECE_TO_USE:
+			//For selecting tiles with charachters on them.
 			if (selectedTile.containedCharacter != null) 
 			{
+				//expand over piece.
 				gameObject.transform.localScale = new Vector3 (1.459983f,1.459983f,1f);
+
+				//Use Enter key to highlight possible moves
 				if (Input.GetKeyUp (KeyCode.Return)) 
 				{
 					chosenCharachter = selectedTile.containedCharacter;
-					mode = SelectionMode.MOVE_TILE;
+					mode = SelectionMode.HIGHLIGHT_POSSIBLE_MOVES;
 				}
 				else if (Input.GetKeyUp (KeyCode.RightShift)) 
 				{
 					chosenCharachter = selectedTile.containedCharacter;
-					mode = SelectionMode.USE_ABILITY;
+					mode = SelectionMode.OPEN_ABILITIES_MENU;
 				}
 			} else 
 			{
@@ -145,8 +153,15 @@ public class Highlighter : MonoBehaviour {
 				gameObject.transform.localScale = new Vector3 (1f,1f,1f);
 			}
 			break;
-		case SelectionMode.MOVE_TILE:
+		case SelectionMode.HIGHLIGHT_POSSIBLE_MOVES: //an init state for MOVE_TO_TILE
+			chosenCharachter.HighlightMoves();
+			mode = SelectionMode.MOVE_TO_TILE;
+			break;
+		case SelectionMode.MOVE_TO_TILE: 
 			
+			break;
+		case SelectionMode.OPEN_ABILITIES_MENU:
+			mode = SelectionMode.USE_ABILITY;
 			break;
 		case SelectionMode.ABILITY_TARGETS:
 			break;
@@ -170,7 +185,9 @@ public class Highlighter : MonoBehaviour {
 	public enum SelectionMode
 	{
 		PIECE_TO_USE,
-		MOVE_TILE,
+		HIGHLIGHT_POSSIBLE_MOVES,
+		MOVE_TO_TILE,
+		OPEN_ABILITIES_MENU,
 		USE_ABILITY,
 		ABILITY_TARGETS
 	}

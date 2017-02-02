@@ -5,14 +5,21 @@ using System.Collections.Generic;
 /**
  * Contains all information about a charachter's class; their abilities
  */
-public class ClassSpecifications : MonoBehaviour {
+public class ClassSpecifications : MonoBehaviour 
+{
+	/**The charachter of this class*/
+	public CharacterCharacter owner;
 
+	/**The set of tiles and the difficulties with which this class can cover them*/
 	public IDictionary<TileAttributes.TileType, double> tileTypeDifficulties;
 
+	/**The class to which this class advances.*/
 	public ClassSpecifications nextLevel;
 
-	public Ability basicMovement;
+	/**The style of movement for this class.*/
+	public Mover movement;
 
+	/**The attacks, spells, or special abilities that this class has*/
 	public Ability[] classAbilities;
 
 	public double grassSpeed = 1;
@@ -23,6 +30,10 @@ public class ClassSpecifications : MonoBehaviour {
 
 	void Awake()
 	{
+		owner = GetComponentInParent<CharacterCharacter> ();
+		movement = GetComponentInChildren<Mover> ();
+		classAbilities = GetComponentsInChildren<Ability> ();
+		nextLevel = GetComponentInChildren<ClassSpecifications> ();
 
 		tileTypeDifficulties = new Dictionary<TileAttributes.TileType, double> ();
 		tileTypeDifficulties.Add (TileAttributes.TileType.grass, grassSpeed);
