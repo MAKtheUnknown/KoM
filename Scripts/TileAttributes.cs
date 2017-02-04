@@ -19,6 +19,9 @@ public class TileAttributes : MonoBehaviour {
 	/**The charachter occupying the space*/
 	public CharacterCharacter containedCharacter;
 
+	public int x;
+	public int y;
+
 	void Awake()
 	{
 		//find and set the map parent.

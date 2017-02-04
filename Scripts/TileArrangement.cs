@@ -92,6 +92,8 @@ public class TileArrangement : MonoBehaviour
 			int x = (int)t.gameObject.transform.position.x - lowX;
 			int y = (int)t.gameObject.transform.position.y - lowY;
 			tileMap [x, y] = t;
+			t.x = x;
+			t.y = y;
 		}
 
 		//go through to connect all the tiles via a linked net.
