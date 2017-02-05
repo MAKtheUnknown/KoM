@@ -22,6 +22,9 @@ public class CharacterCharacter : MonoBehaviour
 
 	public ClassSpecifications type; 
 
+	public int x;
+	public int y;
+
 	void Awake()
 	{
 		team = GetComponentInParent<Team> ();
@@ -41,12 +44,12 @@ public class CharacterCharacter : MonoBehaviour
 		//}
 	}
 
-	void putOnBoard()
+	public void putOnBoard()
 	{
-		int x = (int)this.transform.position.x;
-		int y = (int)this.transform.position.y;
+		x = (int)this.transform.position.x-team.map.LowX;
+		y = (int)this.transform.position.y-team.map.LowY;
 
-		tile = team.map.tileMap[x-team.map.LowX, y-team.map.LowY];
+		tile = team.map.tileMap[x, y];
 		tile.containedCharacter = this;
 	}
 
@@ -66,7 +69,9 @@ public class CharacterCharacter : MonoBehaviour
 
 		foreach (TileAttributes t in possibleMoves) 
 		{
-			Instantiate (t.map.highlighter.possibleMovesHighlighters, t.transform);
+			GameObject h = Instantiate (t.map.highlighter.possibleMovesHighlighters);
+			h.transform.parent = t.map.transform;
+			h.transform.position = t.transform.position;
 		}
 	}
 }

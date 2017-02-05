@@ -3,8 +3,8 @@ using System.Collections;
 
 public class TeamManager : MonoBehaviour {
 
-	TileArrangement map;
-	Team[] teams;
+	public TileArrangement map;
+	public Team[] teams;
 	int turn;
 
 	void Awake()

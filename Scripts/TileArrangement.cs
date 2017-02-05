@@ -129,6 +129,16 @@ public class TileArrangement : MonoBehaviour
 			}
 		}
 
+		//now, put the charachters on the map.
+		TeamManager ts = this.GetComponentInChildren<TeamManager>();
+		foreach (Team t in ts.teams) 
+		{
+			foreach (CharacterCharacter c in t.pieces) 
+			{
+				c.putOnBoard ();
+			}
+		}
+
 		//return the 2d map.
 		return tileMap;
 	}

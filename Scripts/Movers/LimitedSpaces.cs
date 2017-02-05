@@ -18,7 +18,7 @@ public class LimitedSpaces : MonoBehaviour, Mover {
 	TileArrangement map;
 	TileAttributes[,] m;
 
-	List<TileAttributes> possibilities;
+	public List<TileAttributes> possibilities;
 
 	/**The set of tiles and the difficulties with which this class can cover them*/
 	public IDictionary<TileAttributes.TileType, double> tileTypeTimes;
@@ -29,7 +29,7 @@ public class LimitedSpaces : MonoBehaviour, Mover {
 	public double forestSpeed = 1;
 	public double shallowWaterSpeed = 1;
 
-	double[,] times;
+	public double[,] times;
 
 	void Awake()
 	{
@@ -46,9 +46,7 @@ public class LimitedSpaces : MonoBehaviour, Mover {
 	// Use this for initialization
 	void Start () 
 	{
-		t = moved.owner.tile;
-		map = t.map;
-		m = map.tileMap;
+
 	}
 	
 	// Update is called once per frame
@@ -59,25 +57,56 @@ public class LimitedSpaces : MonoBehaviour, Mover {
 
 	public List<TileAttributes> GetPossibleMoves()
 	{
+		t = moved.owner.tile;
+		map = t.map; 
+		m = map.tileMap;
+
 		possibilities = new List<TileAttributes> ();
 
 		times = new double[m.GetLength (0), m.GetLength (1)];
 
 		propogateTimes (t, timeSpent);
 
+		times [moved.owner.x, moved.owner.y] = 0;
+
+		for (int n = 0; n < times.GetLength (0); n++) 
+		{
+			for(int nn = 0; nn < times.GetLength(1); nn++)
+			{
+				if (times [n, nn] != 0) 
+				{
+					possibilities.Add (m [n, nn]);
+				}
+			}
+		}
+
 		return possibilities;
 	}
 
 	public void propogateTimes(TileAttributes t, double time)
 	{
-		double newTime = time  + tileTypeTimes[t.type];
+		double newTime = time + tileTypeTimes[t.type];
 		if (newTime <= timeToMove
-			&& (newTime <= times[t.x,t.y] || times[t.x,t.y] == 0))
+			&& (newTime < times[t.x,t.y] || times[t.x,t.y] == 0))
 		{
-			propogateTimes (t.north, newTime);
-			propogateTimes (t.south, newTime);
-			propogateTimes (t.east, newTime);
-			propogateTimes (t.west, newTime);
+			times[t.x,t.y] = newTime;
+
+			if (t.north != null) 
+			{
+				propogateTimes (t.north, newTime);
+			} 
+			if (t.south != null) 
+			{
+				propogateTimes (t.south, newTime);
+			}
+			if (t.east != null) 
+			{
+				propogateTimes (t.east, newTime);
+			}
+			if (t.west != null) 
+			{
+				propogateTimes (t.west, newTime);
+			}
 		}
 	}
 
