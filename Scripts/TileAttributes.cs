@@ -54,6 +54,11 @@ public class TileAttributes : MonoBehaviour {
 		
 	}
 
+	public bool spaceIsOdccupied()
+	{
+		return (containedCharacter != null);
+	}
+
 	/**Terrains of the tiles*/
 	public enum TileType
 	{

@@ -23,7 +23,8 @@ public class Highlighter : MonoBehaviour {
 
 	public Team currentTeam;
 
-	public GameObject possibleMovesHighlighters;
+	public GameObject possibleMovesHighlighter;
+	public List<GameObject> possibleMoveHighlighters;
 
 	void Awake()
 	{
@@ -34,50 +35,48 @@ public class Highlighter : MonoBehaviour {
 	void Start () 
 	{
 		chosenTiles = new Stack<TileAttributes> ();
+		possibleMoveHighlighters = new List<GameObject> ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if (currentTeam.type == Team.PlayerType.human) 
+		{
 
+			if (Input.GetKey (KeyCode.LeftArrow)) 
+			{
+				move (Direction.west);
+			}
+			if (Input.GetKeyUp (KeyCode.LeftArrow)) 
+			{
+				downStroke = true;
+			}
+			if (Input.GetKey (KeyCode.RightArrow)) 
+			{
+				move (Direction.east);
+			}
+			if (Input.GetKeyUp (KeyCode.RightArrow)) 
+			{
+				downStroke = true;
+			}
 
-		if (Input.GetKey (KeyCode.LeftArrow)) 
-		{
-			move (Direction.west);
-		}
-		if (Input.GetKeyUp (KeyCode.LeftArrow)) 
-		{
-			downStroke = true;
-		}
+			if (Input.GetKey (KeyCode.UpArrow)) {
+				move (Direction.north);
+			}
+			if (Input.GetKeyUp (KeyCode.UpArrow)) {
+				downStroke = true;
+			}
 
-		if (Input.GetKey (KeyCode.RightArrow)) 
-		{
-			move (Direction.east);
-		}
-		if (Input.GetKeyUp (KeyCode.RightArrow)) 
-		{
-			downStroke = true;
-		}
+			if (Input.GetKey (KeyCode.DownArrow)) {
+				move (Direction.south);
+			}
+			if (Input.GetKeyUp (KeyCode.DownArrow)) {
+				downStroke = true;
+			}
 
-		if (Input.GetKey (KeyCode.UpArrow)) 
-		{
-			move (Direction.north);
+			this.executeSelectionModeActions ();
 		}
-		if (Input.GetKeyUp (KeyCode.UpArrow)) 
-		{
-			downStroke = true;
-		}
-
-		if (Input.GetKey (KeyCode.DownArrow)) 
-		{
-			move (Direction.south);
-		}
-		if (Input.GetKeyUp (KeyCode.DownArrow)) 
-		{
-			downStroke = true;
-		}
-
-		this.executeSelectionModeActions ();
 	}
 
 	void move(Direction d)
@@ -131,7 +130,7 @@ public class Highlighter : MonoBehaviour {
 		{
 		case SelectionMode.PIECE_TO_USE:
 			//For selecting tiles with charachters on them.
-			if (selectedTile.containedCharacter != null) 
+			if (selectedTile.containedCharacter != null && currentTeam.Contains(selectedTile.containedCharacter)) 
 			{
 				//expand over piece.
 				gameObject.transform.localScale = new Vector3 (1.459983f,1.459983f,1f);
@@ -158,7 +157,18 @@ public class Highlighter : MonoBehaviour {
 			mode = SelectionMode.MOVE_TO_TILE;
 			break;
 		case SelectionMode.MOVE_TO_TILE: 
-			
+			if (Input.GetKeyUp (KeyCode.Return)) 
+			{
+				if (selectedTile.GetComponentInChildren<RectTransform>() != null)
+				{
+					chosenCharachter.type.movement.Move(selectedTile);
+				}
+				foreach (GameObject g in possibleMoveHighlighters) 
+				{
+					GameObject.Destroy (g);
+				}
+				mode = SelectionMode.PIECE_TO_USE;
+			}
 			break;
 		case SelectionMode.OPEN_ABILITIES_MENU:
 			mode = SelectionMode.USE_ABILITY;
@@ -167,6 +177,11 @@ public class Highlighter : MonoBehaviour {
 			break;
 		}
 
+	}
+
+	void resetPossibleTiles()
+	{
+		possibleMoveHighlighters.Clear ();
 	}
 
 	public Stack<TileAttributes> requestSelections(int number)
@@ -189,6 +204,7 @@ public class Highlighter : MonoBehaviour {
 		MOVE_TO_TILE,
 		OPEN_ABILITIES_MENU,
 		USE_ABILITY,
-		ABILITY_TARGETS
+		ABILITY_TARGETS,
+		INACTIVE
 	}
 }

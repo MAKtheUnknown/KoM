@@ -69,9 +69,11 @@ public class CharacterCharacter : MonoBehaviour
 
 		foreach (TileAttributes t in possibleMoves) 
 		{
-			GameObject h = Instantiate (t.map.highlighter.possibleMovesHighlighters);
-			h.transform.parent = t.map.transform;
-			h.transform.position = t.transform.position;
+			GameObject h = Instantiate (t.map.highlighter.possibleMovesHighlighter);
+			h.transform.parent = t.transform;
+			RectTransform rt = h.GetComponent<RectTransform> ();
+			rt.anchoredPosition = new Vector2 (0,0);
+			this.team.manager.map.highlighter.possibleMoveHighlighters.Add (h);
 		}
 	}
 }

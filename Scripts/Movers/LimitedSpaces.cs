@@ -7,7 +7,8 @@ using System.Collections.Generic;
  * Movements can be made to the north, south, east and west.
  * 
  */
-public class LimitedSpaces : MonoBehaviour, Mover {
+public class LimitedSpaces : MonoBehaviour, Mover 
+{
 
 	public ClassSpecifications moved;
 
@@ -110,8 +111,18 @@ public class LimitedSpaces : MonoBehaviour, Mover {
 		}
 	}
 
+	public void Move(TileAttributes t)
+	{
+		t.containedCharacter = moved.owner;
+		moved.owner.tile.containedCharacter = null;
+		moved.owner.tile = t;
+		moved.owner.transform.position = t.transform.position;
+
+		timeSpent += times[t.x,t.y];
+	}
+
 	public void Reset()
 	{
-
+		timeSpent = 0;
 	}
 }

@@ -27,9 +27,14 @@ public class TeamManager : MonoBehaviour {
 
 	}
 
-	void rotate()
+	public void rotate()
 	{
 		turn = (turn+1)%teams.Length;
 		map.highlighter.currentTeam = teams [turn];
+
+		foreach (CharacterCharacter c in teams[turn].pieces) 
+		{
+			c.type.movement.Reset ();
+		}
 	}
 }

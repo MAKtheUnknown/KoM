@@ -7,5 +7,7 @@ public interface Mover
 
 	List<TileAttributes> GetPossibleMoves();
 
+	void Move (TileAttributes t);
+
 	void Reset();
 }

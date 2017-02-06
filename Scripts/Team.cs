@@ -27,8 +27,21 @@ public class Team : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	
+	}
+
+	public bool Contains(CharacterCharacter p)
+	{
+		foreach(CharacterCharacter c in pieces)
+		{
+			if(c == p)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public enum PlayerType
