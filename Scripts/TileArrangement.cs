@@ -55,6 +55,12 @@ public class TileArrangement : MonoBehaviour
 	 * Also links the tiles toghether by cardinal directions.*/
 	TileAttributes[,] initMap()
 	{
+		//loop through tiles and precisely align them.
+		foreach (TileAttributes t in tiles) 
+		{
+			t.transform.position = new Vector2(Mathf.Round(t.transform.position.x), Mathf.Round(t.transform.position.y));
+		}
+
 		//loop through tiles to find the bottomleftmost and toprightmost tiles.
 		foreach (TileAttributes t in tiles) 
 		{
