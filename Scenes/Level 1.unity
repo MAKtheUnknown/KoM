@@ -567,7 +567,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 0
+  type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   x: 0
@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2523,7 +2523,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 0
+  type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   x: 0
@@ -2786,7 +2786,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 0
+  type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   x: 0
@@ -2873,7 +2873,7 @@ MonoBehaviour:
   hillSpeed: 1
   mountainSpeed: 1
   forestSpeed: 1
-  shallowWaterSpeed: 1
+  shallowWaterSpeed: 4
 --- !u!1 &1968189442
 GameObject:
   m_ObjectHideFlags: 0

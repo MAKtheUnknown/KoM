@@ -136,7 +136,7 @@ public class Highlighter : MonoBehaviour {
 				gameObject.transform.localScale = new Vector3 (1.459983f,1.459983f,1f);
 
 				//Use Enter key to highlight possible moves
-				if (Input.GetKeyUp (KeyCode.Return)) 
+				if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp(0)) 
 				{
 					chosenCharachter = selectedTile.containedCharacter;
 					mode = SelectionMode.HIGHLIGHT_POSSIBLE_MOVES;
@@ -157,7 +157,7 @@ public class Highlighter : MonoBehaviour {
 			mode = SelectionMode.MOVE_TO_TILE;
 			break;
 		case SelectionMode.MOVE_TO_TILE: 
-			if (Input.GetKeyUp (KeyCode.Return)) 
+			if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp(0)) 
 			{
 				if (selectedTile.GetComponentInChildren<RectTransform>() != null)
 				{

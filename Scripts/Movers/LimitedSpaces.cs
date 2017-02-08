@@ -117,6 +117,8 @@ public class LimitedSpaces : MonoBehaviour, Mover
 		moved.owner.tile.containedCharacter = null;
 		moved.owner.tile = t;
 		moved.owner.transform.position = t.transform.position;
+		moved.owner.x = t.x;
+		moved.owner.y = t.y;
 
 		timeSpent += times[t.x,t.y];
 	}
