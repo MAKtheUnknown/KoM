@@ -24,11 +24,11 @@ public class LimitedSpaces : MonoBehaviour, Mover
 	/**The set of tiles and the difficulties with which this class can cover them*/
 	public IDictionary<TileAttributes.TileType, double> tileTypeTimes;
 
-	public double grassSpeed = 1;
-	public double hillSpeed = 1;
-	public double mountainSpeed = 1;
-	public double forestSpeed = 1;
-	public double shallowWaterSpeed = 1;
+	public double grassTime = 1;
+	public double hillTime = 1;
+	public double mountainTime = 1;
+	public double forestTime = 1;
+	public double shallowWaterTime = 1;
 
 	public double[,] times;
 
@@ -37,11 +37,11 @@ public class LimitedSpaces : MonoBehaviour, Mover
 		moved = GetComponentInParent<ClassSpecifications> ();
 
 		tileTypeTimes = new Dictionary<TileAttributes.TileType, double> ();
-		tileTypeTimes.Add (TileAttributes.TileType.grass, grassSpeed);
-		tileTypeTimes.Add (TileAttributes.TileType.hills, hillSpeed);
-		tileTypeTimes.Add (TileAttributes.TileType.mountains, mountainSpeed);
-		tileTypeTimes.Add (TileAttributes.TileType.trees, forestSpeed);
-		tileTypeTimes.Add (TileAttributes.TileType.water, shallowWaterSpeed);
+		tileTypeTimes.Add (TileAttributes.TileType.grass, grassTime);
+		tileTypeTimes.Add (TileAttributes.TileType.hills, hillTime);
+		tileTypeTimes.Add (TileAttributes.TileType.mountains, mountainTime);
+		tileTypeTimes.Add (TileAttributes.TileType.trees, forestTime);
+		tileTypeTimes.Add (TileAttributes.TileType.water, shallowWaterTime);
 	}
 
 	// Use this for initialization
