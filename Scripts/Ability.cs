@@ -9,4 +9,10 @@ public interface Ability
 	
 	// Update is called once per frame
 	void Update ();
+
+	void GetName();
+
+	void GetDescription();
+
+	void Use();
 }
