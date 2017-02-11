@@ -5,6 +5,7 @@ public class Zooming : MonoBehaviour
 {
 	Camera camera;
 
+	public double scrollBorder = 10.0;
 
 	// Use this for initialization
 	void Start () 
@@ -24,19 +25,19 @@ public class Zooming : MonoBehaviour
 		{
 			this.camera.orthographicSize-=.05f;
 		}
-		if (Input.GetKey (KeyCode.W)) 
+		if (Input.GetKey (KeyCode.W) || Input.mousePosition.y > this.camera.pixelHeight - this.scrollBorder) 
 		{
 			this.camera.transform.Translate (new Vector2 (0, .1f));
 		}
-		if (Input.GetKey (KeyCode.A)) 
+		if (Input.GetKey (KeyCode.A) || Input.mousePosition.x < this.scrollBorder) 
 		{
 			this.camera.transform.Translate (new Vector2 (-.1f, 0));
 		}
-		if (Input.GetKey (KeyCode.S)) 
+		if (Input.GetKey (KeyCode.S) || Input.mousePosition.y < this.scrollBorder) 
 		{
 			this.camera.transform.Translate (new Vector2 (0, -.1f));
 		}
-		if (Input.GetKey (KeyCode.D)) 
+		if (Input.GetKey (KeyCode.D) || Input.mousePosition.x > this.camera.pixelWidth - this.scrollBorder) 
 		{
 			this.camera.transform.Translate (new Vector2 (.1f, 0));
 		}

@@ -92,19 +92,19 @@ public class LimitedSpaces : MonoBehaviour, Mover
 		{
 			times[t.x,t.y] = newTime;
 
-			if (t.north != null) 
+			if (t.north != null && t.north.containedCharacter == null) 
 			{
 				propogateTimes (t.north, newTime);
 			} 
-			if (t.south != null) 
+			if (t.south != null && t.south.containedCharacter == null) 
 			{
 				propogateTimes (t.south, newTime);
 			}
-			if (t.east != null) 
+			if (t.east != null && t.east.containedCharacter == null) 
 			{
 				propogateTimes (t.east, newTime);
 			}
-			if (t.west != null) 
+			if (t.west != null && t.west.containedCharacter == null) 
 			{
 				propogateTimes (t.west, newTime);
 			}
