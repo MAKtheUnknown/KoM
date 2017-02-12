@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public interface Ability 
 {
@@ -10,9 +11,9 @@ public interface Ability
 	// Update is called once per frame
 	void Update ();
 
-	void GetName();
+	string GetName();
 
-	void GetDescription();
+	string GetDescription();
 
-	void Use();
+	void Use(List<TileAttributes> ts);
 }

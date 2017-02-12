@@ -76,4 +76,19 @@ public class CharacterCharacter : MonoBehaviour
 			this.team.manager.map.highlighter.possibleMoveHighlighters.Add (h);
 		}
 	}
+
+	public void damage(double d)
+	{
+		this.currentHP -= (int)d;
+
+		if(currentHP <= 0)
+		{
+			this.kill();
+		}
+	}
+
+	public void kill()
+	{
+		GameObject.Destroy (this.gameObject);
+	}
 }
