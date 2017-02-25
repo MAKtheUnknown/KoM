@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class BasicAttack : Ability {
+public class BasicAttack : MonoBehaviour, Ability {
 
 
 	public string name;

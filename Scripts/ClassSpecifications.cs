@@ -20,6 +20,15 @@ public class ClassSpecifications : MonoBehaviour
 	/**The attacks, spells, or special abilities that this class has*/
 	public Ability[] classAbilities;
 
+	public int maximumHealth;
+
+	public int maxXP;
+
+	public int morale;
+
+
+	public 
+
 	void Awake()
 	{
 		owner = GetComponentInParent<CharacterCharacter> ();
@@ -32,7 +41,6 @@ public class ClassSpecifications : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		
 	}
 	
 	// Update is called once per frame

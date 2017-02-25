@@ -4,10 +4,8 @@ using System.Collections.Generic;
 
 public class CharacterCharacter : MonoBehaviour 
 {
-	
-	public int maxHP;
 	public int currentHP;
-	public int maxXP;
+
 	public int currentXP;
 	public int maxMovesPerTurn;
 	public int movesLeftThisTurn;
@@ -36,6 +34,7 @@ public class CharacterCharacter : MonoBehaviour
 	void Start () 
 	{
 		putOnBoard ();
+		currentHP = type.maximumHealth;
 	}
 	
 	// Update is called once per frame
