@@ -86,6 +86,16 @@ public class CharacterCharacter : MonoBehaviour
 		}
 	}
 
+	public void heal(int h)
+	{
+		this.currentHP += h;
+
+		if (currentHP > type.maxXP) 
+		{
+			currentHP = type.maxXP;
+		}
+	}
+
 	public void kill()
 	{
 		GameObject.Destroy (this.gameObject);
