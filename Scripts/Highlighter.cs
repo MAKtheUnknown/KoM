@@ -132,11 +132,12 @@ public class Highlighter : MonoBehaviour {
 			//For selecting tiles with charachters on them.
 			if (selectedTile.containedCharacter != null && currentTeam.Contains(selectedTile.containedCharacter)) 
 			{
-				//expand over piece.
-				gameObject.transform.localScale = new Vector3 (1.459983f,1.459983f,1f);
+                    //expand over piece.
+                    gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+                    //gameObject.transform.localScale = new Vector3 (1.459983f,1.459983f,1f);
 
-				//Use Enter key to highlight possible moves
-				if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp(0)) 
+                    //Use Enter key to highlight possible moves
+                    if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp(0)) 
 				{
 					chosenCharachter = selectedTile.containedCharacter;
 					mode = SelectionMode.HIGHLIGHT_POSSIBLE_MOVES;

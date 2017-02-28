@@ -120,7 +120,8 @@ public class LimitedSpaces : MonoBehaviour, Mover
 		moved.owner.x = t.x;
 		moved.owner.y = t.y;
 
-		timeSpent += times[t.x,t.y];
+        //timeSpent += times[t.x,t.y];
+        timeSpent = timeToMove;
 	}
 
 	public void Reset()
