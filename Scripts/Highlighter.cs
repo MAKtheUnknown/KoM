@@ -19,7 +19,7 @@ public class Highlighter : MonoBehaviour {
 	public SelectionMode mode = SelectionMode.PIECE_TO_USE;
 
 	public Stack<TileAttributes> chosenTiles; 
-	public CharacterCharacter chosenCharachter;
+	public CharacterCharacter chosenCharacter;
 
 	public Team currentTeam;
 
@@ -139,22 +139,23 @@ public class Highlighter : MonoBehaviour {
                     //Use Enter key to highlight possible moves
                     if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp(0)) 
 				{
-					chosenCharachter = selectedTile.containedCharacter;
+					chosenCharacter = selectedTile.containedCharacter;
 					mode = SelectionMode.HIGHLIGHT_POSSIBLE_MOVES;
 				}
-				else if (Input.GetKeyUp (KeyCode.RightShift)) 
+				else if (Input.GetKeyUp (KeyCode.RightShift) || Input.GetMouseButtonUp(1)) 
 				{
-					chosenCharachter = selectedTile.containedCharacter;
+					chosenCharacter = selectedTile.containedCharacter;
 					mode = SelectionMode.OPEN_ABILITIES_MENU;
 				}
-			} else 
+			} 
+            /*else 
 			{
 				
 				gameObject.transform.localScale = new Vector3 (1f,1f,1f);
-			}
+			}*/
 			break;
 		case SelectionMode.HIGHLIGHT_POSSIBLE_MOVES: //an init state for MOVE_TO_TILE
-			chosenCharachter.HighlightMoves();
+			chosenCharacter.HighlightMoves();
 			mode = SelectionMode.MOVE_TO_TILE;
 			break;
 		case SelectionMode.MOVE_TO_TILE: 
@@ -162,7 +163,7 @@ public class Highlighter : MonoBehaviour {
 			{
 				if (selectedTile.GetComponentInChildren<RectTransform>() != null)
 				{
-					chosenCharachter.type.movement.Move(selectedTile);
+					chosenCharacter.type.movement.Move(selectedTile);
 				}
 				foreach (GameObject g in possibleMoveHighlighters) 
 				{
@@ -172,6 +173,11 @@ public class Highlighter : MonoBehaviour {
 			}
 			break;
 		case SelectionMode.OPEN_ABILITIES_MENU:
+            GameObject[] abilities = GameObject.FindGameObjectsWithTag("AbilityButton");
+            foreach (GameObject ability in abilities)
+                {
+                    ability.transform.position = new Vector3(0, 0, ability.transform.position.z);
+                }
 			mode = SelectionMode.USE_ABILITY;
 			break;
 		case SelectionMode.ABILITY_TARGETS:
