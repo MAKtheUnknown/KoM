@@ -30,23 +30,14 @@ public class Team : MonoBehaviour {
 		map = this.GetComponentInParent<TileArrangement> ();
 		manager = this.GetComponentInParent<TeamManager> ();
 		pieces = this.GetComponentsInChildren<CharacterCharacter> ();
-		teamMorale=100; //for testing
-		maxMorale=100; //for testing
 	}
 
 	// Use this for initialization
 	void Start () 
 	{
-		for(int i = 0; i<manager.teams.Length; i++)
-		{
-			if(manager.teams[i]==this) //sets moraleBar to the morale moraleBar corresponding to the team
-			{
-				moraleBar = manager.moraleBars[i];
-				moraleText= manager.moraleTexts[i];
-			}
-		}
-
+		
 	}
+	
 	
 	// Update is called once per frame
 	void Update () 
@@ -75,7 +66,6 @@ public class Team : MonoBehaviour {
 			manager.RemoveTeam(this);
 		}
 		changeMorale();
-		Debug.Log("damage: "+d);
 	}
 	
 	public void changeMorale()

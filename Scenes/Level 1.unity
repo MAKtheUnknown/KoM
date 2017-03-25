@@ -1273,11 +1273,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 314807018}
   m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
-  m_LocalPosition: {x: 105, y: 275, z: -102.000015}
-  m_LocalScale: {x: 11.807653, y: 99.99979, z: 85.75302}
+  m_LocalPosition: {x: 1.2259847, y: 5.2109127, z: -1.1909568}
+  m_LocalScale: {x: 0.1378667, y: 1.1676021, z: 1.0012561}
   m_Children: []
-  m_Father: {fileID: 831728673}
-  m_RootOrder: 17
+  m_Father: {fileID: 989117867}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
 --- !u!23 &314807020
 MeshRenderer:
@@ -3143,12 +3143,7 @@ RectTransform:
   - {fileID: 1878401468}
   - {fileID: 1438682064}
   - {fileID: 2110334609}
-  - {fileID: 1265286120}
-  - {fileID: 1365990607}
-  - {fileID: 1202299011}
-  - {fileID: 314807019}
-  - {fileID: 1571350131}
-  - {fileID: 1489659907}
+  - {fileID: 989117867}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3767,6 +3762,40 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &989117866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 989117867}
+  m_Layer: 0
+  m_Name: Morale UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &989117867
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 989117866}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -171.29088, z: 0}
+  m_LocalScale: {x: 85.64544, y: 85.64544, z: 85.64544}
+  m_Children:
+  - {fileID: 1265286120}
+  - {fileID: 1365990607}
+  - {fileID: 1202299011}
+  - {fileID: 314807019}
+  - {fileID: 1571350131}
+  - {fileID: 1489659907}
+  m_Father: {fileID: 831728673}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &994880835
 Transform:
   m_ObjectHideFlags: 0
@@ -4200,8 +4229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map: {fileID: 0}
   teams: []
-  moraleBars: []
-  moraleText: []
 --- !u!4 &1177113358 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4194052188242560, guid: d9b17e2f2970819429b98d6b89045ad1,
@@ -4412,16 +4439,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1202299010}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.011676045, y: 0.011676045, z: 0.011676045}
   m_Children: []
-  m_Father: {fileID: 831728673}
-  m_RootOrder: 16
+  m_Father: {fileID: 989117867}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -270, y: 230}
+  m_AnchoredPosition: {x: -3.1525269, y: 4.685486}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1202299012
@@ -4498,11 +4525,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1265286119}
   m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
-  m_LocalPosition: {x: -275, y: 275, z: -102.00001}
-  m_LocalScale: {x: 11.807653, y: 100, z: 85.75302}
+  m_LocalPosition: {x: -3.2109125, y: 5.2109127, z: -1.1909567}
+  m_LocalScale: {x: 0.1378667, y: 1.1676046, z: 1.0012561}
   m_Children: []
-  m_Father: {fileID: 831728673}
-  m_RootOrder: 14
+  m_Father: {fileID: 989117867}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
 --- !u!23 &1265286121
 MeshRenderer:
@@ -5137,11 +5164,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1365990606}
   m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
-  m_LocalPosition: {x: -275, y: 275, z: -102.00001}
-  m_LocalScale: {x: 11.021446, y: 100, z: 85.75302}
+  m_LocalPosition: {x: -3.2109125, y: 5.2109127, z: -1.1909567}
+  m_LocalScale: {x: 0.1286869, y: 1.1676046, z: 1.0012561}
   m_Children: []
-  m_Father: {fileID: 831728673}
-  m_RootOrder: 15
+  m_Father: {fileID: 989117867}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
 --- !u!23 &1365990608
 MeshRenderer:
@@ -5345,14 +5372,14 @@ RectTransform:
   m_GameObject: {fileID: 1489659906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0003147, y: 1.0003147, z: 1.0003147}
+  m_LocalScale: {x: 0.01167972, y: 0.01167972, z: 0.01167972}
   m_Children: []
-  m_Father: {fileID: 831728673}
-  m_RootOrder: 19
+  m_Father: {fileID: 989117867}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 229.99997}
+  m_AnchoredPosition: {x: 1.1676025, y: 4.6854706}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489659908
@@ -5443,8 +5470,11 @@ MonoBehaviour:
   pieces: []
   map: {fileID: 0}
   manager: {fileID: 0}
-  teamMorale: 0
-  bar: {fileID: 0}
+  teamMorale: 100
+  maxMorale: 100
+  moraleBar: {fileID: 314807018}
+  moraleText: {fileID: 1489659906}
+  textAlign: 1
 --- !u!4 &1503569323
 Transform:
   m_ObjectHideFlags: 0
@@ -5725,11 +5755,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1571350130}
   m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
-  m_LocalPosition: {x: 105, y: 275, z: -102.000015}
-  m_LocalScale: {x: 11.021448, y: 99.99979, z: 85.75302}
+  m_LocalPosition: {x: 1.2259847, y: 5.2109127, z: -1.1909568}
+  m_LocalScale: {x: 0.12868693, y: 1.1676021, z: 1.0012561}
   m_Children: []
-  m_Father: {fileID: 831728673}
-  m_RootOrder: 18
+  m_Father: {fileID: 989117867}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
 --- !u!23 &1571350132
 MeshRenderer:
@@ -7874,8 +7904,11 @@ MonoBehaviour:
   pieces: []
   map: {fileID: 0}
   manager: {fileID: 0}
-  teamMorale: 0
-  bar: {fileID: 0}
+  teamMorale: 100
+  maxMorale: 100
+  moraleBar: {fileID: 1265286119}
+  moraleText: {fileID: 1202299010}
+  textAlign: 0
 --- !u!1001 &2126631538
 Prefab:
   m_ObjectHideFlags: 0

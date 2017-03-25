@@ -7,8 +7,6 @@ public class TeamManager : MonoBehaviour {
 
 	public TileArrangement map;
 	public Team[] teams;
-	public GameObject[] moraleBars;
-	public GameObject[] moraleTexts;
 	
 	int turn;
 
@@ -16,10 +14,6 @@ public class TeamManager : MonoBehaviour {
 	{
 		map = this.GetComponentInParent<TileArrangement> ();
 		teams = this.GetComponentsInChildren<Team> ();
-		moraleBars = GameObject.FindGameObjectsWithTag("Morale Bar");
-		moraleTexts = GameObject.FindGameObjectsWithTag("Morale Text");
-		Array.Reverse(moraleBars);	//Not sure why we need to reverse in order to get elements in desired order (fix later)
-		//Array.Reverse(moraleText);	//Same as above
 	}
 
 	// Use this for initialization
@@ -27,19 +21,8 @@ public class TeamManager : MonoBehaviour {
 	{
 		turn = 0;
 		map.highlighter.currentTeam = teams [turn];
-		for(int i=0;i<teams.Length;i++)
-		{
-			moraleTexts[i].GetComponent<Text>().text=teams[i].name+": 100/100";
-			if(i%2==0)
-			{
-				teams[i].textAlign=Team.MoraleTextAlign.left;
-			}
-			
-			if(i%2==1)
-			{
-				teams[i].textAlign=Team.MoraleTextAlign.right;
-			}
-		}
+		
+		teams[0].moraleText.GetComponent<Text>().fontStyle=FontStyle.Bold;
 		
 	}
 	
@@ -61,6 +44,20 @@ public class TeamManager : MonoBehaviour {
 			c.type.movement.Reset ();
 			c.usedAbility = false;
 		}
+		
+		//bolds the active team's text
+		foreach(Team x in teams)
+		{
+			x.moraleText.GetComponent<Text>().fontStyle= FontStyle.Normal;
+			if(x==teams[turn%teams.Length])
+			{
+				x.moraleText.GetComponent<Text>().fontStyle= FontStyle.Bold;
+			}
+		}
+		
+		
+		
+		
 	}
 	
 	public void RemoveTeam(Team selectedTeam) //Sets selectedTeam's type to "dead"
