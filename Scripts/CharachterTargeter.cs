@@ -82,6 +82,24 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 		}
 	}
 
+	/* GetTargetsInRange(int x, int y, float range)
+	{
+		TileAttributes t = map.tileMap [x, y];
+		for (int i = x - range; i < x + range; x++) 
+		{
+			for (int j = y - range; j < j + range; j++) 
+			{
+				if (i >= map.LowX && j >= map.LowY && i < map.HighX && j < map.HighY) 
+				{
+					//if (Mathf.Sqrt (i ^ 2 + j ^ 2) < ) 
+					{
+
+					}
+				}
+			}
+		}
+	}*/
+
 	public virtual void Use()
 	{
 		

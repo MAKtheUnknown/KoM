@@ -165,4 +165,18 @@ public class TileArrangement : MonoBehaviour
 			return lowY;
 		}
 	}
+
+	/**A getter for the x position of the leftmost tile.*/	
+	public int HighX 
+	{
+		get {
+			return highX;
+		}
+	}
+	/**A getter for the y position of the lowermost tile.*/
+	public int HighY {
+		get {
+			return highY;
+		}
+	}
 }

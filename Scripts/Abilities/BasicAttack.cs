@@ -7,6 +7,7 @@ public class BasicAttack : CharachterTargeter {
 
 
 	public double damage;
+	public double range;
 
 	// Use this for initialization
 	public override void Start () 
