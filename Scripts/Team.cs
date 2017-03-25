@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System;
 
 public class Team : MonoBehaviour {
 
@@ -15,13 +17,21 @@ public class Team : MonoBehaviour {
 	
 	public float teamMorale;
 	
-	public GameObject bar; //
+	public float maxMorale;
+	
+	public GameObject moraleBar; // Morale bar corresponding to team
+	
+	public GameObject moraleText;// Morale text corresponding to team
+	
+	public MoraleTextAlign textAlign;//Alignment of text
 
 	void Awake()
 	{
 		map = this.GetComponentInParent<TileArrangement> ();
 		manager = this.GetComponentInParent<TeamManager> ();
 		pieces = this.GetComponentsInChildren<CharacterCharacter> ();
+		teamMorale=100; //for testing
+		maxMorale=100; //for testing
 	}
 
 	// Use this for initialization
@@ -29,9 +39,10 @@ public class Team : MonoBehaviour {
 	{
 		for(int i = 0; i<manager.teams.Length; i++)
 		{
-			if(manager.teams[i]==this) //sets bar to the morale bar corresponding to the team
+			if(manager.teams[i]==this) //sets moraleBar to the morale moraleBar corresponding to the team
 			{
-				bar = manager.moraleBars[i];
+				moraleBar = manager.moraleBars[i];
+				moraleText= manager.moraleTexts[i];
 			}
 		}
 
@@ -54,13 +65,6 @@ public class Team : MonoBehaviour {
 		}
 		return false;
 	}
-
-	public enum PlayerType
-	{
-		human,
-		computer,
-		dead
-	}
 	
 	public void TeamDamage (double d)
 	{
@@ -71,11 +75,34 @@ public class Team : MonoBehaviour {
 			manager.RemoveTeam(this);
 		}
 		changeMorale();
+		Debug.Log("damage: "+d);
 	}
 	
 	public void changeMorale()
+	{	//First half to change morale bar
+		moraleBar.GetComponent<Transform>().transform.localScale -= new Vector3(0,(float)(maxMorale-teamMorale)/maxMorale*100,0); //Currently using 100 as placeholder. Later use variable maxMorale
+		if(textAlign==Team.MoraleTextAlign.left)
+		{
+			moraleBar.GetComponent<Transform>().transform.localPosition -=new Vector3((float)(maxMorale-teamMorale)/maxMorale*100,0,0);
+		}
+		else
+		{
+			moraleBar.GetComponent<Transform>().transform.localPosition +=new Vector3((float)(maxMorale-teamMorale)/maxMorale*100,0,0);
+		}
+		//Changes morale text
+		moraleText.GetComponent<Text>().text=name+": "+teamMorale+"/"+maxMorale;
+	}
+
+	public enum PlayerType
 	{
-		bar.GetComponent<Transform>().transform.localScale -= new Vector3(0,(100-teamMorale),0); //Currently using 100 as placeholder. Later use variable maxMorale
-		bar.GetComponent<Transform>().transform.localPosition -=new Vector3((100-teamMorale),0,0);
+		human,
+		computer,
+		dead
+	}
+	
+	public enum MoraleTextAlign
+	{
+		left,
+		right
 	}
 }

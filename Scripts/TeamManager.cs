@@ -8,7 +8,7 @@ public class TeamManager : MonoBehaviour {
 	public TileArrangement map;
 	public Team[] teams;
 	public GameObject[] moraleBars;
-	public GameObject[] moraleText;
+	public GameObject[] moraleTexts;
 	
 	int turn;
 
@@ -17,10 +17,9 @@ public class TeamManager : MonoBehaviour {
 		map = this.GetComponentInParent<TileArrangement> ();
 		teams = this.GetComponentsInChildren<Team> ();
 		moraleBars = GameObject.FindGameObjectsWithTag("Morale Bar");
-		moraleText = GameObject.FindGameObjectsWithTag("Morale Text");
-		Array.Sort(moraleBars, CompareText);
+		moraleTexts = GameObject.FindGameObjectsWithTag("Morale Text");
 		Array.Reverse(moraleBars);	//Not sure why we need to reverse in order to get elements in desired order (fix later)
-		Array.Reverse(moraleText);	//Same as above
+		//Array.Reverse(moraleText);	//Same as above
 	}
 
 	// Use this for initialization
@@ -30,8 +29,18 @@ public class TeamManager : MonoBehaviour {
 		map.highlighter.currentTeam = teams [turn];
 		for(int i=0;i<teams.Length;i++)
 		{
-			moraleText[i].GetComponent<Text>().text=teams[i].name+": 100/100";
+			moraleTexts[i].GetComponent<Text>().text=teams[i].name+": 100/100";
+			if(i%2==0)
+			{
+				teams[i].textAlign=Team.MoraleTextAlign.left;
+			}
+			
+			if(i%2==1)
+			{
+				teams[i].textAlign=Team.MoraleTextAlign.right;
+			}
 		}
+		
 	}
 	
 	// Update is called once per frame
@@ -39,12 +48,6 @@ public class TeamManager : MonoBehaviour {
 	{
 		Team t = teams [turn % teams.Length];
 
-	}
-	
-	int CompareText(GameObject x, GameObject y)
-	{
-		return x.GetComponent<Text>().text.CompareTo(y.GetComponent<Text>().text);
-		Debug.Log("1");
 	}
 
 	public void rotate()
