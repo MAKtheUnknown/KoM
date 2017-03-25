@@ -155,7 +155,7 @@ public class Highlighter : MonoBehaviour {
                     //gameObject.transform.localScale = new Vector3 (1.459983f,1.459983f,1f);
 
                     //Use Enter key to highlight possible moves
-				if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp (0)) 
+				if ((Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp (0)) && selectedTile.containedCharacter.usedAbility == false) 
 				{
 					chosenCharacter = selectedTile.containedCharacter;
 					abilitySelectorObject = GameObject.Instantiate (savedAbilitySelectorObject, new Vector3(0,0,0) /*new Vector3(308, 0, -101)*/, new Quaternion(), map.ui.transform);
