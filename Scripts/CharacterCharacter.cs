@@ -9,6 +9,7 @@ public class CharacterCharacter : MonoBehaviour
 	public int currentXP;
 	public int maxMovesPerTurn;
 	public int movesLeftThisTurn;
+	public int morale;
 
 	public IDictionary<TileAttributes, int> tilesToMoves; 
 
@@ -101,6 +102,7 @@ public class CharacterCharacter : MonoBehaviour
 
 	public void kill()
 	{
+		team.TeamDamage(morale); //inflicts damage to team's morale
 		GameObject.Destroy (this.gameObject);
 	}
 }

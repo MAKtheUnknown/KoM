@@ -12,6 +12,10 @@ public class Team : MonoBehaviour {
 	public TileArrangement map;
 
 	public TeamManager manager;
+	
+	public float teamMorale;
+	
+	public GameObject bar; //
 
 	void Awake()
 	{
@@ -23,6 +27,13 @@ public class Team : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		for(int i = 0; i<manager.teams.Length; i++)
+		{
+			if(manager.teams[i]==this) //sets bar to the morale bar corresponding to the team
+			{
+				bar = manager.moraleBars[i];
+			}
+		}
 
 	}
 	
@@ -47,6 +58,24 @@ public class Team : MonoBehaviour {
 	public enum PlayerType
 	{
 		human,
-		computer
+		computer,
+		dead
+	}
+	
+	public void TeamDamage (double d)
+	{
+		teamMorale-= (int)d;
+		if(teamMorale<=0)
+		{
+			teamMorale=0;
+			manager.RemoveTeam(this);
+		}
+		changeMorale();
+	}
+	
+	public void changeMorale()
+	{
+		bar.GetComponent<Transform>().transform.localScale -= new Vector3(0,(100-teamMorale),0); //Currently using 100 as placeholder. Later use variable maxMorale
+		bar.GetComponent<Transform>().transform.localPosition -=new Vector3((100-teamMorale),0,0);
 	}
 }

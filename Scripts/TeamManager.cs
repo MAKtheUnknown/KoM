@@ -1,16 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System;
 
 public class TeamManager : MonoBehaviour {
 
 	public TileArrangement map;
 	public Team[] teams;
+	public GameObject[] moraleBars;
+	public GameObject[] moraleText;
+	
 	int turn;
 
 	void Awake()
 	{
 		map = this.GetComponentInParent<TileArrangement> ();
 		teams = this.GetComponentsInChildren<Team> ();
+		moraleBars = GameObject.FindGameObjectsWithTag("Morale Bar");
+		moraleText = GameObject.FindGameObjectsWithTag("Morale Text");
+		Array.Sort(moraleBars, CompareText);
+		Array.Reverse(moraleBars);	//Not sure why we need to reverse in order to get elements in desired order (fix later)
+		Array.Reverse(moraleText);	//Same as above
 	}
 
 	// Use this for initialization
@@ -18,6 +28,10 @@ public class TeamManager : MonoBehaviour {
 	{
 		turn = 0;
 		map.highlighter.currentTeam = teams [turn];
+		for(int i=0;i<teams.Length;i++)
+		{
+			moraleText[i].GetComponent<Text>().text=teams[i].name+": 100/100";
+		}
 	}
 	
 	// Update is called once per frame
@@ -25,6 +39,12 @@ public class TeamManager : MonoBehaviour {
 	{
 		Team t = teams [turn % teams.Length];
 
+	}
+	
+	int CompareText(GameObject x, GameObject y)
+	{
+		return x.GetComponent<Text>().text.CompareTo(y.GetComponent<Text>().text);
+		Debug.Log("1");
 	}
 
 	public void rotate()
@@ -38,5 +58,51 @@ public class TeamManager : MonoBehaviour {
 			c.type.movement.Reset ();
 			c.usedAbility = false;
 		}
+	}
+	
+	public void RemoveTeam(Team selectedTeam) //Sets selectedTeam's type to "dead"
+	{
+		foreach (Team t in teams)
+		{
+			if(t == selectedTeam)
+			{
+				t.type=Team.PlayerType.dead;	
+				
+				foreach(CharacterCharacter p in t.pieces)
+				{
+					GameObject.Destroy (p.gameObject);
+				}
+			}
+			
+		}
+		this.CheckVictory();
+	}
+	
+	public void CheckVictory()
+	{
+		int c = 0;	//Counter of remaining (non-dead) teams
+		foreach (Team t in teams)
+		{
+			if(t.type==Team.PlayerType.dead)
+			{
+				c++;
+			}
+		}
+		
+		if(c<=1)
+		{
+			foreach(Team t in teams)
+			{
+				if(t.type!=Team.PlayerType.dead)
+				{
+					this.DeclareVictory(t.name);
+				}
+			}
+		}
+	}
+	
+	public void DeclareVictory(string teamName)
+	{
+		Debug.Log(teamName+" wins"); //placeholder for victory screen
 	}
 }

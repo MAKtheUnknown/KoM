@@ -1248,6 +1248,88 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afa9b54eeaa13784f84c0b3d830bc073, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &314807018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 314807019}
+  - component: {fileID: 314807022}
+  - component: {fileID: 314807021}
+  - component: {fileID: 314807020}
+  m_Layer: 0
+  m_Name: Team 2 Current Morale
+  m_TagString: Morale Bar
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &314807019
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314807018}
+  m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
+  m_LocalPosition: {x: 105, y: 275, z: -102.000015}
+  m_LocalScale: {x: 11.807653, y: 99.99979, z: 85.75302}
+  m_Children: []
+  m_Father: {fileID: 831728673}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
+--- !u!23 &314807020
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314807018}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: b3371fd04b850a745bbd6bb4478d4221, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &314807021
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314807018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &314807022
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314807018}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &323324379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1379,7 @@ MonoBehaviour:
   currentXP: 0
   maxMovesPerTurn: 0
   movesLeftThisTurn: 0
+  morale: 0
   tile: {fileID: 0}
   team: {fileID: 0}
   type: {fileID: 0}
@@ -2260,6 +2343,7 @@ MonoBehaviour:
   currentXP: 0
   maxMovesPerTurn: 0
   movesLeftThisTurn: 0
+  morale: 0
   tile: {fileID: 0}
   team: {fileID: 0}
   type: {fileID: 0}
@@ -3059,6 +3143,12 @@ RectTransform:
   - {fileID: 1878401468}
   - {fileID: 1438682064}
   - {fileID: 2110334609}
+  - {fileID: 1265286120}
+  - {fileID: 1365990607}
+  - {fileID: 1202299011}
+  - {fileID: 314807019}
+  - {fileID: 1571350131}
+  - {fileID: 1489659907}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4110,6 +4200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map: {fileID: 0}
   teams: []
+  moraleBars: []
+  moraleText: []
 --- !u!4 &1177113358 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4194052188242560, guid: d9b17e2f2970819429b98d6b89045ad1,
@@ -4297,6 +4389,80 @@ Transform:
   m_PrefabParentObject: {fileID: 4000012626915900, guid: afa9b54eeaa13784f84c0b3d830bc073,
     type: 2}
   m_PrefabInternal: {fileID: 26127325}
+--- !u!1 &1202299010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1202299011}
+  - component: {fileID: 1202299013}
+  - component: {fileID: 1202299012}
+  m_Layer: 5
+  m_Name: Team 1 Morale Text
+  m_TagString: Morale Text
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1202299011
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1202299010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 831728673}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -270, y: 230}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1202299012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1202299010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.92766976, g: 0.9705882, b: 0.19269031, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 008f226efb827434782bf4fe180c33e7, type: 3}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Team 1: 100/100'
+--- !u!222 &1202299013
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1202299010}
 --- !u!4 &1202754825 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011675964248, guid: 5aed2c4b508ee664ba18376769ff07ff,
@@ -4307,6 +4473,88 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011675964248, guid: 5aed2c4b508ee664ba18376769ff07ff,
     type: 2}
   m_PrefabInternal: {fileID: 830346844}
+--- !u!1 &1265286119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1265286120}
+  - component: {fileID: 1265286123}
+  - component: {fileID: 1265286122}
+  - component: {fileID: 1265286121}
+  m_Layer: 0
+  m_Name: Team 1 Current Morale
+  m_TagString: Morale Bar
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1265286120
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265286119}
+  m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
+  m_LocalPosition: {x: -275, y: 275, z: -102.00001}
+  m_LocalScale: {x: 11.807653, y: 100, z: 85.75302}
+  m_Children: []
+  m_Father: {fileID: 831728673}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
+--- !u!23 &1265286121
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265286119}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: b3371fd04b850a745bbd6bb4478d4221, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &1265286122
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265286119}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1265286123
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265286119}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1284207666
 Prefab:
   m_ObjectHideFlags: 0
@@ -4864,6 +5112,88 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1365990606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1365990607}
+  - component: {fileID: 1365990610}
+  - component: {fileID: 1365990609}
+  - component: {fileID: 1365990608}
+  m_Layer: 0
+  m_Name: Team 1 Max Morale
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1365990607
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365990606}
+  m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
+  m_LocalPosition: {x: -275, y: 275, z: -102.00001}
+  m_LocalScale: {x: 11.021446, y: 100, z: 85.75302}
+  m_Children: []
+  m_Father: {fileID: 831728673}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
+--- !u!23 &1365990608
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365990606}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 35f87e0c5088a96429d5f19f00c829fd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &1365990609
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365990606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1365990610
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365990606}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1372870962 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4194052188242560, guid: d9b17e2f2970819429b98d6b89045ad1,
@@ -4990,6 +5320,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aed2c4b508ee664ba18376769ff07ff, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1489659906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1489659907}
+  - component: {fileID: 1489659909}
+  - component: {fileID: 1489659908}
+  m_Layer: 5
+  m_Name: Team 2 Morale Text
+  m_TagString: Morale Text
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1489659907
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489659906}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0003147, y: 1.0003147, z: 1.0003147}
+  m_Children: []
+  m_Father: {fileID: 831728673}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 100, y: 229.99997}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1489659908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489659906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.92766976, g: 0.9705882, b: 0.19269031, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 008f226efb827434782bf4fe180c33e7, type: 3}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Team 2: 100/100'
+--- !u!222 &1489659909
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489659906}
 --- !u!1 &1500078925
 GameObject:
   m_ObjectHideFlags: 0
@@ -5035,10 +5439,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  name: 
+  name: Team B
   pieces: []
   map: {fileID: 0}
   manager: {fileID: 0}
+  teamMorale: 0
+  bar: {fileID: 0}
 --- !u!4 &1503569323
 Transform:
   m_ObjectHideFlags: 0
@@ -5294,6 +5700,88 @@ Transform:
   m_Father: {fileID: 691831152}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1571350130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1571350131}
+  - component: {fileID: 1571350134}
+  - component: {fileID: 1571350133}
+  - component: {fileID: 1571350132}
+  m_Layer: 0
+  m_Name: Team 2 Max Morale
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1571350131
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571350130}
+  m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
+  m_LocalPosition: {x: 105, y: 275, z: -102.000015}
+  m_LocalScale: {x: 11.021448, y: 99.99979, z: 85.75302}
+  m_Children: []
+  m_Father: {fileID: 831728673}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
+--- !u!23 &1571350132
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571350130}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 35f87e0c5088a96429d5f19f00c829fd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &1571350133
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571350130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1571350134
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571350130}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1579319491
 Prefab:
   m_ObjectHideFlags: 0
@@ -7382,10 +7870,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  name: 
+  name: Team A
   pieces: []
   map: {fileID: 0}
   manager: {fileID: 0}
+  teamMorale: 0
+  bar: {fileID: 0}
 --- !u!1001 &2126631538
 Prefab:
   m_ObjectHideFlags: 0
