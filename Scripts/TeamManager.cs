@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System;
 
 public class TeamManager : MonoBehaviour {
 
 	public TileArrangement map;
 	public Team[] teams;
+	
 	int turn;
 
 	void Awake()
@@ -18,6 +21,9 @@ public class TeamManager : MonoBehaviour {
 	{
 		turn = 0;
 		map.highlighter.currentTeam = teams [turn];
+		
+		teams[0].moraleText.GetComponent<Text>().fontStyle=FontStyle.Bold;
+		
 	}
 	
 	// Update is called once per frame
@@ -38,5 +44,65 @@ public class TeamManager : MonoBehaviour {
 			c.type.movement.Reset ();
 			c.usedAbility = false;
 		}
+		
+		//bolds the active team's text
+		foreach(Team x in teams)
+		{
+			x.moraleText.GetComponent<Text>().fontStyle= FontStyle.Normal;
+			if(x==teams[turn%teams.Length])
+			{
+				x.moraleText.GetComponent<Text>().fontStyle= FontStyle.Bold;
+			}
+		}
+		
+		
+		
+		
+	}
+	
+	public void RemoveTeam(Team selectedTeam) //Sets selectedTeam's type to "dead"
+	{
+		foreach (Team t in teams)
+		{
+			if(t == selectedTeam)
+			{
+				t.type=Team.PlayerType.dead;	
+				
+				foreach(CharacterCharacter p in t.pieces)
+				{
+					GameObject.Destroy (p.gameObject);
+				}
+			}
+			
+		}
+		this.CheckVictory();
+	}
+	
+	public void CheckVictory()
+	{
+		int c = 0;	//Counter of remaining (non-dead) teams
+		foreach (Team t in teams)
+		{
+			if(t.type==Team.PlayerType.dead)
+			{
+				c++;
+			}
+		}
+		
+		if(c<=1)
+		{
+			foreach(Team t in teams)
+			{
+				if(t.type!=Team.PlayerType.dead)
+				{
+					this.DeclareVictory(t.name);
+				}
+			}
+		}
+	}
+	
+	public void DeclareVictory(string teamName)
+	{
+		Debug.Log(teamName+" wins"); //placeholder for victory screen
 	}
 }

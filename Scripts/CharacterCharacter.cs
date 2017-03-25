@@ -9,6 +9,7 @@ public class CharacterCharacter : MonoBehaviour
 	public int currentXP;
 	public int maxMovesPerTurn;
 	public int movesLeftThisTurn;
+	public int morale;
 
 	public IDictionary<TileAttributes, int> tilesToMoves; 
 
@@ -30,6 +31,7 @@ public class CharacterCharacter : MonoBehaviour
 		team = GetComponentInParent<Team> ();
 		type = GetComponentInChildren<ClassSpecifications> ();
 		specialAbilities = GetComponentsInChildren<Ability> ();
+		morale=40; //for testing purposes
 	}
 
 	// Use this for initialization
@@ -101,6 +103,7 @@ public class CharacterCharacter : MonoBehaviour
 
 	public void kill()
 	{
+		team.TeamDamage(morale); //inflicts damage to team's morale
 		GameObject.Destroy (this.gameObject);
 	}
 }
