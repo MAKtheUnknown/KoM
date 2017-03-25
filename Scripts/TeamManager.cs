@@ -36,6 +36,7 @@ public class TeamManager : MonoBehaviour {
 		foreach (CharacterCharacter c in teams[turn].pieces) 
 		{
 			c.type.movement.Reset ();
+			c.usedAbility = false;
 		}
 	}
 }

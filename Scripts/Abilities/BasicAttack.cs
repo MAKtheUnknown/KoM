@@ -4,14 +4,15 @@ using System.Collections.Generic;
 
 public class BasicAttack : CharachterTargeter {
 
-
+	public ClassSpecifications specs;
 
 	public double damage;
-	public double range;
+	public float range;
 
 	// Use this for initialization
 	public override void Start () 
 	{
+		specs = GetComponentInParent<ClassSpecifications> ();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		targets = new List<TileAttributes> ();
 		charachterTargets = new List<CharacterCharacter> ();
@@ -41,7 +42,7 @@ public class BasicAttack : CharachterTargeter {
 	{
 		if (targetsAquired == false) 
 		{
-			base.GetTargets();
+			base.GetTargets(specs.owner.x, specs.owner.y, range);
 		}
 		if (targetsAquired == true) 
 		{
@@ -51,6 +52,7 @@ public class BasicAttack : CharachterTargeter {
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
+			specs.owner.usedAbility = true;
 		}
 
 	}

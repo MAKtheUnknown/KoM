@@ -51,8 +51,10 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 
 
 
-	public void GetTargets()
+	public void GetTargets(int x, int y, float range)
 	{
+		List<CharacterCharacter> inRange = GetTargetsInRange (x, y, range);
+		
 		foreach (GameObject g in GameObject.FindGameObjectsWithTag("Possible Move Highlighters")) 
 		{
 			GameObject.Destroy (g);
@@ -69,8 +71,21 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 			TileAttributes t = targets [0];
 			if (t.containedCharacter != null) 
 			{
-				charachterTargets.Add (t.containedCharacter);
-				targetsToAquire--;
+				if (inRange.Contains (t.containedCharacter)) 
+				{
+					charachterTargets.Add (t.containedCharacter);
+					targetsToAquire--;
+				}
+				else
+				{
+					map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+					instructionLabel.text = "";
+				}
+			}
+			else 
+			{
+				instructionLabel.text = "";
+				map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			}
 			targets.Remove (t);
 		}
@@ -82,23 +97,26 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 		}
 	}
 
-	/* GetTargetsInRange(int x, int y, float range)
+	List<CharacterCharacter> GetTargetsInRange(int x, int y, float range)
 	{
-		TileAttributes t = map.tileMap [x, y];
-		for (int i = x - range; i < x + range; x++) 
-		{
-			for (int j = y - range; j < j + range; j++) 
-			{
-				if (i >= map.LowX && j >= map.LowY && i < map.HighX && j < map.HighY) 
-				{
-					//if (Mathf.Sqrt (i ^ 2 + j ^ 2) < ) 
-					{
+		List<CharacterCharacter> charTargets = new List<CharacterCharacter> ();
 
-					}
+		foreach (Team t in map.teams.teams) 
+		{
+			foreach (CharacterCharacter c in t.pieces) 
+			{
+				int rsqrd = (int)(range * range);
+				int dxsqrd = (x - c.x) * (x - c.x);
+				int dysqrd = (y - c.y) * (y - c.y);
+				bool b = !(x == c.x && y == c.y);
+				if ((rsqrd >= dxsqrd + dysqrd) && b) 
+				{
+					charTargets.Add (c);
 				}
 			}
 		}
-	}*/
+		return charTargets;
+	}
 
 	public virtual void Use()
 	{

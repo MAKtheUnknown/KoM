@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Healing : CharachterTargeter {
 
-	public string name;
-	public string description;
 
 	public int addedHealth;
 
+	public int range;
+
+	public ClassSpecifications specs;
 
 	// Use this for initialization
 	public override void Start () 
 	{
+		specs = GetComponentInParent<ClassSpecifications> ();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		targets = new List<TileAttributes> ();
 		charachterTargets = new List<CharacterCharacter> ();
@@ -28,21 +30,13 @@ public class Healing : CharachterTargeter {
 
 	}
 
-	public string GetName()
-	{
-		return name;
-	}
 
-	public string GetDescription()
-	{
-		return description;
-	}
 
 	public override void Use()
 	{
 		if (targetsAquired == false) 
 		{
-			base.GetTargets();
+			base.GetTargets(specs.owner.x, specs.owner.y, range);
 		}
 		if (targetsAquired == true) 
 		{
@@ -52,6 +46,7 @@ public class Healing : CharachterTargeter {
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
+			specs.owner.usedAbility = true;
 		}
 
 	}

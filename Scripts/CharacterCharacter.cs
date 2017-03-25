@@ -20,6 +20,8 @@ public class CharacterCharacter : MonoBehaviour
 
 	public ClassSpecifications type; 
 
+	public bool usedAbility;
+
 	public int x;
 	public int y;
 
@@ -35,6 +37,7 @@ public class CharacterCharacter : MonoBehaviour
 	{
 		putOnBoard ();
 		currentHP = type.maximumHealth;
+		usedAbility = false;
 	}
 	
 	// Update is called once per frame
