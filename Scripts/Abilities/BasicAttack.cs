@@ -2,19 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class BasicAttack : MonoBehaviour, Ability {
+public class BasicAttack : CharachterTargeter {
 
 
-	public string name;
-
-	public string description;
 
 	public double damage;
 
 	// Use this for initialization
-	public void Start () 
+	public override void Start () 
 	{
-	
+		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
+		targets = new List<TileAttributes> ();
+		charachterTargets = new List<CharacterCharacter> ();
+		targetsAquired = false;
+		targetsToAquire = numberOfTargets;
+		GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
+		base.Start ();
 	}
 	
 	// Update is called once per frame
@@ -33,13 +36,20 @@ public class BasicAttack : MonoBehaviour, Ability {
 		return description;
 	}
 
-	public void Use(List<TileAttributes> ts)
+	public override void Use()
 	{
-		TileAttributes tileTarget = ts [0];
-		if (tileTarget.containedCharacter != null) 
+		if (targetsAquired == false) 
 		{
-			CharacterCharacter attackedCharachter = tileTarget.containedCharacter;
-			attackedCharachter.damage (damage);
+			base.GetTargets();
+		}
+		if (targetsAquired == true) 
+		{
+			foreach (CharacterCharacter t in charachterTargets) 
+			{
+				t.damage (damage);
+			}
+			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+			Start ();
 		}
 
 	}

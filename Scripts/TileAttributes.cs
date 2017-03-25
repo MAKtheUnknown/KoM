@@ -43,10 +43,20 @@ public class TileAttributes : MonoBehaviour {
 	//things done when you mouse over a tile.
 	void OnMouseOver()
 	{
-		//set the highlighter's selected tile.
-		map.highlighter.selectedTile = this;
-		//move the highlighter over this tile.
-		map.highlighter.transform.position = this.gameObject.transform.position;
+		//make sure mouse is not over sidebar.
+		if (map.highlighter.mouseIsOverSidebar == false) 
+		{
+			map.highlighter.gameObject.SetActive (true);
+			//set the highlighter's selected tile.
+			map.highlighter.selectedTile = this;
+			//move the highlighter over this tile.
+			map.highlighter.transform.position = this.gameObject.transform.position;
+		}
+	}
+
+	void OnMouseExit()
+	{
+		map.highlighter.gameObject.SetActive (false);
 	}
 
 	void OnClick()

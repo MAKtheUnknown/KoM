@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public interface Ability 
+public interface Ability
 {
 
 	// Use this for initialization
@@ -15,5 +15,5 @@ public interface Ability
 
 	string GetDescription();
 
-	void Use(List<TileAttributes> ts);
+	void Use();
 }

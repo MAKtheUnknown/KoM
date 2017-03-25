@@ -16,6 +16,8 @@ public class TileArrangement : MonoBehaviour
 	/**The thing that selects and highlights tiles.*/
 	public Highlighter highlighter;
 
+	public GameObject ui;
+
 	//The lowest and highest positions of the physical tiles.
 	int lowX = 0;
 	int highX = 0;
@@ -42,7 +44,8 @@ public class TileArrangement : MonoBehaviour
 		highlighter.selectedTile = tiles[0];
 		//move the highlighter to its starting position.
 		highlighter.transform.position = highlighter.selectedTile.transform.position;
-
+		//get the user interface from the scene.
+		ui = GameObject.FindGameObjectWithTag("UI");
 	}
 	
 	// Update is called once per frame

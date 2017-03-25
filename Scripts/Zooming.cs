@@ -4,6 +4,7 @@ using System.Collections;
 public class Zooming : MonoBehaviour 
 {
 	Camera camera;
+	Canvas canvas;
 
 	public double scrollBorder = 10.0;
 
@@ -11,6 +12,7 @@ public class Zooming : MonoBehaviour
 	void Start () 
 	{
 		this.camera = this.GetComponent<Camera> ();
+		this.canvas = GameObject.FindGameObjectWithTag ("UI").GetComponent<Canvas>();
 	}
 	
 	// Update is called once per frame
@@ -20,10 +22,12 @@ public class Zooming : MonoBehaviour
 		if (Input.GetAxis ("Mouse ScrollWheel")>0 || Input.GetKey(KeyCode.E)) 
 		{
 			this.camera.orthographicSize+=.05f;
+			this.canvas.transform.Translate (0f, 0f, 500f);
 		}
 		if (Input.GetAxis ("Mouse ScrollWheel")<0 || Input.GetKey(KeyCode.Q)) 
 		{
 			this.camera.orthographicSize-=.05f;
+			this.canvas.transform.Translate (0f, 0f, -500f);
 		}
 		if (Input.GetKey (KeyCode.W) /*|| Input.mousePosition.y > this.camera.pixelHeight - this.scrollBorder*/) 
 		{

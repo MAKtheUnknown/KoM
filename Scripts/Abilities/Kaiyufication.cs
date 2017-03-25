@@ -27,13 +27,13 @@ public class Kaiyufication : Ability {
 		return description;
 	}
 
-	public void Use(List<TileAttributes> ts)
+	public void Use()
 	{
-		TileAttributes tileTarget = ts [0];
+		/*TileAttributes tileTarget = ts [0];
 		if (tileTarget.containedCharacter != null) 
 		{
 			CharacterCharacter attackedCharachter = tileTarget.containedCharacter;
 			attackedCharachter.name = "Kaiyu"; //Caillou
-		}
+		}*/
 	}
 }
