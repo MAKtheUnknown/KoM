@@ -91,7 +91,11 @@ public class Highlighter : MonoBehaviour {
 				GameObject.FindGameObjectWithTag ("Character Display").GetComponent<SpriteRenderer>().sprite = selectedTile.containedCharacter.GetComponent<SpriteRenderer>().sprite;
 				GameObject.FindGameObjectWithTag ("Character Display").transform.localScale = new Vector3 (75, 75, 1);
 				GameObject.FindGameObjectWithTag ("Health Indicator").transform.localScale = new Vector3 (11.80754f, 71.82333f*selectedTile.containedCharacter.currentHP/selectedTile.containedCharacter.type.maximumHealth, 85.7285f);
+<<<<<<< HEAD
 				GameObject.FindGameObjectWithTag ("Health Indicator").transform.localPosition = new Vector3 (369.7f,18f+71f*((float)selectedTile.containedCharacter.currentHP/selectedTile.containedCharacter.type.maximumHealth),-103f);
+=======
+				GameObject.FindGameObjectWithTag ("Health Indicator").transform.localPosition = new Vector3 (369.7f,17f+72f*selectedTile.containedCharacter.currentHP/selectedTile.containedCharacter.type.maximumHealth,-103);
+>>>>>>> refs/remotes/origin/master
 			}
 
 			this.executeSelectionModeActions ();
