@@ -1261,7 +1261,7 @@ GameObject:
   - component: {fileID: 314807020}
   m_Layer: 0
   m_Name: Team 2 Current Morale
-  m_TagString: Morale Bar
+  m_TagString: Morale Bar 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1379,7 +1379,6 @@ MonoBehaviour:
   currentXP: 0
   maxMovesPerTurn: 0
   movesLeftThisTurn: 0
-  morale: 0
   tile: {fileID: 0}
   team: {fileID: 0}
   type: {fileID: 0}
@@ -2343,7 +2342,6 @@ MonoBehaviour:
   currentXP: 0
   maxMovesPerTurn: 0
   movesLeftThisTurn: 0
-  morale: 0
   tile: {fileID: 0}
   team: {fileID: 0}
   type: {fileID: 0}
@@ -4306,6 +4304,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   maximumHealth: 14
+  defense: 0
   maxXP: 55
   morale: 100
 --- !u!1 &1199034287
@@ -4399,7 +4398,7 @@ GameObject:
   - component: {fileID: 1202299012}
   m_Layer: 5
   m_Name: Team 1 Morale Text
-  m_TagString: Morale Text
+  m_TagString: Morale Text 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4484,7 +4483,7 @@ GameObject:
   - component: {fileID: 1265286121}
   m_Layer: 0
   m_Name: Team 1 Current Morale
-  m_TagString: Morale Bar
+  m_TagString: Morale Bar 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5330,7 +5329,7 @@ GameObject:
   - component: {fileID: 1489659908}
   m_Layer: 5
   m_Name: Team 2 Morale Text
-  m_TagString: Morale Text
+  m_TagString: Morale Text 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5513,6 +5512,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   maximumHealth: 14
+  defense: 0
   maxXP: 55
   morale: 100
 --- !u!4 &1535234115
