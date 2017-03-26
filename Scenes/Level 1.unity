@@ -1273,13 +1273,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 314807018}
   m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 105, y: 275.00003, z: -102.00002}
-  m_LocalScale: {x: 11.807654, y: 99.999794, z: 85.75302}
-=======
   m_LocalPosition: {x: 105.000015, y: 275, z: -102.00003}
   m_LocalScale: {x: 11.807656, y: 99.9998, z: 85.75303}
->>>>>>> refs/remotes/origin/master
   m_Children: []
   m_Father: {fileID: 831728673}
   m_RootOrder: 17
@@ -4500,13 +4495,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1265286119}
   m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
-<<<<<<< HEAD
-  m_LocalPosition: {x: -275, y: 275.00003, z: -102}
-  m_LocalScale: {x: 11.807654, y: 100, z: 85.75302}
-=======
   m_LocalPosition: {x: -275.00003, y: 275, z: -102.000015}
   m_LocalScale: {x: 11.807656, y: 100.000015, z: 85.75303}
->>>>>>> refs/remotes/origin/master
   m_Children: []
   m_Father: {fileID: 831728673}
   m_RootOrder: 14
@@ -5144,13 +5134,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1365990606}
   m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
-<<<<<<< HEAD
-  m_LocalPosition: {x: -275, y: 275.00003, z: -102}
-  m_LocalScale: {x: 11.021446, y: 100, z: 85.75302}
-=======
   m_LocalPosition: {x: -275.00003, y: 275, z: -102.000015}
   m_LocalScale: {x: 11.021446, y: 100.000015, z: 85.75303}
->>>>>>> refs/remotes/origin/master
   m_Children: []
   m_Father: {fileID: 831728673}
   m_RootOrder: 15
@@ -5357,22 +5342,14 @@ RectTransform:
   m_GameObject: {fileID: 1489659906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-  m_LocalScale: {x: 1.0003147, y: 1.0003147, z: 1.0003147}
-=======
   m_LocalScale: {x: 1.0003148, y: 1.0003148, z: 1.0003148}
->>>>>>> refs/remotes/origin/master
   m_Children: []
   m_Father: {fileID: 831728673}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  m_AnchoredPosition: {x: 99.99983, y: 229.9983}
-=======
   m_AnchoredPosition: {x: 99.99983, y: 229.99829}
->>>>>>> refs/remotes/origin/master
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489659908
@@ -5465,8 +5442,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   teamMorale: 100
   maxMorale: 100
-  moraleBar: {fileID: 0}
-  moraleText: {fileID: 0}
+  moraleBar: {fileID: 314807018}
+  moraleText: {fileID: 1489659906}
   textAlign: 1
 --- !u!4 &1503569323
 Transform:
@@ -5749,13 +5726,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1571350130}
   m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 105, y: 275.00003, z: -102.00002}
-  m_LocalScale: {x: 11.021448, y: 99.999794, z: 85.75302}
-=======
   m_LocalPosition: {x: 105.000015, y: 275, z: -102.00003}
   m_LocalScale: {x: 11.021449, y: 99.9998, z: 85.75303}
->>>>>>> refs/remotes/origin/master
   m_Children: []
   m_Father: {fileID: 831728673}
   m_RootOrder: 18
@@ -6675,7 +6647,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1920014614}
   m_LocalRotation: {x: -0.043619405, y: 0, z: 0, w: 0.9990483}
-  m_LocalPosition: {x: 369.7, y: 89, z: -103}
+  m_LocalPosition: {x: 369.7, y: 89, z: -102}
   m_LocalScale: {x: 11.807538, y: 71.823326, z: 85.752846}
   m_Children: []
   m_Father: {fileID: 831728673}
@@ -7905,8 +7877,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   teamMorale: 100
   maxMorale: 100
-  moraleBar: {fileID: 0}
-  moraleText: {fileID: 0}
+  moraleBar: {fileID: 1265286119}
+  moraleText: {fileID: 1202299010}
   textAlign: 0
 --- !u!1001 &2126631538
 Prefab:
