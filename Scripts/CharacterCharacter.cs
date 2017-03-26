@@ -31,7 +31,7 @@ public class CharacterCharacter : MonoBehaviour
 		team = GetComponentInParent<Team> ();
 		type = GetComponentInChildren<ClassSpecifications> ();
 		specialAbilities = GetComponentsInChildren<Ability> ();
-		morale=40; //for testing purposes
+		//morale=40; //for testing purposes
 	}
 
 	// Use this for initialization
