@@ -21,6 +21,8 @@ public class ClassSpecifications : MonoBehaviour
 	public Ability[] classAbilities;
 
 	public int maximumHealth;
+	
+	public int defense;
 
 	public int maxXP;
 

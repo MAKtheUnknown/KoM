@@ -26,6 +26,7 @@ public class TeamManager : MonoBehaviour {
 		{
 			teams[i].moraleBar=GameObject.FindGameObjectWithTag("Morale Bar "+(i+1));
 			teams[i].moraleText=GameObject.FindGameObjectWithTag("Morale Text "+(i+1));
+			teams[i].moraleText.GetComponent<Text>().text=teams[i].name+": "+teams[i].teamMorale+"/"+teams[i].maxMorale;
 		}
 		teams[0].moraleText.GetComponent<Text>().fontStyle=FontStyle.Bold;
 		
