@@ -1272,13 +1272,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 314807018}
-  m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
+  m_LocalRotation: {x: -0.032384723, y: 0.032384723, z: 0.7063648, w: 0.7063648}
   m_LocalPosition: {x: 105.000015, y: 275, z: -102.00003}
   m_LocalScale: {x: 11.807656, y: 99.9998, z: 85.75303}
   m_Children: []
   m_Father: {fileID: 831728673}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -5.25, y: 0, z: 90}
 --- !u!23 &314807020
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3862,8 +3862,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 370, y: 2.5}
-  m_SizeDelta: {x: 35, y: 20}
+  m_AnchoredPosition: {x: 368, y: 2.5}
+  m_SizeDelta: {x: 51, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1043939707
 MonoBehaviour:
@@ -3886,7 +3886,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 008f226efb827434782bf4fe180c33e7, type: 3}
-    m_FontSize: 16
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -3897,7 +3897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'HP:'
+  m_Text: 100/100
 --- !u!222 &1043939708
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4304,6 +4304,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   maximumHealth: 14
+  attack: 0
   defense: 0
   maxXP: 55
   morale: 100
@@ -4494,13 +4495,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1265286119}
-  m_LocalRotation: {x: -0.030843573, y: 0.030843573, z: 0.7064338, w: 0.7064338}
+  m_LocalRotation: {x: -0.032384723, y: 0.032384723, z: 0.7063648, w: 0.7063648}
   m_LocalPosition: {x: -275.00003, y: 275, z: -102.000015}
   m_LocalScale: {x: 11.807656, y: 100.000015, z: 85.75303}
   m_Children: []
   m_Father: {fileID: 831728673}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -5.25, y: 0, z: 90}
 --- !u!23 &1265286121
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5512,6 +5513,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   maximumHealth: 14
+  attack: 0
   defense: 0
   maxXP: 55
   morale: 100
