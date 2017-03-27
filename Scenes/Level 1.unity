@@ -3842,7 +3842,7 @@ GameObject:
   - component: {fileID: 1043939707}
   m_Layer: 5
   m_Name: HP Label
-  m_TagString: Untagged
+  m_TagString: Health Label
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3862,8 +3862,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 367.7, y: 3.5}
-  m_SizeDelta: {x: 30.9, y: 17.5}
+  m_AnchoredPosition: {x: 370, y: 2.5}
+  m_SizeDelta: {x: 35, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1043939707
 MonoBehaviour:
@@ -3886,7 +3886,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 008f226efb827434782bf4fe180c33e7, type: 3}
-    m_FontSize: 11
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1

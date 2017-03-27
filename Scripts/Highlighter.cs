@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using System;
 
 public class Highlighter : MonoBehaviour {
 
@@ -92,6 +94,7 @@ public class Highlighter : MonoBehaviour {
 				GameObject.FindGameObjectWithTag ("Character Display").transform.localScale = new Vector3 (75, 75, 1);
 				GameObject.FindGameObjectWithTag ("Health Indicator").transform.localScale = new Vector3 (11.80754f, 71.82333f*selectedTile.containedCharacter.currentHP/selectedTile.containedCharacter.type.maximumHealth, 85.7285f);
 				GameObject.FindGameObjectWithTag ("Health Indicator").transform.localPosition = new Vector3 (369.7f,17f+72f*selectedTile.containedCharacter.currentHP/selectedTile.containedCharacter.type.maximumHealth,-103);
+				GameObject.FindGameObjectWithTag ("Health Label").GetComponent<Text>().text = selectedTile.containedCharacter.currentHP+"/"+selectedTile.containedCharacter.type.maximumHealth;
 			}
 
 			this.executeSelectionModeActions ();

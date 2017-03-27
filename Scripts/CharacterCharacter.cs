@@ -81,7 +81,6 @@ public class CharacterCharacter : MonoBehaviour
 
 	public void damage(double d)
 	{
-		this.currentHP -= (int)(d*(100.0-2*this.type.defense)/100);
 
 		if(currentHP <= 0)
 		{
