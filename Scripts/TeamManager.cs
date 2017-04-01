@@ -49,6 +49,16 @@ public class TeamManager : MonoBehaviour {
 		{
 			c.type.movement.Reset ();
 			c.usedAbility = false;
+			foreach (ActiveEffect e in c.activeEffects) 
+			{
+				e.turnsLeft--;
+				e.Act ();
+				if (e.turnsLeft <= 0) 
+				{
+					e.Finish ();
+					c.activeEffects.Remove (e);
+				}
+			}
 		}
 		
 		//bolds the active team's text

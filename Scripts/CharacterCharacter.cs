@@ -22,6 +22,8 @@ public class CharacterCharacter : MonoBehaviour
 
 	public bool usedAbility;
 
+	public List<ActiveEffect> activeEffects;
+
 	public int x;
 	public int y;
 
@@ -38,6 +40,7 @@ public class CharacterCharacter : MonoBehaviour
 		putOnBoard ();
 		currentHP = type.maximumHealth;
 		usedAbility = false;
+		activeEffects = new List<ActiveEffect> ();
 	}
 	
 	// Update is called once per frame
