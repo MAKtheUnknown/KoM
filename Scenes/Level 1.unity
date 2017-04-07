@@ -4568,7 +4568,7 @@ GameObject:
   - component: {fileID: 1279884267}
   m_Layer: 0
   m_Name: Music Playing Cube
-  m_TagString: Untagged
+  m_TagString: Music Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7746,7 +7746,7 @@ GameObject:
   - component: {fileID: 2059450344}
   m_Layer: 0
   m_Name: Victory Cube
-  m_TagString: Untagged
+  m_TagString: Victory Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7757,14 +7757,14 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2059450343}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e5f88d3caee69014a81e4dee6a26a75b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
