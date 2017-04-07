@@ -59,4 +59,4 @@ MonoBehaviour:
   hillTime: 3
   mountainTime: 4
   forestTime: 3
-  shallowWaterTime: 5
+  shallowWaterTime: 9001

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using System;
 
 public class Highlighter : MonoBehaviour {
 
@@ -51,7 +53,6 @@ public class Highlighter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		print (mode);
 		if (currentTeam.type == Team.PlayerType.human
 			&& selectedTile != null) 
 		{
@@ -85,6 +86,16 @@ public class Highlighter : MonoBehaviour {
 			}
 			if (Input.GetKeyUp (KeyCode.DownArrow)) {
 				downStroke = true;
+			}
+
+			if (selectedTile.containedCharacter != null) 
+			{
+				GameObject.FindGameObjectWithTag ("Character Display").GetComponent<SpriteRenderer>().sprite = selectedTile.containedCharacter.GetComponent<SpriteRenderer>().sprite;
+				GameObject.FindGameObjectWithTag ("Character Display").transform.localScale = new Vector3 (75, 75, 1);
+				GameObject.FindGameObjectWithTag ("Health Indicator").transform.localScale = new Vector3 (11.80754f, 71.82333f*selectedTile.containedCharacter.currentHP/selectedTile.containedCharacter.type.maximumHealth, 85.7285f);
+				GameObject.FindGameObjectWithTag ("Health Indicator").transform.localPosition = new Vector3 (369.7f,17f+72f*selectedTile.containedCharacter.currentHP/selectedTile.containedCharacter.type.maximumHealth,-102);
+				GameObject.FindGameObjectWithTag ("Health Label").GetComponent<Text>().text= selectedTile.containedCharacter.currentHP+"/"+selectedTile.containedCharacter.type.maximumHealth;
+				
 			}
 
 			this.executeSelectionModeActions ();
@@ -149,7 +160,7 @@ public class Highlighter : MonoBehaviour {
                     //gameObject.transform.localScale = new Vector3 (1.459983f,1.459983f,1f);
 
                     //Use Enter key to highlight possible moves
-				if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp (0)) 
+				if ((Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp (0)) && selectedTile.containedCharacter.usedAbility == false) 
 				{
 					chosenCharacter = selectedTile.containedCharacter;
 					abilitySelectorObject = GameObject.Instantiate (savedAbilitySelectorObject, new Vector3(0,0,0) /*new Vector3(308, 0, -101)*/, new Quaternion(), map.ui.transform);

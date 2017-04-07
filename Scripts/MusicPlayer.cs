@@ -11,4 +11,5 @@ public class MusicPlayer : MonoBehaviour
         fxSound = GetComponent<AudioSource>();
         fxSound.Play();
     }
+
 }

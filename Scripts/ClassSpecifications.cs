@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -21,6 +21,10 @@ public class ClassSpecifications : MonoBehaviour
 	public Ability[] classAbilities;
 
 	public int maximumHealth;
+	
+	public int attack;
+	
+	public int defense;
 
 	public int maxXP;
 

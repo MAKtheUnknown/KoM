@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -20,6 +20,10 @@ public class CharacterCharacter : MonoBehaviour
 
 	public ClassSpecifications type; 
 
+	public bool usedAbility;
+
+	public List<ActiveEffect> activeEffects;
+
 	public int x;
 	public int y;
 
@@ -35,6 +39,8 @@ public class CharacterCharacter : MonoBehaviour
 	{
 		putOnBoard ();
 		currentHP = type.maximumHealth;
+		usedAbility = false;
+		activeEffects = new List<ActiveEffect> ();
 	}
 	
 	// Update is called once per frame
@@ -59,7 +65,7 @@ public class CharacterCharacter : MonoBehaviour
 
 	void damage(int dmg)
 	{
-		currentHP-=dmg;
+		currentHP-=dmg*(100-2*type.defense)/100;
 	}
 
 	public void HighlightMoves()
@@ -78,7 +84,7 @@ public class CharacterCharacter : MonoBehaviour
 
 	public void damage(double d)
 	{
-		this.currentHP -= (int)d;
+		this.currentHP -= (int)(d*(100.0-2*this.type.defense)/100);
 
 		if(currentHP <= 0)
 		{
@@ -98,6 +104,7 @@ public class CharacterCharacter : MonoBehaviour
 
 	public void kill()
 	{
+		team.TeamDamage(this.type.morale); //inflicts damage to team's morale
 		GameObject.Destroy (this.gameObject);
 	}
 }
