@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<npcs>
+   <npc name="Colin" npcType="Barman" entries="3">
+      <speach>Hello I am Colin.</speach>
+      <speach>I am a Barman.</speach>
+      <speach>I am Colin, who is a Barman.</speach>
+   </npc>
+</npcs>

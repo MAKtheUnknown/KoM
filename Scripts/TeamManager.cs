@@ -49,6 +49,16 @@ public class TeamManager : MonoBehaviour {
 		{
 			c.type.movement.Reset ();
 			c.usedAbility = false;
+			foreach (ActiveEffect e in c.activeEffects) 
+			{
+				e.turnsLeft--;
+				e.Act ();
+				if (e.turnsLeft <= 0) 
+				{
+					e.Finish ();
+					c.activeEffects.Remove (e);
+				}
+			}
 		}
 		
 		//bolds the active team's text
@@ -110,5 +120,7 @@ public class TeamManager : MonoBehaviour {
 	public void DeclareVictory(string teamName)
 	{
 		Debug.Log(teamName+" wins"); //placeholder for victory screen
-	}
+        GameObject.FindGameObjectWithTag("Music Cube").GetComponent<AudioSource>().enabled = false;
+        GameObject.FindGameObjectWithTag("Victory Cube").GetComponent<AudioSource>().enabled = true;
+    }
 }

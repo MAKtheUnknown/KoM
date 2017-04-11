@@ -6,10 +6,11 @@ public class Kaiyufication : Ability {
 
 	public string name = "Kaiyufication";
 	public string description;
+	public TileArrangement map;
 	// Use this for initialization
 	public void Start () 
 	{
-	
+		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 	}
 	
 	// Update is called once per frame
@@ -29,11 +30,12 @@ public class Kaiyufication : Ability {
 
 	public void Use()
 	{
-		/*TileAttributes tileTarget = ts [0];
-		if (tileTarget.containedCharacter != null) 
+		foreach (Team t in map.teams.teams) 
 		{
-			CharacterCharacter attackedCharachter = tileTarget.containedCharacter;
-			attackedCharachter.name = "Kaiyu"; //Caillou
-		}*/
+			foreach (CharacterCharacter c in t.pieces) 
+			{
+				c.activeEffects.Add (new Kaiyufied (c));
+			}
+		}
 	}
 }
