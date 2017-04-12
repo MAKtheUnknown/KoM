@@ -30,8 +30,7 @@ public class ClassSpecifications : MonoBehaviour
 
 	public int morale;
 
-
-	public 
+	public CharacterType charClass;
 
 	void Awake()
 	{
@@ -52,4 +51,12 @@ public class ClassSpecifications : MonoBehaviour
 	{
 
 	}
+	
+	public enum CharacterType
+	{
+		Swordsman,
+		Alchemist,
+		Bard,
+		Priest
+	};
 }

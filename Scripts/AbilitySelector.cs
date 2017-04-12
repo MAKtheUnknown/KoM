@@ -41,7 +41,7 @@ public class AbilitySelector : MonoBehaviour {
 
 	void AddLabel(Ability a)
 	{
-		if(a.Available() && a.cooldown <= 0)
+		if(a.Available() && a.cooldownTimer <= 0)
 		{
 			GameObject l = Instantiate (baseLabel, new Vector3(308f/85.75285f, 2f, -2f), new Quaternion (), gameObject.transform);
 			SelectAbilityLabel s = l.GetComponent<SelectAbilityLabel> ();

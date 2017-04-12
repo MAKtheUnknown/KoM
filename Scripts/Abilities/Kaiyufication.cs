@@ -42,5 +42,6 @@ public class Kaiyufication : Ability {
 		}
 		map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
 	}
 }

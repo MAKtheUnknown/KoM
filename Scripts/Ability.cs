@@ -7,6 +7,7 @@ public abstract class Ability : MonoBehaviour
 	public string description;
 	public int cooldown;
 	public int cooldownTimer;
+	public bool ultimate;
 
 	// Use this for initialization
 	public abstract void Start ();

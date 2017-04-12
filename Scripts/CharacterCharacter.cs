@@ -9,6 +9,7 @@ public class CharacterCharacter : MonoBehaviour
 	public int currentXP;
 	public int maxMovesPerTurn;
 	public int movesLeftThisTurn;
+	public List<CharacterCharacter> bardLinked;
 
 	public IDictionary<TileAttributes, int> tilesToMoves; 
 
@@ -32,6 +33,7 @@ public class CharacterCharacter : MonoBehaviour
 		team = GetComponentInParent<Team> ();
 		type = GetComponentInChildren<ClassSpecifications> ();
 		specialAbilities = GetComponentsInChildren<Ability> ();
+		bardLinked = new List<CharacterCharacter>();
 	}
 
 	// Use this for initialization
@@ -66,6 +68,16 @@ public class CharacterCharacter : MonoBehaviour
 	void damage(int dmg)
 	{
 		currentHP-=dmg*(100-2*type.defense)/100;
+		if(bardLinked!=null)
+		{
+			foreach(CharacterCharacter c in bardLinked)
+			{
+				if(c!=null)
+				{
+					c.currentHP-=dmg*(100-2*c.type.defense)/200;
+				}
+			}
+		}
 	}
 
 	public void HighlightMoves()
@@ -85,26 +97,59 @@ public class CharacterCharacter : MonoBehaviour
 	public void damage(double d)
 	{
 		this.currentHP -= (int)(d*(100.0-2*this.type.defense)/100);
+		
 
 		if(currentHP <= 0)
 		{
 			this.kill();
 		}
+		
+		if(bardLinked!=null)
+		{	
+			foreach(CharacterCharacter c in bardLinked)
+			{
+				if(c!=null)
+				{
+					c.currentHP-=(int)(d*(100.0-2*c.type.defense)/200);
+					if(c.currentHP <= 0)
+					{
+						c.kill();
+					}
+				}
+			}
+		}
 	}
 
 	public void heal(int h)
 	{
-		this.currentHP += h;
+		this.currentHP += h;		
 
 		if (currentHP > type.maxXP) 
 		{
 			currentHP = type.maxXP;
 		}
+		
+		if(bardLinked!=null)
+		{
+			foreach(CharacterCharacter c in bardLinked)
+			{
+				if(c!=null)
+				{
+					c.currentHP+=h/2;
+					if (c.currentHP > c.type.maxXP) 
+					{
+						c.currentHP = c.type.maxXP;
+					}
+				}
+			}
+		}
 	}
 
 	public void kill()
 	{
-		team.TeamDamage(this.type.morale); //inflicts damage to team's morale
+		team.TeamDamage(this.type.morale); //inflicts damage to team's morale		
+		//foreach(ActiveEffect a in activeEffects)
+		//	a.Finish();
 		GameObject.Destroy (this.gameObject);
 	}
 }

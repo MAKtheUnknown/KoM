@@ -64,7 +64,7 @@ public class TileAttributes : MonoBehaviour {
 		
 	}
 
-	public bool spaceIsOdccupied()
+	public bool spaceIsOccupied()
 	{
 		return (containedCharacter != null);
 	}

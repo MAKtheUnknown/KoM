@@ -50,6 +50,7 @@ public class OffKeyCacophony : CharachterTargeter {
 		{
 			foreach (CharacterCharacter c in charachterTargets) 
 			{
+<<<<<<< HEAD
 				TileAttributes tile;
 				int x=(c.x-specs.owner.x)/Math.Max(Math.Abs(c.x-specs.owner.x),1);
 				int y=(c.y-specs.owner.x)/Math.Max(Math.Abs(c.x-specs.owner.x),1);
@@ -64,11 +65,37 @@ public class OffKeyCacophony : CharachterTargeter {
 				specs.owner.x = t.x;
 				specs.owner.y = t.y;
 				*/
+=======
+				int originalX=c.x;
+				int originalY=c.y;
+				//x and y are in the array of tiles
+				TileAttributes tile;
+				int x=Math.Min(1,Math.Max(-1,(int)(c.x-specs.owner.x)));
+				int y=Math.Min(1,Math.Max(-1,(int)(c.y-specs.owner.y)));
+				c.x+=x;
+				c.y+=y;
+				c.x=Math.Max(0,Math.Min(c.x, specs.owner.team.map.HighX-specs.owner.team.map.LowX));
+				c.y=Math.Max(0,Math.Min(c.y, specs.owner.team.map.HighY-specs.owner.team.map.LowY));
+				tile = specs.owner.team.map.tileMap[c.x, c.y];
+				if(tile.containedCharacter != null || tile.type==TileAttributes.TileType.water)
+				{
+					c.x=originalX;
+					c.y=originalY;	
+				}
+				else
+				{
+					c.tile.containedCharacter = null;
+					c.tile = tile;
+					tile.containedCharacter = c;
+					c.transform.position = tile.transform.position;	
+				}
+>>>>>>> refs/remotes/origin/master
 				c.damage (damage);
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
 			specs.owner.usedAbility = true;
+			cooldownTimer=cooldown;
 		}
 
 	}

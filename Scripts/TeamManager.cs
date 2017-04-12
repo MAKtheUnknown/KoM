@@ -31,6 +31,32 @@ public class TeamManager : MonoBehaviour {
 		}
 		teams[0].moraleText.GetComponent<Text>().fontStyle=FontStyle.Bold;
 		
+		//Sets passives as active effects for specific classes
+		foreach(Team t in teams)
+		{
+			foreach(CharacterCharacter c in t.pieces)
+			{
+				if(c.type.charClass==ClassSpecifications.CharacterType.Swordsman)
+				{
+					
+				}
+				
+				if(c.type.charClass==ClassSpecifications.CharacterType.Alchemist)
+				{
+					
+				}
+				
+				if(c.type.charClass==ClassSpecifications.CharacterType.Bard)
+				{
+					c.activeEffects.Add(new RisingTempo(c));
+				}
+				
+				if(c.type.charClass==ClassSpecifications.CharacterType.Priest)
+				{
+					
+				}
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -49,27 +75,30 @@ public class TeamManager : MonoBehaviour {
 		//prepare all the team's pieces for the new turn.
 		foreach (CharacterCharacter c in teams[turn].pieces) 
 		{
-			c.type.movement.Reset ();
-			c.usedAbility = false;
-			foreach (ActiveEffect e in c.activeEffects) 
+			if(c!=null)
 			{
-				e.turnsLeft--;
-				e.Act ();
-				if (e.turnsLeft <= 0) 
+				c.type.movement.Reset ();
+				c.usedAbility = false;
+				foreach (ActiveEffect e in c.activeEffects) 
 				{
-					e.Finish ();
-					effectsToRemove.Add(e);
+					e.turnsLeft--;
+					e.Act ();
+					if (e.turnsLeft <= 0) 
+					{
+						e.Finish ();
+						effectsToRemove.Add(e);
+					}
 				}
-			}
-			foreach(ActiveEffect e in effectsToRemove)
-				c.activeEffects.Remove (e);
-			effectsToRemove= new List<ActiveEffect>();
+				foreach(ActiveEffect e in effectsToRemove)
+					c.activeEffects.Remove (e);
+				effectsToRemove= new List<ActiveEffect>();
 
-			foreach (Ability a in c.type.classAbilities) 
-			{
-				if(a.cooldownTimer > 0) 
+				foreach (Ability a in c.type.classAbilities) 
 				{
-					a.cooldownTimer--;
+					if(a.cooldownTimer > 0) 
+					{
+						a.cooldownTimer--;
+					}
 				}
 			}
 		}

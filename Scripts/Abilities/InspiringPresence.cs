@@ -54,6 +54,7 @@ public class InspiringPresence : CharachterTargeter  {
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
 			specs.owner.usedAbility = true;
+			cooldownTimer=cooldown;
 		
 
 	}
