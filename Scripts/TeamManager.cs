@@ -53,7 +53,7 @@ public class TeamManager : MonoBehaviour {
 				
 				if(c.type.charClass==ClassSpecifications.CharacterType.Priest)
 				{
-					
+					c.activeEffects.Add(new Martyr(c));
 				}
 			}
 		}

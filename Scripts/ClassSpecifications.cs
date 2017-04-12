@@ -57,6 +57,6 @@ public class ClassSpecifications : MonoBehaviour
 		Swordsman,
 		Alchemist,
 		Bard,
-		Priest
+		Priest,
 	};
 }

@@ -10,6 +10,8 @@ public class CharacterCharacter : MonoBehaviour
 	public int maxMovesPerTurn;
 	public int movesLeftThisTurn;
 	public List<CharacterCharacter> bardLinked;
+	public bool guarded;
+	public bool shielded;
 
 	public IDictionary<TileAttributes, int> tilesToMoves; 
 
@@ -34,6 +36,8 @@ public class CharacterCharacter : MonoBehaviour
 		type = GetComponentInChildren<ClassSpecifications> ();
 		specialAbilities = GetComponentsInChildren<Ability> ();
 		bardLinked = new List<CharacterCharacter>();
+		usedAbility = false;
+		activeEffects = new List<ActiveEffect> ();
 	}
 
 	// Use this for initialization
@@ -41,8 +45,6 @@ public class CharacterCharacter : MonoBehaviour
 	{
 		putOnBoard ();
 		currentHP = type.maximumHealth;
-		usedAbility = false;
-		activeEffects = new List<ActiveEffect> ();
 	}
 	
 	// Update is called once per frame
@@ -67,16 +69,19 @@ public class CharacterCharacter : MonoBehaviour
 
 	void damage(int dmg)
 	{
-		currentHP-=dmg*(100-2*type.defense)/100;
-		if(bardLinked!=null)
+		if(!guarded)
 		{
-			foreach(CharacterCharacter c in bardLinked)
+			currentHP-=dmg*(100-2*type.defense)/100;
+			if(bardLinked!=null)
 			{
-				if(c!=null)
+				foreach(CharacterCharacter c in bardLinked)
 				{
-					c.currentHP-=dmg*(100-2*c.type.defense)/200;
+					if(c!=null)
+					{
+						c.currentHP-=dmg*(100-2*c.type.defense)/200;
+					}
 				}
-			}
+		}
 		}
 	}
 
@@ -95,25 +100,32 @@ public class CharacterCharacter : MonoBehaviour
 	}
 
 	public void damage(double d)
-	{
-		this.currentHP -= (int)(d*(100.0-2*this.type.defense)/100);
-		
-
-		if(currentHP <= 0)
+	{	
+		if(shielded)
 		{
-			this.kill();
+			d*=.7;
 		}
-		
-		if(bardLinked!=null)
-		{	
-			foreach(CharacterCharacter c in bardLinked)
+		if(!guarded)
+		{
+			this.currentHP -= (int)(d*(100.0-2*this.type.defense)/100);
+			
+
+			if(currentHP <= 0)
 			{
-				if(c!=null)
+				this.kill();
+			}
+			
+			if(bardLinked!=null)
+			{	
+				foreach(CharacterCharacter c in bardLinked)
 				{
-					c.currentHP-=(int)(d*(100.0-2*c.type.defense)/200);
-					if(c.currentHP <= 0)
+					if(c!=null)
 					{
-						c.kill();
+						c.currentHP-=(int)(d*(100.0-2*c.type.defense)/200);
+						if(c.currentHP <= 0)
+						{
+							c.kill();
+						}
 					}
 				}
 			}

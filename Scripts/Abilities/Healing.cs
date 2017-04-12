@@ -34,6 +34,7 @@ public class Healing : CharachterTargeter {
 
 	public override void Use()
 	{
+		addedHealth= specs.attack*2;
 		if (targetsAquired == false) 
 		{
 			base.GetTargets(specs.owner.x, specs.owner.y, range);

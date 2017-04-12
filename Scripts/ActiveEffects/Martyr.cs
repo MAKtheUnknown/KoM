@@ -1,0 +1,48 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Martyr : ActiveEffect {
+
+	private Team team;
+	private bool martyred;
+	private int moraleDamage;
+
+	public Martyr(CharacterCharacter c)
+	{
+		Init (c);
+	}
+
+	public void Init(CharacterCharacter c)
+	{
+		this.Init (c, 100);
+	}
+
+	public new void Init(CharacterCharacter c, int rounds)
+	{
+		base.Init (c, rounds);
+		martyred=false;
+		moraleDamage=c.type.morale;
+		team=c.team;
+	}
+
+	public override void Act()
+	{
+		if(subject==null&&!martyred)
+		{
+			foreach(Team t in team.manager.teams)
+			{
+				if(t!=team)
+				{
+					t.TeamDamage(moraleDamage);
+					martyred=true;
+				}
+			}
+		}
+	}
+
+	public override void Finish()
+	{
+		
+	}
+}
