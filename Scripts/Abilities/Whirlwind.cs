@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Whirlwind : MonoBehaviour, Ability 
+public class Whirlwind : Ability 
 {
 
 	string name = "Whirlwind";
@@ -12,28 +12,28 @@ public class Whirlwind : MonoBehaviour, Ability
 	TileArrangement map;
 
 	// Use this for initialization
-	public void Start () 
+	public override void Start () 
 	{
 		specs = GetComponentInParent<ClassSpecifications> ();
 	}
 	
 	// Update is called once per frame
-	public void Update () 
+	public override void Update () 
 	{
 		
 	}
 
-	public string GetName()
+	public override string GetName()
 	{
 		return name;
 	}
 
-	public string GetDescription()
+	public override string GetDescription()
 	{
 		return description;
 	}
 
-	public void Use()
+	public override void Use()
 	{
 		TileAttributes t = specs.owner.tile;
 		if (t.north != null && t.north.containedCharacter != null)

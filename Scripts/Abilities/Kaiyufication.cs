@@ -2,35 +2,35 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Kaiyufication : MonoBehaviour, Ability {
+public class Kaiyufication : Ability {
 
 	public string name = "Kaiyufication";
 	public string description;
 	public TileArrangement map;
 	public ClassSpecifications specs;
 	// Use this for initialization
-	public void Start () 
+	public override void Start () 
 	{
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		specs = GetComponentInParent<ClassSpecifications> ();
 	}
 	
 	// Update is called once per frame
-	public void Update () {
+	public override void Update () {
 	
 	}
 
-	public string GetName()
+	public override string GetName()
 	{
 		return name;
 	}
 
-	public string GetDescription()
+	public override string GetDescription()
 	{
 		return description;
 	}
 
-	public void Use()
+	public override void Use()
 	{
 		foreach (Team t in map.teams.teams) 
 		{

@@ -2,20 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public abstract class Ability
+public abstract class Ability : MonoBehaviour
 {
 	public string description;
 	public int cooldown;
 
 	// Use this for initialization
-	void Start ();
+	public abstract void Start ();
 	
 	// Update is called once per frame
-	void Update ();
+	public abstract void Update ();
 
-	string GetName();
+	public abstract string GetName();
 
-	string GetDescription();
+	public abstract string GetDescription();
 
-	void Use();
+	public abstract void Use();
 }

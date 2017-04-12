@@ -2,37 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cripple : MonoBehaviour, Ability
+public class Cripple : Ability
 {
-
-	string name = "Cripple";
-	string description = "";
 
 	ClassSpecifications specs;
 
 	// Use this for initialization
-	public void Start () 
+	public override void Start () 
 	{
 		specs = GetComponentInParent<ClassSpecifications> ();
+		name = "Cripple";
 	}
 	
 	// Update is called once per frame
-	public void Update () 
+	public override void Update () 
 	{
 		
 	}
 
-	public string GetName()
+	public override string GetName()
 	{
 		return name;
 	}
 
-	public string GetDescription()
+	public override string GetDescription()
 	{
 		return description;
 	}
 
-	public void Use()
+	public override void Use()
 	{
 		
 	}
