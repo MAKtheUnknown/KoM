@@ -49,7 +49,7 @@ public class InspiringPresence : CharachterTargeter  {
 			
 			if (rsqrd >= dxsqrd + dysqrd) 
 			{
-				c.activeEffects.Add (new Inspired (c));;
+				c.activeEffects.Add (new Inspired (c));
 			}
 		}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;

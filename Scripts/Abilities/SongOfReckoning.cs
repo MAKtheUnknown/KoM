@@ -1,18 +1,19 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class WellPlannedAttack : CharachterTargeter {
+public class SongOfReckoning : CharachterTargeter {
 
-	public ClassSpecifications specs;
 
 	public double damage;
-	public float range;
+	public int range;
+
+	public ClassSpecifications specs;
 
 	// Use this for initialization
 	public override void Start () 
 	{
-		name="A Well-Planned Attack";
+		name="Song of Reckoning";
 		specs = GetComponentInParent<ClassSpecifications> ();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		targets = new List<TileAttributes> ();
@@ -22,22 +23,14 @@ public class WellPlannedAttack : CharachterTargeter {
 		GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
 		base.Start ();
 	}
-	
+
 	// Update is called once per frame
-	public override void Update () 
+	public void Update () 
 	{
-	
-	}
-		
-	public override string GetName()
-	{
-		return name;
+
 	}
 
-	public override string GetDescription()
-	{
-		return description;
-	}
+
 
 	public override void Use()
 	{
@@ -50,10 +43,8 @@ public class WellPlannedAttack : CharachterTargeter {
 		{
 			foreach (CharacterCharacter t in charachterTargets) 
 			{
-				t.type.defense/=2;
 				t.damage (damage);
-				t.damage(damage);
-				t.type.defense*=2;
+				t.activeEffects.Add(new Stunned(t));
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();

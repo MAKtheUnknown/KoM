@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
@@ -41,6 +42,7 @@ public class TeamManager : MonoBehaviour {
 
 	public void rotate()
 	{
+		List<ActiveEffect> effectsToRemove= new List<ActiveEffect>();
 		turn = (turn+1)%teams.Length;
 		map.highlighter.currentTeam = teams [turn];
 
@@ -56,9 +58,12 @@ public class TeamManager : MonoBehaviour {
 				if (e.turnsLeft <= 0) 
 				{
 					e.Finish ();
-					c.activeEffects.Remove (e);
+					effectsToRemove.Add(e);
 				}
 			}
+			foreach(ActiveEffect e in effectsToRemove)
+				c.activeEffects.Remove (e);
+			effectsToRemove= new List<ActiveEffect>();
 		}
 		
 		//bolds the active team's text

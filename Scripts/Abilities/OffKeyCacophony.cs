@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
-public class WellPlannedAttack : CharachterTargeter {
+public class OffKeyCacophony : CharachterTargeter {
 
 	public ClassSpecifications specs;
 
@@ -12,7 +13,6 @@ public class WellPlannedAttack : CharachterTargeter {
 	// Use this for initialization
 	public override void Start () 
 	{
-		name="A Well-Planned Attack";
 		specs = GetComponentInParent<ClassSpecifications> ();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		targets = new List<TileAttributes> ();
@@ -24,17 +24,17 @@ public class WellPlannedAttack : CharachterTargeter {
 	}
 	
 	// Update is called once per frame
-	public override void Update () 
+	public void Update () 
 	{
 	
 	}
 		
-	public override string GetName()
+	public string GetName()
 	{
 		return name;
 	}
 
-	public override string GetDescription()
+	public string GetDescription()
 	{
 		return description;
 	}
@@ -50,10 +50,16 @@ public class WellPlannedAttack : CharachterTargeter {
 		{
 			foreach (CharacterCharacter t in charachterTargets) 
 			{
-				t.type.defense/=2;
 				t.damage (damage);
-				t.damage(damage);
-				t.type.defense*=2;
+				t.x+=(t.x-specs.owner.x)/Math.Max(Math.Abs(t.x-specs.owner.x),1);
+				t.y+=(t.y-specs.owner.x)/Math.Max(Math.Abs(t.x-specs.owner.x),1);
+				/*
+				specs.owner.tile.containedCharacter = null;
+				specs.owner.tile = t;
+				specs.owner.transform.position = t.transform.position;
+				specs.owner.x = t.x;
+				specs.owner.y = t.y;
+				*/
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
