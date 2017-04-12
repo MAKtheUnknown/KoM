@@ -61,11 +61,10 @@ public class TeamManager : MonoBehaviour {
 					effectsToRemove.Add(e);
 				}
 			}
-<<<<<<< HEAD
 			foreach(ActiveEffect e in effectsToRemove)
 				c.activeEffects.Remove (e);
 			effectsToRemove= new List<ActiveEffect>();
-=======
+
 			foreach (Ability a in c.type.classAbilities) 
 			{
 				if(a.cooldownTimer > 0) 
@@ -73,7 +72,6 @@ public class TeamManager : MonoBehaviour {
 					a.cooldownTimer--;
 				}
 			}
->>>>>>> origin/master
 		}
 		
 		//bolds the active team's text
