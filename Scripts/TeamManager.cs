@@ -61,9 +61,9 @@ public class TeamManager : MonoBehaviour {
 			}
 			foreach (Ability a in c.type.classAbilities) 
 			{
-				if(a.cooldown > 0) 
+				if(a.cooldownTimer > 0) 
 				{
-					a.cooldown--;
+					a.cooldownTimer--;
 				}
 			}
 		}
