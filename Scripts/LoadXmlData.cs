@@ -22,13 +22,13 @@ public class LoadXmlData : MonoBehaviour
 		// ensures I don't try to show data I don't have
 		if(showData<maxData)
 		{
-			GUI.Label(new Rect(0,0,200,20), NpcName[showData]);
-			GUI.Label(new Rect(0,20,200,100), data[showData]);
-			if(GUI.Button(new Rect(0,120,200,20),"Next"))
+			GUI.Label(new Rect(20,Screen.height-120,200,20), NpcName[showData]);
+			GUI.Label(new Rect(20,Screen.height-100,Screen.width-40,60), data[showData]);
+			if(GUI.Button(new Rect(Screen.width/2 -40,Screen.height-20,100,20),"Next"))
 			{
-				Debug.Log(showData);
-				Debug.Log(data[showData]);
-				Debug.Log(NpcName[showData]);
+				//Debug.Log(showData);
+				//Debug.Log(data[showData]);
+				//Debug.Log(NpcName[showData]);
 				// wrap
 				if(showData == maxData - 1)
 					showData=0;
@@ -92,6 +92,9 @@ XmlReader reader = XmlReader.Create("chat.xml");
 	NpcName[1] = "Lucius";
 	NpcName[2] = "MC";
 	NpcName[3] = "Lucius";
+	NpcName[4] = "MC";
+	NpcName[5] = "Lucius";
+	NpcName[6] = "";
 						showData=0;
 	}
 }
