@@ -8,6 +8,7 @@ public class Kaiyufication : Ability {
 	// Use this for initialization
 	public override void Start () 
 	{
+		name = "Kaiyufication";	
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		specs = GetComponentInParent<ClassSpecifications> ();
 	}
