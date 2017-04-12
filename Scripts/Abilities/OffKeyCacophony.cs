@@ -48,18 +48,23 @@ public class OffKeyCacophony : CharachterTargeter {
 		}
 		if (targetsAquired == true) 
 		{
-			foreach (CharacterCharacter t in charachterTargets) 
+			foreach (CharacterCharacter c in charachterTargets) 
 			{
-				t.damage (damage);
-				t.x+=(t.x-specs.owner.x)/Math.Max(Math.Abs(t.x-specs.owner.x),1);
-				t.y+=(t.y-specs.owner.x)/Math.Max(Math.Abs(t.x-specs.owner.x),1);
-				/*
+				TileAttributes tile;
+				int x=(c.x-specs.owner.x)/Math.Max(Math.Abs(c.x-specs.owner.x),1);
+				int y=(c.y-specs.owner.x)/Math.Max(Math.Abs(c.x-specs.owner.x),1);
+				c.x+=x;
+				c.y+=y;
+				tile = specs.owner.team.map.tileMap[c.x, c.y];
 				specs.owner.tile.containedCharacter = null;
-				specs.owner.tile = t;
-				specs.owner.transform.position = t.transform.position;
+				specs.owner.tile = tile;
+				tile.containedCharacter = c;
+				specs.owner.transform.position = tile.transform.position;
+				/*
 				specs.owner.x = t.x;
 				specs.owner.y = t.y;
 				*/
+				c.damage (damage);
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
