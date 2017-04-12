@@ -40,6 +40,7 @@ public class BasicAttack : CharachterTargeter {
 
 	public override void Use()
 	{
+		damage=specs.attack;
 		if (targetsAquired == false) 
 		{
 			base.GetTargets(specs.owner.x, specs.owner.y, range);

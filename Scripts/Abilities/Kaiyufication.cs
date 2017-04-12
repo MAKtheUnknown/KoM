@@ -3,9 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Kaiyufication : Ability {
-
-	public string name = "Kaiyufication";
-	public string description;
 	public TileArrangement map;
 	public ClassSpecifications specs;
 	// Use this for initialization

@@ -18,4 +18,11 @@ public abstract class Ability : MonoBehaviour
 	public abstract string GetDescription();
 
 	public abstract void Use();
+	
+	//virtual means that it is implemented, but can still be overridden
+	public virtual bool Available()
+	{
+		return true;
+	}
+	
 }

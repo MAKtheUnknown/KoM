@@ -5,15 +5,13 @@ using UnityEngine;
 public class Whirlwind : Ability 
 {
 
-	string name = "Whirlwind";
-	string description = "";
-
 	ClassSpecifications specs;
 	TileArrangement map;
 
 	// Use this for initialization
 	public override void Start () 
 	{
+		name="Whirlwind";
 		specs = GetComponentInParent<ClassSpecifications> ();
 	}
 	
