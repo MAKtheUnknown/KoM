@@ -41,11 +41,14 @@ public class AbilitySelector : MonoBehaviour {
 
 	void AddLabel(Ability a)
 	{
-		GameObject l = Instantiate (baseLabel, new Vector3(308f/85.75285f, 2f, -2f), new Quaternion (), gameObject.transform);
-		SelectAbilityLabel s = l.GetComponent<SelectAbilityLabel> ();
-		s.selector = this;
-		s.SetAbility (a);
-		l.transform.Translate (new Vector3 (0, -initialOffset-offset, 0));
-		offset += .3f;
+		if(a.Available() && a.cooldown <= 0)
+		{
+			GameObject l = Instantiate (baseLabel, new Vector3(308f/85.75285f, 2f, -2f), new Quaternion (), gameObject.transform);
+			SelectAbilityLabel s = l.GetComponent<SelectAbilityLabel> ();
+			s.selector = this;
+			s.SetAbility (a);
+			l.transform.Translate (new Vector3 (0, -initialOffset-offset, 0));
+			offset += .3f;
+		}
 	}
 }

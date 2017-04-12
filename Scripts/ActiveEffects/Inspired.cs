@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kaiyufied : ActiveEffect {
+public class Inspired : ActiveEffect {
 
-	private string originalName;
+	private int changeInDamage;
 
-	public Kaiyufied(CharacterCharacter c)
+	public Inspired(CharacterCharacter c)
 	{
 		Init (c);
 	}
 
 	public void Init(CharacterCharacter c)
 	{
-		this.Init (c, 9001);
+		this.Init (c, 6);
 	}
 
 	public new void Init(CharacterCharacter c, int rounds)
 	{
 		base.Init (c, rounds);
-		originalName = c.name;
-		c.name = "Kaiyu";
-		c.team.TeamDamage(3.0);
+		changeInDamage = (int)(c.type.attack*0.1);
+		c.type.attack+=changeInDamage;
+		c.type.defense+=2;
 	}
 
 	public override void Act()
@@ -31,6 +31,7 @@ public class Kaiyufied : ActiveEffect {
 
 	public override void Finish()
 	{
-		subject.name = originalName;
+		subject.type.attack -= changeInDamage;
+		subject.type.defense-=2;
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AbstractAbility : MonoBehaviour {
+public class AbstractAbility {
 
 	// Use this for initialization
 	void Start () {

@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class CharachterTargeter : MonoBehaviour, Ability {
+public abstract class CharachterTargeter : Ability {
 
 	public TileArrangement map;
-
-	public string name;
-
-	public string description;
 
 	public List<TileAttributes> targets;
 	public List<CharacterCharacter> charachterTargets;
@@ -22,7 +18,7 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 	public Text instructionLabel;
 
 	// Use this for initialization
-	public virtual void Start () 
+	public override void Start () 
 	{
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		targets = new List<TileAttributes> ();
@@ -34,17 +30,17 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 	}
 
 	// Update is called once per frame
-	public void Update () 
+	public override void Update () 
 	{
 
 	}
 
-	public string GetName()
+	public override string GetName()
 	{
 		return name;
 	}
 
-	public string GetDescription()
+	public override string GetDescription()
 	{
 		return description;
 	}
@@ -118,7 +114,7 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 		return charTargets;
 	}
 
-	public virtual void Use()
+	public override void Use()
 	{
 		
 	}

@@ -9,69 +9,92 @@ using System.IO;
 public class LoadXmlData : MonoBehaviour 
 {
 	string npcName;
-	string npcType;
 
 	int maxData;
+	int npcTalk;
+	int npcNum;
 	int showData;
 	string [] data;
-
+	string [] NpcName;
 	//simple gui to show read data
 	public void OnGUI()
 	{
 		// ensures I don't try to show data I don't have
 		if(showData<maxData)
 		{
-			GUI.Label(new Rect(0,0,200,20), npcType+":"+npcName);
-			GUI.Label(new Rect(0,20,200,100), data[showData]);
-			if(Input.GetKeyUp("space"))
+			GUI.Label(new Rect(20,Screen.height-120,200,20), NpcName[showData]);
+			GUI.Label(new Rect(20,Screen.height-100,Screen.width-40,60), data[showData]);
+			if(GUI.Button(new Rect(Screen.width/2 -40,Screen.height-20,100,20),"Next"))
 			{
-				// goto next
-				showData++;
+				//Debug.Log(showData);
+				//Debug.Log(data[showData]);
+				//Debug.Log(NpcName[showData]);
 				// wrap
-				if(showData>=maxData)
+				if(showData == maxData - 1)
 					showData=0;
+				else 
+				showData = (showData +1);
+				
+			    
 			}
 		}
 	}
-
 	public void Start()
 	{
 		// initialise data
 		maxData = 0;
+		npcTalk = 0;
 		showData = 0;
-		npcName = "unset";
 		npcName = "unset";
 		data = null;
 
 		//readxml from chat.xml in project folder (Same folder where Assets and Library are in the Editor)
-		XmlReader reader = XmlReader.Create("chat.xml");
+XmlReader reader = XmlReader.Create("chat.xml");
 		//while there is data read it
 		while(reader.Read())
 		{
+			if (reader.IsStartElement("npcs"))
+			{
+			maxData = Int32.Parse(reader.GetAttribute("totalentries"));
+			//Debug.Log(maxData);
+			//allocate string pointer array
+			data = new string[maxData];
+			NpcName = new string[maxData];
+			}
 			//when you find a npc tag do this
 			if(reader.IsStartElement("npc"))
 			{
 				// get attributes from npc tag
-				npcName=reader.GetAttribute("name");
-				npcType = reader.GetAttribute("npcType");
-				maxData = Int32.Parse(reader.GetAttribute("entries"));
-
-				//allocate string pointer array
-				data = new string[maxData];
-
+				//NpcName[npcNum]=reader.GetAttribute("name");
+				//npcNum++;
+				//Debug.Log(reader.GetAttribute("name"));
+				npcTalk=Int32.Parse(reader.GetAttribute("entries"));
+				
 				//read speach elements (showdata is used instead of having a new int I reset it later)
-				for(showData = 0;showData<maxData;showData++)
+				for(int x = 0;x<maxData;x++)
 				{
 					reader.Read();
 					if(reader.IsStartElement("speach"))
 					{
 						//fill strings
 						data[showData] = reader.ReadString();
+						if (showData < maxData -1)
+						showData++;
+						//Debug.Log(data[showData]);
 					}
 				}
 				//reset showData index
-				showData=0;
+
 			}
+		  
 		}
-}
+	NpcName[0] = "";
+	NpcName[1] = "Lucius";
+	NpcName[2] = "MC";
+	NpcName[3] = "Lucius";
+	NpcName[4] = "MC";
+	NpcName[5] = "Lucius";
+	NpcName[6] = "";
+						showData=0;
+	}
 }
