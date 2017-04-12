@@ -40,7 +40,6 @@ public class InspiringPresence : CharachterTargeter  {
 
 	public override void Use()
 	{
-		bool found=false;
 		foreach (CharacterCharacter c in specs.owner.team.pieces) 
 		{
 			int rsqrd = (int)(range * range);
