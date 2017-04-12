@@ -1,20 +1,19 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class SongOfReckoning : CharachterTargeter {
-
-
-	public double damage;
-	public int range;
+public class BalladOfLoveAndHate : CharachterTargeter {
 
 	public ClassSpecifications specs;
+
+	public double damage;
+	public float range;
 
 	// Use this for initialization
 	public override void Start () 
 	{
-		name="Song of Reckoning";
-		specs = GetComponentInParent<ClassSpecifications> ();
+		ultimate=true;
+		specs = GetComponentInParent<ClassSpecifications>();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		targets = new List<TileAttributes> ();
 		charachterTargets = new List<CharacterCharacter> ();
@@ -23,14 +22,22 @@ public class SongOfReckoning : CharachterTargeter {
 		GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
 		base.Start ();
 	}
-
+	
 	// Update is called once per frame
 	public override void Update () 
 	{
-
+	
+	}
+		
+	public override string GetName()
+	{
+		return name;
 	}
 
-
+	public override string GetDescription()
+	{
+		return description;
+	}
 
 	public override void Use()
 	{
@@ -41,11 +48,7 @@ public class SongOfReckoning : CharachterTargeter {
 		}
 		if (targetsAquired == true) 
 		{
-			foreach (CharacterCharacter t in charachterTargets) 
-			{
-				t.damage (damage);
-				t.activeEffects.Add(new Reckoned(t));
-			}
+			specs.owner.activeEffects.Add(new BardLinked(specs.owner,charachterTargets));	
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
 			specs.owner.usedAbility = true;

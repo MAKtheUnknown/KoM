@@ -54,5 +54,6 @@ public class Whirlwind : Ability
 		map = specs.owner.tile.map;
 		map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
 	}
 }

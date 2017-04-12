@@ -40,7 +40,6 @@ public class InspiringPresence : CharachterTargeter  {
 
 	public override void Use()
 	{
-		bool found=false;
 		foreach (CharacterCharacter c in specs.owner.team.pieces) 
 		{
 			int rsqrd = (int)(range * range);
@@ -55,6 +54,7 @@ public class InspiringPresence : CharachterTargeter  {
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
 			specs.owner.usedAbility = true;
+			cooldownTimer=cooldown;
 		
 
 	}

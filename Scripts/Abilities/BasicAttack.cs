@@ -23,17 +23,17 @@ public class BasicAttack : CharachterTargeter {
 	}
 	
 	// Update is called once per frame
-	public void Update () 
+	public override void Update () 
 	{
 	
 	}
 		
-	public string GetName()
+	public override string GetName()
 	{
 		return name;
 	}
 
-	public string GetDescription()
+	public override string GetDescription()
 	{
 		return description;
 	}
@@ -54,6 +54,7 @@ public class BasicAttack : CharachterTargeter {
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
 			specs.owner.usedAbility = true;
+			cooldownTimer=cooldown;
 		}
 
 	}

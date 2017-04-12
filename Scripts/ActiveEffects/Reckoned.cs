@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stunned : ActiveEffect {
+public class Reckoned : ActiveEffect {
 	private int changeInDefense;
 
 
-	public Stunned(CharacterCharacter c)
+	public Reckoned(CharacterCharacter c)
 	{
 		Init (c);
 	}
@@ -19,6 +19,11 @@ public class Stunned : ActiveEffect {
 	public new void Init(CharacterCharacter c, int rounds)
 	{
 		base.Init (c, rounds);
+		if(c.type.defense<10)
+			changeInDefense=c.type.defense;
+		else
+			changeInDefense=10;
+		c.type.defense-=changeInDefense;
 	}
 
 	public override void Act()
@@ -29,5 +34,6 @@ public class Stunned : ActiveEffect {
 
 	public override void Finish()
 	{
+		subject.type.defense+=changeInDefense;
 	}
 }

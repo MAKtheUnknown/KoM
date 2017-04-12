@@ -25,7 +25,7 @@ public class Healing : CharachterTargeter {
 	}
 
 	// Update is called once per frame
-	public void Update () 
+	public override void Update () 
 	{
 
 	}
@@ -47,6 +47,7 @@ public class Healing : CharachterTargeter {
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
 			specs.owner.usedAbility = true;
+			cooldownTimer=cooldown;
 		}
 
 	}
