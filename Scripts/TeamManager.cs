@@ -59,6 +59,13 @@ public class TeamManager : MonoBehaviour {
 					c.activeEffects.Remove (e);
 				}
 			}
+			foreach (Ability a in c.type.classAbilities) 
+			{
+				if(a.cooldown > 0) 
+				{
+					a.cooldown--;
+				}
+			}
 		}
 		
 		//bolds the active team's text
