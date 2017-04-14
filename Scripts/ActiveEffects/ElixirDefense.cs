@@ -19,8 +19,8 @@ public class ElixirDefense : ActiveEffect {
 	public new void Init(CharacterCharacter c, int rounds)
 	{
 		base.Init (c, rounds);
-		c.type.defense+=changeInDefense;
 		changeInDefense=6;
+		c.type.defense+=changeInDefense;
 	}
 
 	public override void Act()

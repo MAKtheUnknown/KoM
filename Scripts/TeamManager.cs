@@ -127,7 +127,8 @@ public class TeamManager : MonoBehaviour {
 	{
 		if(c.type.type==ClassSpecifications.CharacterType.Swordsman)
 		{
-			
+			c.passive = new Stalwart(c);
+			c.activeEffects.Add(c.passive);
 		}
 		
 		if(c.type.type==ClassSpecifications.CharacterType.Alchemist)

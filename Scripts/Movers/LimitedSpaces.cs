@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿	using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -47,6 +47,7 @@ public class LimitedSpaces : MonoBehaviour, Mover
 	// Use this for initialization
 	void Start () 
 	{
+		timeToMove=moved.moves;
 	}
 	
 	// Update is called once per frame

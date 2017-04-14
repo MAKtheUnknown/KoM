@@ -27,6 +27,8 @@ public class ClassSpecifications : MonoBehaviour
 	public int defense;
 	
 	public int range;
+	
+	public int moves;
 
 	public int maxXP;
 

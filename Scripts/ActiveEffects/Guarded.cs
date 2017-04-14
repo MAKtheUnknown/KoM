@@ -10,7 +10,12 @@ public class Guarded : ActiveEffect {
 	{
 		Init (c);
 	}
-
+	
+	public Guarded(CharacterCharacter c, double r)
+	{
+		this.Init(c,1,r);
+	}
+	
 	public void Init(CharacterCharacter c)
 	{
 		this.Init (c, 1);

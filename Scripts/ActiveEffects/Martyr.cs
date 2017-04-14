@@ -6,6 +6,7 @@ public class Martyr : ActiveEffect {
 
 	private Team team;
 	private int moraleDamage;
+	bool done=false;
 
 	public Martyr(CharacterCharacter c)
 	{
@@ -30,12 +31,16 @@ public class Martyr : ActiveEffect {
 
 	public override void Finish()
 	{
-		foreach(Team t in team.manager.teams)
+		if(!done)
 		{
-			if(t!=team)
+			foreach(Team t in team.manager.teams)
 			{
-				t.TeamDamage(moraleDamage);
+				if(t!=team)
+				{
+					t.TeamDamage(moraleDamage);
+				}
 			}
+			done=true;
 		}
 	}
 }

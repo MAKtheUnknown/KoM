@@ -24,6 +24,8 @@ public class Team : MonoBehaviour {
 	public GameObject moraleText;// Morale text corresponding to team
 	
 	public MoraleTextAlign textAlign;//Alignment of text
+	
+	public double teamDefense=0; //defense against morale damage 
 
 	void Awake()
 	{
@@ -59,7 +61,7 @@ public class Team : MonoBehaviour {
 	
 	public void TeamDamage (double d)
 	{
-		teamMorale-= (int)d;
+		teamMorale-= (int)(d*(1-teamDefense));
 		if(teamMorale<=0)
 		{
 			teamMorale=0;

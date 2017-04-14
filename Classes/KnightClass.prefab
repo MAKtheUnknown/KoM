@@ -131,9 +131,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3966b2e15562bd44ae794978d8b66c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Swing Sword
   description: Attacks a unit 1 space away.
+  cooldown: 0
+  cooldownTimer: 0
+  ultimate: 0
+  map: {fileID: 0}
+  targets: []
+  charachterTargets: []
+  numberOfTargets: 0
+  targetsToAquire: 0
+  targetsAquired: 0
+  instructionLabel: {fileID: 0}
+  specs: {fileID: 0}
   damage: 4
+  range: 0
 --- !u!114 &114912816119697594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +158,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
+  classAbilities: []
   maximumHealth: 14
+  attack: 0
+  defense: 0
+  range: 0
   maxXP: 55
   morale: 100
+  type: 0

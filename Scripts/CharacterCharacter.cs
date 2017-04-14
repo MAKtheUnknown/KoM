@@ -62,8 +62,13 @@ public class CharacterCharacter : MonoBehaviour
 		}
 		if(currentHP==0&&type.type==ClassSpecifications.CharacterType.Priest)
 		{
-			passive.Act();
-			passive=null;
+			passive.Finish();
+			currentHP=-1;
+		}
+		if(currentHP==0&&type.type==ClassSpecifications.CharacterType.Swordsman)
+		{
+			passive.Finish();
+			currentHP=-1;
 		}
 			
 	}

@@ -1,27 +1,33 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Cripple : CharachterTargeter
-{
+public class ShieldBearer : CharachterTargeter  {
 
-	ClassSpecifications specs;
-	public int damage;
-	public int range;
+	public ClassSpecifications specs;
+
+	public float range;
 
 	// Use this for initialization
 	public override void Start () 
 	{
+		base.ultimate=true;
 		specs = GetComponentInParent<ClassSpecifications> ();
-		name = "Cripple";
+		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
+		targets = new List<TileAttributes> ();
+		charachterTargets = new List<CharacterCharacter> ();
+		targetsAquired = false;
+		targetsToAquire = numberOfTargets;
+		GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
+		base.Start ();
 	}
 	
 	// Update is called once per frame
 	public override void Update () 
 	{
-		
+	
 	}
-
+		
 	public override string GetName()
 	{
 		return name;
@@ -34,17 +40,15 @@ public class Cripple : CharachterTargeter
 
 	public override void Use()
 	{
-		damage=1;
 		if (targetsAquired == false) 
 		{
-			base.GetEnemyTargets(specs.owner.x, specs.owner.y, range, specs.owner.team);
+			base.GetTargets(specs.owner.x, specs.owner.y, range);
 		}
 		if (targetsAquired == true) 
 		{
 			foreach (CharacterCharacter c in charachterTargets) 
 			{
-				c.damage (damage);
-				c.activeEffects.Add(new Slowed(c));
+				c.activeEffects.Add(new Guarded(c,.35));
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
@@ -53,5 +57,5 @@ public class Cripple : CharachterTargeter
 		}
 
 	}
-
+	
 }
