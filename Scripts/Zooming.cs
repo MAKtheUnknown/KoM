@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Zooming : MonoBehaviour 
 {
-	Camera camera;
+	new Camera camera;
 	Canvas canvas;
 
 	public double scrollBorder = 10.0;

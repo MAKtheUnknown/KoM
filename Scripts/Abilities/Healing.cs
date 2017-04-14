@@ -37,7 +37,7 @@ public class Healing : CharachterTargeter {
 		addedHealth= specs.attack*2;
 		if (targetsAquired == false) 
 		{
-			base.GetTargets(specs.owner.x, specs.owner.y, range);
+			base.GetAllyTargets(specs.owner.x, specs.owner.y, range,specs.owner.team);
 		}
 		if (targetsAquired == true) 
 		{

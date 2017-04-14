@@ -215,6 +215,13 @@ public class Highlighter : MonoBehaviour {
 				((CharachterTargeter)abilityInUse).targets.Add (selectedTile);
 			}
 			break;
+		case SelectionMode.SELECT_TILES:
+			abilityInUse.Use();
+			if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp (0)) 
+			{
+				((TileTargeter)abilityInUse).targets.Add (selectedTile);
+			}
+			break;
 		}
 
 	}
@@ -244,6 +251,7 @@ public class Highlighter : MonoBehaviour {
 		MOVE_TO_TILE,
 		USE_ABILITY,
 		SELECT_TARGETS,
+		SELECT_TILES,
 		INACTIVE
 	}
 }

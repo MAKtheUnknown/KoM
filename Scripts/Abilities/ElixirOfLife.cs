@@ -1,19 +1,18 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class SongOfReckoning : CharachterTargeter {
-
-
-	public double damage;
-	public int range;
+public class ElixirOfLife : CharachterTargeter  {
 
 	public ClassSpecifications specs;
+
+	public float range;
+	int chance;
 
 	// Use this for initialization
 	public override void Start () 
 	{
-		name="Song of Reckoning";
+		base.ultimate=true;
 		specs = GetComponentInParent<ClassSpecifications> ();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		targets = new List<TileAttributes> ();
@@ -23,28 +22,50 @@ public class SongOfReckoning : CharachterTargeter {
 		GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
 		base.Start ();
 	}
-
+	
 	// Update is called once per frame
 	public override void Update () 
 	{
-
+	
+	}
+		
+	public override string GetName()
+	{
+		return name;
 	}
 
-
+	public override string GetDescription()
+	{
+		return description;
+	}
 
 	public override void Use()
 	{
-		damage=specs.attack;
+		chance = (int)Random.Range(1,4);
 		if (targetsAquired == false) 
 		{
-			base.GetEnemyTargets(specs.owner.x, specs.owner.y, range, specs.owner.team);
+			base.GetAllyTargets(specs.owner.x, specs.owner.y, range,specs.owner.team);
 		}
 		if (targetsAquired == true) 
 		{
-			foreach (CharacterCharacter t in charachterTargets) 
+			foreach (CharacterCharacter c in charachterTargets) 
 			{
-				t.damage (damage);
-				t.activeEffects.Add(new Reckoned(t));
+				if(chance==1)
+				{
+					c.activeEffects.Add(new ElixirHealth(c));					
+				}
+				else if (chance==2)
+				{
+					c.activeEffects.Add(new ElixirDamage(c));					
+				}
+				else if (chance==3)
+				{
+					c.activeEffects.Add(new ElixirSpeed(c));					
+				}
+				else
+				{
+					c.activeEffects.Add(new ElixirDefense(c));					
+				}
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
@@ -53,4 +74,5 @@ public class SongOfReckoning : CharachterTargeter {
 		}
 
 	}
+	
 }

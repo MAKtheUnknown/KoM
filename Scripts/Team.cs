@@ -7,7 +7,7 @@ public class Team : MonoBehaviour {
 
 	public PlayerType type;
 
-	public string name;
+	public new string name;
 
 	public CharacterCharacter[] pieces;
 

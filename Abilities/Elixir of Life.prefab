@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1179136814618998}
+  m_RootGameObject: {fileID: 1001284799806468}
   m_IsPrefabParent: 1
---- !u!1 &1179136814618998
+--- !u!1 &1001284799806468
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4556281137109034}
-  - component: {fileID: 114368413193693046}
+  - component: {fileID: 4828819476567576}
+  - component: {fileID: 114603470226213394}
   m_Layer: 0
-  m_Name: A Well-Planned Attack
+  m_Name: Elixir of Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4556281137109034
+--- !u!4 &4828819476567576
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179136814618998}
+  m_GameObject: {fileID: 1001284799806468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,28 +40,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114368413193693046
+--- !u!114 &114603470226213394
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179136814618998}
+  m_GameObject: {fileID: 1001284799806468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3af7a86c5a103a43adce653c480c1ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f7b345524588304ba02ce427f12728b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
-  cooldown: 0
+  cooldown: 3
   cooldownTimer: 0
-  ultimate: 0
+  ultimate: 1
   map: {fileID: 0}
   targets: []
   charachterTargets: []
-  numberOfTargets: 1
-  targetsToAquire: 1
+  numberOfTargets: 2
+  targetsToAquire: 2
   targetsAquired: 0
   instructionLabel: {fileID: 0}
   specs: {fileID: 0}
-  damage: 5
-  range: 1
+  range: 3

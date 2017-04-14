@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class TileArrangement : MonoBehaviour 
 {
 	/**The 1d array of all tiles. Used temporarily.*/
-	TileAttributes[] tiles;
+	public TileAttributes[] tiles;
 
 	/**The 2d array of all tiles. Set up on Awake().*/
 	public TileAttributes[,] tileMap;

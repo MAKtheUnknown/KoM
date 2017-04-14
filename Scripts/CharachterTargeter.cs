@@ -92,7 +92,98 @@ public abstract class CharachterTargeter : Ability {
 			instructionLabel.text = "";
 		}
 	}
+	
+	public void GetAllyTargets(int x, int y, float range, Team team)
+	{
+		List<CharacterCharacter> inRange = GetAllTargetsInRange (x, y, range);
+		
+		foreach (GameObject g in GameObject.FindGameObjectsWithTag("Possible Move Highlighters")) 
+		{
+			GameObject.Destroy (g);
+		}
+		map.highlighter.mode = Highlighter.SelectionMode.SELECT_TARGETS;
+		if (instructionLabel.text.Equals ("Select " + targetsToAquire + "pieces.") == false) 
+		{
+			GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
+		}
+		instructionLabel.text = "Select " + targetsToAquire + " pieces.";
 
+		if (targets.Count > 0) 
+		{
+			TileAttributes t = targets [0];
+			if (t.containedCharacter != null) 
+			{
+				if (inRange.Contains (t.containedCharacter)&&t.containedCharacter.team==team) 
+				{
+					charachterTargets.Add (t.containedCharacter);
+					targetsToAquire--;
+				}
+				else
+				{
+					map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+					instructionLabel.text = "";
+				}
+			}
+			else 
+			{
+				instructionLabel.text = "";
+				map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+			}
+			targets.Remove (t);
+		}
+
+		if (targetsToAquire <= 0) 
+		{
+			targetsAquired = true;
+			instructionLabel.text = "";
+		}
+	}
+	
+	public void GetEnemyTargets(int x, int y, float range, Team team)
+	{
+		List<CharacterCharacter> inRange = GetTargetsInRange (x, y, range);
+		
+		foreach (GameObject g in GameObject.FindGameObjectsWithTag("Possible Move Highlighters")) 
+		{
+			GameObject.Destroy (g);
+		}
+		map.highlighter.mode = Highlighter.SelectionMode.SELECT_TARGETS;
+		if (instructionLabel.text.Equals ("Select " + targetsToAquire + "pieces.") == false) 
+		{
+			GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
+		}
+		instructionLabel.text = "Select " + targetsToAquire + " pieces.";
+
+		if (targets.Count > 0) 
+		{
+			TileAttributes t = targets [0];
+			if (t.containedCharacter != null) 
+			{
+				if (inRange.Contains (t.containedCharacter)&&t.containedCharacter.team!=team) 
+				{
+					charachterTargets.Add (t.containedCharacter);
+					targetsToAquire--;
+				}
+				else
+				{
+					map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+					instructionLabel.text = "";
+				}
+			}
+			else 
+			{
+				instructionLabel.text = "";
+				map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+			}
+			targets.Remove (t);
+		}
+
+		if (targetsToAquire <= 0) 
+		{
+			targetsAquired = true;
+			instructionLabel.text = "";
+		}
+	}
 	List<CharacterCharacter> GetTargetsInRange(int x, int y, float range)
 	{
 		List<CharacterCharacter> charTargets = new List<CharacterCharacter> ();
@@ -106,6 +197,27 @@ public abstract class CharachterTargeter : Ability {
 				int dysqrd = (y - c.y) * (y - c.y);
 				bool b = !(x == c.x && y == c.y);
 				if ((rsqrd >= dxsqrd + dysqrd) && b) 
+				{
+					charTargets.Add (c);
+				}
+			}
+		}
+		return charTargets;
+	}
+	
+	//Included self
+	List<CharacterCharacter> GetAllTargetsInRange(int x, int y, float range)
+	{
+		List<CharacterCharacter> charTargets = new List<CharacterCharacter> ();
+
+		foreach (Team t in map.teams.teams) 
+		{
+			foreach (CharacterCharacter c in t.pieces) 
+			{
+				int rsqrd = (int)(range * range);
+				int dxsqrd = (x - c.x) * (x - c.x);
+				int dysqrd = (y - c.y) * (y - c.y);
+				if (rsqrd >= dxsqrd + dysqrd) 
 				{
 					charTargets.Add (c);
 				}

@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shielded : ActiveEffect {
+public class ElixirDefense : ActiveEffect {
 
-	public Shielded(CharacterCharacter c)
+	private int changeInDefense;
+
+	public ElixirDefense(CharacterCharacter c)
 	{
 		Init (c);
 	}
 
 	public void Init(CharacterCharacter c)
 	{
-		this.Init (c, 1);
+		this.Init (c, 4);
 	}
 
 	public new void Init(CharacterCharacter c, int rounds)
 	{
 		base.Init (c, rounds);
-		c.shielded=true;
+		c.type.defense+=changeInDefense;
+		changeInDefense=6;
 	}
 
 	public override void Act()
@@ -27,6 +30,6 @@ public class Shielded : ActiveEffect {
 
 	public override void Finish()
 	{
-		subject.shielded=false;
+		subject.type.defense-=changeInDefense;
 	}
 }

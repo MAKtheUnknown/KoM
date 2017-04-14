@@ -5,7 +5,6 @@ using UnityEngine;
 public class Martyr : ActiveEffect {
 
 	private Team team;
-	private bool martyred;
 	private int moraleDamage;
 
 	public Martyr(CharacterCharacter c)
@@ -21,28 +20,22 @@ public class Martyr : ActiveEffect {
 	public new void Init(CharacterCharacter c, int rounds)
 	{
 		base.Init (c, rounds);
-		martyred=false;
 		moraleDamage=c.type.morale;
 		team=c.team;
 	}
 
 	public override void Act()
 	{
-		if(subject==null&&!martyred)
-		{
-			foreach(Team t in team.manager.teams)
-			{
-				if(t!=team)
-				{
-					t.TeamDamage(moraleDamage);
-					martyred=true;
-				}
-			}
-		}
 	}
 
 	public override void Finish()
 	{
-		
+		foreach(Team t in team.manager.teams)
+		{
+			if(t!=team)
+			{
+				t.TeamDamage(moraleDamage);
+			}
+		}
 	}
 }

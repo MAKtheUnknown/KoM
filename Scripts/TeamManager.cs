@@ -36,25 +36,7 @@ public class TeamManager : MonoBehaviour {
 		{
 			foreach(CharacterCharacter c in t.pieces)
 			{
-				if(c.type.charClass==ClassSpecifications.CharacterType.Swordsman)
-				{
-					
-				}
-				
-				if(c.type.charClass==ClassSpecifications.CharacterType.Alchemist)
-				{
-					
-				}
-				
-				if(c.type.charClass==ClassSpecifications.CharacterType.Bard)
-				{
-					c.activeEffects.Add(new RisingTempo(c));
-				}
-				
-				if(c.type.charClass==ClassSpecifications.CharacterType.Priest)
-				{
-					c.activeEffects.Add(new Martyr(c));
-				}
+				addPassive(c);
 			}
 		}
 	}
@@ -68,7 +50,11 @@ public class TeamManager : MonoBehaviour {
 
 	public void rotate()
 	{
+		
 		List<ActiveEffect> effectsToRemove= new List<ActiveEffect>();
+		//Increments tile effects
+		foreach(TileAttributes t in map.tiles)
+		UpdateTiles(t);
 		turn = (turn+1)%teams.Length;
 		map.highlighter.currentTeam = teams [turn];
 
@@ -79,6 +65,7 @@ public class TeamManager : MonoBehaviour {
 			{
 				c.type.movement.Reset ();
 				c.usedAbility = false;
+
 				foreach (ActiveEffect e in c.activeEffects) 
 				{
 					e.turnsLeft--;
@@ -115,6 +102,52 @@ public class TeamManager : MonoBehaviour {
 		
 		
 		
+		
+	}
+	
+	void UpdateTiles(TileAttributes t)
+	{
+		List<TileEffect> tileEffectsToRemove = new List<TileEffect>();
+		foreach(TileEffect e in t.tileEffects)
+			{
+				e.turnsLeft--;
+				e.Act ();
+				if (e.turnsLeft <= 0) 
+				{
+					e.Finish ();
+					tileEffectsToRemove.Add(e);
+				}
+			}
+			foreach(TileEffect e in tileEffectsToRemove)
+				t.tileEffects.Remove(e);
+	}
+	
+	//adds passives for characters as effects
+	void addPassive(CharacterCharacter c)
+	{
+		if(c.type.type==ClassSpecifications.CharacterType.Swordsman)
+		{
+			
+		}
+		
+		if(c.type.type==ClassSpecifications.CharacterType.Alchemist)
+		{
+			c.passive = new ParadigmShift(c);
+			c.activeEffects.Add(c.passive);
+			
+		}
+		
+		if(c.type.type==ClassSpecifications.CharacterType.Bard)
+		{
+			c.passive = new RisingTempo(c);
+			c.activeEffects.Add(c.passive);
+		}
+		
+		if(c.type.type==ClassSpecifications.CharacterType.Priest)
+		{
+			c.passive = new Martyr(c);
+			c.activeEffects.Add(c.passive);
+		}
 		
 	}
 	

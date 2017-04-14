@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1179136814618998}
+  m_RootGameObject: {fileID: 1735276601445444}
   m_IsPrefabParent: 1
---- !u!1 &1179136814618998
+--- !u!1 &1735276601445444
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4556281137109034}
-  - component: {fileID: 114368413193693046}
+  - component: {fileID: 4823830202582694}
+  - component: {fileID: 114272571861351730}
   m_Layer: 0
-  m_Name: A Well-Planned Attack
+  m_Name: Chemical Spill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4556281137109034
+--- !u!4 &4823830202582694
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179136814618998}
+  m_GameObject: {fileID: 1735276601445444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,28 +40,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114368413193693046
+--- !u!114 &114272571861351730
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179136814618998}
+  m_GameObject: {fileID: 1735276601445444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3af7a86c5a103a43adce653c480c1ac, type: 3}
+  m_Script: {fileID: 11500000, guid: e0eeac7a18f05c84fa5b3e8347ee621e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
-  cooldown: 0
+  cooldown: 6
   cooldownTimer: 0
   ultimate: 0
   map: {fileID: 0}
   targets: []
-  charachterTargets: []
+  tileTargets: []
+  fullTileTargets: []
   numberOfTargets: 1
   targetsToAquire: 1
   targetsAquired: 0
   instructionLabel: {fileID: 0}
   specs: {fileID: 0}
-  damage: 5
-  range: 1
+  damage: 1
+  range: 3
+  size: 3

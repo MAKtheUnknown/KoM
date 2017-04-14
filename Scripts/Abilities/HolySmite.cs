@@ -44,7 +44,7 @@ public class HolySmite : CharachterTargeter {
 		damage=specs.attack;
 		if (targetsAquired == false) 
 		{
-			base.GetTargets(specs.owner.x, specs.owner.y, range);
+			base.GetEnemyTargets(specs.owner.x, specs.owner.y, range, specs.owner.team);
 		}
 		if (targetsAquired == true) 
 		{
