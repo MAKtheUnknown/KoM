@@ -75,13 +75,18 @@ public class CharacterCharacter : MonoBehaviour
 
 	public void putOnBoard()
 	{
-		x = (int)this.transform.position.x-team.map.LowX;
-		y = (int)this.transform.position.y-team.map.LowY;
+		x = (int)Math.Round(this.transform.position.x-team.map.LowX);
+		y = (int)Math.Round(this.transform.position.y-team.map.LowY);
 		
 		tile = team.map.tileMap[x, y];
 		lastTile=team.map.tileMap[x, y];
 		tile.containedCharacter = this;
 		
+	}
+	
+	int Dround(double d)
+	{
+		return (int)Math.Round(d);
 	}
 
 	void findRoutes()

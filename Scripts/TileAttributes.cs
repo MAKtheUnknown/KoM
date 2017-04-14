@@ -77,6 +77,7 @@ public class TileAttributes : MonoBehaviour {
 		hills,
 		mountains,
 		water,
-		trees
+		trees,
+		bridge
 	};
 }

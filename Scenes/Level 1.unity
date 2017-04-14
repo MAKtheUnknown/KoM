@@ -3517,7 +3517,7 @@ MonoBehaviour:
   attack: 4
   defense: 5
   range: 1
-  moves: 0
+  moves: 10
   maxXP: 55
   morale: 100
   type: 1
@@ -3993,7 +3993,7 @@ MonoBehaviour:
   attack: 4
   defense: 5
   range: 1
-  moves: 0
+  moves: 10
   maxXP: 55
   morale: 100
   type: 3
@@ -5056,7 +5056,7 @@ MonoBehaviour:
   attack: 4
   defense: 5
   range: 1
-  moves: 0
+  moves: 10
   maxXP: 55
   morale: 100
   type: 2
@@ -6695,7 +6695,7 @@ MonoBehaviour:
   attack: 4
   defense: 5
   range: 1
-  moves: 0
+  moves: 10
   maxXP: 55
   morale: 100
   type: 0
