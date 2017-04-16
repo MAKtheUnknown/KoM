@@ -14429,6 +14429,7 @@ MonoBehaviour:
   teams: {fileID: 0}
   highlighter: {fileID: 0}
   ui: {fileID: 0}
+  uiCameraPosition: {x: 0, y: 0}
 --- !u!4 &691831152
 Transform:
   m_ObjectHideFlags: 0
@@ -15950,6 +15951,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4194052188242560, guid: d9b17e2f2970819429b98d6b89045ad1, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114975255349253450, guid: d9b17e2f2970819429b98d6b89045ad1,
+        type: 2}
+      propertyPath: shallowWaterTime
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -28086,7 +28092,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1438682063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 308.112, y: -1, z: -101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2089431321}
@@ -37175,7 +37181,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.5
+  orthographic size: 9.5
   m_Depth: -0.1
   m_CullingMask:
     serializedVersion: 2
@@ -37196,7 +37202,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013509776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -10}
+  m_LocalPosition: {x: 7, y: 7, z: -10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -38271,8 +38277,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 309.921, y: -41.03894}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 308, y: -1.03894}
+  m_SizeDelta: {x: 95, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2089431322
 MonoBehaviour:
@@ -38306,7 +38312,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Select an Ability
+
+'
 --- !u!222 &2089431323
 CanvasRenderer:
   m_ObjectHideFlags: 0

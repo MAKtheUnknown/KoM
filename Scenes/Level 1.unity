@@ -3083,6 +3083,7 @@ MonoBehaviour:
   teams: {fileID: 0}
   highlighter: {fileID: 0}
   ui: {fileID: 0}
+  uiCameraPosition: {x: 0, y: 0}
 --- !u!4 &691831152
 Transform:
   m_ObjectHideFlags: 0
@@ -5567,7 +5568,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1279884266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.17, y: 9.05, z: -1.1777344}
+  m_LocalPosition: {x: -2.17, y: 9.05, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6390,7 +6391,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1438682063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 308.112, y: -1, z: -101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2089431321}
@@ -9186,7 +9187,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2059450343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: 9.05, z: -1.1777344}
+  m_LocalPosition: {x: -0.47, y: 9.05, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

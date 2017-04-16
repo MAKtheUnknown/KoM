@@ -168,7 +168,7 @@ public class Highlighter : MonoBehaviour {
 				if ((Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp (0)) && selectedTile.containedCharacter.usedAbility == false) 
 				{
 					chosenCharacter = selectedTile.containedCharacter;
-					abilitySelectorObject = GameObject.Instantiate (savedAbilitySelectorObject, new Vector3(0,0,0) /*new Vector3(308, 0, -101)*/, new Quaternion(), map.ui.transform);
+					abilitySelectorObject = GameObject.Instantiate (savedAbilitySelectorObject, GameObject.Find("Ability Instruction Panel").transform.position/*new Vector3(0,0,0)*/ /*new Vector3(308, 0, -101)*/, new Quaternion(), map.ui.transform);
 					abilitySelector = abilitySelectorObject.GetComponent<AbilitySelector> ();
 
 

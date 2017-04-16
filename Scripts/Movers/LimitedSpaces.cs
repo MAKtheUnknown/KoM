@@ -25,12 +25,12 @@ public class LimitedSpaces : MonoBehaviour, Mover
 	/**The set of tiles and the difficulties with which this class can cover them*/
 	public IDictionary<TileAttributes.TileType, double> tileTypeTimes;
 
-	public double grassTime = 2;
-	public double hillTime = 3;
-	public double mountainTime = 4;
-	public double forestTime = 3;
-	public double shallowWaterTime = 9001;
-	public double bridgeTime = 1 ;
+	double grassTime = 2;
+	double hillTime = 3;
+	double mountainTime = 4;
+	double forestTime = 3;
+	double shallowWaterTime = 9001;
+	double bridgeTime = 1 ;
 
 	public double[,] times;
 
