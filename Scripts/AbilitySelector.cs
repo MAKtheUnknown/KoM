@@ -11,7 +11,8 @@ public class AbilitySelector : MonoBehaviour {
 	
 	GameObject UIcamera;
 	//Vector3 originalUIpos; //retrieved from map (arbitrarily chosen)
-	//Vector3 UIposition;
+	Vector3 UIposition;
+	//float originalCameraSize;
 	float cameraSize;
 	//float scale=85.775f;//Scale for text to properly adjust to UI camera movement
 
@@ -19,6 +20,7 @@ public class AbilitySelector : MonoBehaviour {
 	public float offset;
 
 	// Use this for initialization
+	
 	void Start () 
 	{
 		initialOffset = 0.7f;
@@ -28,13 +30,13 @@ public class AbilitySelector : MonoBehaviour {
 		
 		UIcamera = GameObject.Find("UI Camera");
 		//originalUIpos=map.uiCameraPosition;
-		//UIposition = UIcamera.transform.position;
+		UIposition = UIcamera.transform.position;
+		//originalCameraSize = map.uiCameraSize;
 		cameraSize=UIcamera.GetComponent<Camera>().orthographicSize;
 		initialOffset*=cameraSize/3.5f;
-		/*
-		gameObject.transform.Translate (new Vector3(308f/85.75285f, 2f, -2f));//TODO: Figure out why you need such weird values.
-		//gameObject.transform.position = new Vector3(1/(3f*cameraSize),2f+1/(3f*cameraSize),-100/85.75285f);
-		gameObject.transform.Translate (Vector3.Scale(new Vector3(1,1,0),(UIposition-originalUIpos)));*/
+	
+		gameObject.transform.position= (new Vector3(308f/85.75285f*cameraSize/3.5f, 2f, -2f*cameraSize/3.5f));//TODO: Figure out why you need such weird values.
+		gameObject.transform.Translate (Vector3.Scale(new Vector3(1f,1f,0f),(UIposition-new Vector3(0f,2f,10f))));
 		gameObject.transform.localScale.Set(1, 1, 1);
 
 		foreach (Ability a in map.highlighter.chosenCharacter.specialAbilities) 

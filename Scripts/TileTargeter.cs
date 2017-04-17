@@ -92,9 +92,9 @@ public abstract class TileTargeter : Ability {
 	{
 		foreach(TileAttributes t in tileTargets)
 		{
-			for(int i = size/2+t.x;i>t.x-size/2;i--)
+			for(int i = size/2+t.x;i>t.x-size/2f;i--)
 			{
-				for(int j = t.y-size/2 ;j<t.y+size/2;j++)
+				for(int j = t.y-size/2 ;j<t.y+size/2f;j++)
 				{
 					if((0<=i)&&(i<=t.map.HighX-t.map.LowX)&&(0<=j)&&(j<=t.map.HighY-t.map.LowY))
 					{
