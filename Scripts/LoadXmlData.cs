@@ -8,6 +8,8 @@ using System.IO;
 
 public class LoadXmlData : MonoBehaviour 
 {
+	public GUIStyle style;
+	public GUIStyle nameStyle;
 	string npcName;
 
 	int maxData;
@@ -19,11 +21,18 @@ public class LoadXmlData : MonoBehaviour
 	//simple gui to show read data
 	public void OnGUI()
 	{
+		style.wordWrap = true;
+		style.fontSize = 14;
+		style.normal.textColor = Color.black;
+		style.normal.background = new Texture2D(Screen.width, Screen.height-100);
+		nameStyle.fontSize = 16;
+		nameStyle.normal.textColor = Color.yellow;
 		// ensures I don't try to show data I don't have
 		if(showData<maxData)
 		{
-			GUI.Label(new Rect(20,Screen.height-120,200,20), NpcName[showData]);
-			GUI.Label(new Rect(20,Screen.height-100,Screen.width-40,60), data[showData]);
+			GUI.Label(new Rect(20,Screen.height-120,200,20), NpcName[showData],nameStyle);
+			GUI.Box(new Rect(20,Screen.height-100,Screen.width-40,60), data[showData],style);
+
 			if(GUI.Button(new Rect(Screen.width/2 -40,Screen.height-20,100,20),"Next"))
 			{
 				//Debug.Log(showData);
@@ -49,7 +58,7 @@ public class LoadXmlData : MonoBehaviour
 		data = null;
 
 		//readxml from chat.xml in project folder (Same folder where Assets and Library are in the Editor)
-XmlReader reader = XmlReader.Create("chat.xml");
+XmlReader reader = XmlReader.Create("Assets/chat.xml");
 		//while there is data read it
 		while(reader.Read())
 		{
@@ -90,9 +99,9 @@ XmlReader reader = XmlReader.Create("chat.xml");
 		}
 	NpcName[0] = "";
 	NpcName[1] = "Lucius";
-	NpcName[2] = "MC";
+	NpcName[2] = "Xander";
 	NpcName[3] = "Lucius";
-	NpcName[4] = "MC";
+	NpcName[4] = "Xander";
 	NpcName[5] = "Lucius";
 	NpcName[6] = "";
 						showData=0;
