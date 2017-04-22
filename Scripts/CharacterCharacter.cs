@@ -60,6 +60,7 @@ public class CharacterCharacter : MonoBehaviour
 			passive.Act();
 			lastTile=tile;
 		}
+		//Note: These are not currently working. Can't update after gameObject destoryed? (probably) Added death-based conditions to kill method
 		if(currentHP==0&&type.type==ClassSpecifications.CharacterType.Priest)
 		{
 			passive.Finish();
@@ -178,7 +179,11 @@ public class CharacterCharacter : MonoBehaviour
 	public void kill()
 	{
 		//Remove this if statement if we Finish/Remove active effects after a character dies
-		team.TeamDamage(this.type.morale); 	
+		
+		team.TeamDamage(this.type.morale); 
+		x=-500;
+		y=-500;
+		tile=null;
 		
 		//team.TeamDamage(this.type.morale); //inflicts damage to team's morale		
 		//foreach(ActiveEffect a in activeEffects)

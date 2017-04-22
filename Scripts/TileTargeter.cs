@@ -105,7 +105,7 @@ public abstract class TileTargeter : Ability {
 		}
 	}
 	
-	List<TileAttributes> GetTilesInRange(int x, int y, float range)
+	public List<TileAttributes> GetTilesInRange(int x, int y, float range)
 	{
 		List<TileAttributes> tileTargets = new List<TileAttributes> ();
 

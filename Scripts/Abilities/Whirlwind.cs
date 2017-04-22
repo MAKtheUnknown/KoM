@@ -56,4 +56,9 @@ public class Whirlwind : Ability
 		specs.owner.usedAbility = true;
 		cooldownTimer=cooldown;
 	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		this.Use();
+	}
 }

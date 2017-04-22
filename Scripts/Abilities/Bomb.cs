@@ -46,7 +46,8 @@ public class Bomb : TileTargeter  {
 
 	public override void Use()
 	{
-		damage=specs.attack+1;
+		damage=specs.attack+3;
+		range=specs.range;
 		if (targetsAquired == false) 
 		{
 			base.GetTargets(specs.owner.x, specs.owner.y, range);
@@ -66,5 +67,24 @@ public class Bomb : TileTargeter  {
 		}
 		
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		damage=specs.attack+3;
+		range=specs.range;
+		tileTargets= new List<TileAttributes>();
+		tileTargets.Add(target.tile);
+		base.GetFullTargets(size);
+		foreach(TileAttributes t in fullTileTargets)
+		{
+			if(t.containedCharacter!=null&&t.containedCharacter.team!=specs.owner.team)
+				t.containedCharacter.damage(damage);
+		}
+		
+		
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
 	}
 }

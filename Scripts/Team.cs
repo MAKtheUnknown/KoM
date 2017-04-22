@@ -72,7 +72,7 @@ public class Team : MonoBehaviour {
 	
 	public void changeMorale()
 	{	//First half to change morale bar
-		moraleBar.GetComponent<Transform>().transform.localScale -= new Vector3(0,(float)(maxMorale-teamMorale)/maxMorale*100,0); //Currently using 100 as placeholder. Later use variable maxMorale
+		moraleBar.GetComponent<Transform>().transform.localScale = Vector3.Scale(moraleBar.GetComponent<Transform>().transform.localScale, new Vector3(1,0,1))+new Vector3(0,(float)(teamMorale)/maxMorale*100,0); //Currently using 100 as placeholder. Later use variable maxMorale
 		if(textAlign==Team.MoraleTextAlign.left)
 		{
 			moraleBar.GetComponent<Transform>().transform.localPosition -=new Vector3((float)(maxMorale-teamMorale)/maxMorale*100,0,0);

@@ -42,6 +42,7 @@ public class BalladOfLoveAndHate : CharachterTargeter {
 	public override void Use()
 	{
 		damage=specs.attack;
+		range=specs.range;
 		if (targetsAquired == false) 
 		{
 			base.GetTargets(specs.owner.x, specs.owner.y, range);
@@ -55,5 +56,27 @@ public class BalladOfLoveAndHate : CharachterTargeter {
 			cooldownTimer=cooldown;
 		}
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		damage=specs.attack+3;
+		range=specs.range;
+		int count=0;
+		charachterTargets= new List<CharacterCharacter>();
+		foreach(CharacterCharacter c in base.GetTargetsInRange(specs.owner.x,specs.owner.y,specs.range))
+		{
+			if(c.team!=specs.owner.team&&count<numberOfTargets)
+			{
+				charachterTargets.Add(c);
+				count++;
+			}
+		}
+		
+		
+		specs.owner.activeEffects.Add(new BardLinked(specs.owner,charachterTargets));
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
 	}
 }

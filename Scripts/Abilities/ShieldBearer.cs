@@ -40,22 +40,20 @@ public class ShieldBearer : CharachterTargeter  {
 
 	public override void Use()
 	{
-		if (targetsAquired == false) 
+		foreach (CharacterCharacter c in specs.owner.team.pieces) 
 		{
-			base.GetTargets(specs.owner.x, specs.owner.y, range);
+			c.activeEffects.Add(new Guarded(c,.35));
 		}
-		if (targetsAquired == true) 
-		{
-			foreach (CharacterCharacter c in charachterTargets) 
-			{
-				c.activeEffects.Add(new Guarded(c,.35));
-			}
-			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
-			Start ();
-			specs.owner.usedAbility = true;
-			cooldownTimer=cooldown;
-		}
+		map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		this.Use();		
 	}
 	
 }

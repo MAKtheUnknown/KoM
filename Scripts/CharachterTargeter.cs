@@ -184,7 +184,7 @@ public abstract class CharachterTargeter : Ability {
 			instructionLabel.text = "";
 		}
 	}
-	List<CharacterCharacter> GetTargetsInRange(int x, int y, float range)
+	public List<CharacterCharacter> GetTargetsInRange(int x, int y, float range)
 	{
 		List<CharacterCharacter> charTargets = new List<CharacterCharacter> ();
 
@@ -206,7 +206,7 @@ public abstract class CharachterTargeter : Ability {
 	}
 	
 	//Included self
-	List<CharacterCharacter> GetAllTargetsInRange(int x, int y, float range)
+	public List<CharacterCharacter> GetAllTargetsInRange(int x, int y, float range)
 	{
 		List<CharacterCharacter> charTargets = new List<CharacterCharacter> ();
 

@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ThreatDetermination : MonoBehaviour {
+	//This threat is filled with DETERMINATIOn
    TileArrangement map;
    	int searchRadius;
 	CharacterCharacter highestThreat;
@@ -17,12 +19,14 @@ public class ThreatDetermination : MonoBehaviour {
 		//check characters move + attackRange
 		enemysInRange =inRange(c.x,c.y,(float)searchRadius,c); 
 		//if list has elements
-		if(enemysInRange != null){
+		if(enemysInRange.Count!=0){
 		//calculate ratio between morale and distance away
 		getRatio(enemysInRange,c);
 		//Move towards character with the most 'threat'
 		highestThreat = getHighestThreat();
 	    moveTowardsHighThreat(c,highestThreat);
+		if(!c.usedAbility)
+			useStrongestAbility(c,highestThreat);
 		}
 		//else find the closest enemy and move towards
 		else{
@@ -51,9 +55,9 @@ public class ThreatDetermination : MonoBehaviour {
 	
 	public void getRatio(List<CharacterCharacter> enemy,CharacterCharacter c){
 		ratio = new double[enemy.Count];
-		for(int i = 0; i < enemy.Count -1; i++)
+		for(int i = 0; i < enemy.Count; i++)
 		{
-			ratio[i] = ((double)enemy[i].type.morale / distance(enemy[i].x,enemy[i].y,c.x,c.y)) / (enemy[i].currentHP/enemy[i].type.maximumHealth);
+			ratio[i] = ((double)enemy[i].type.morale / distance(enemy[i].x,enemy[i].y,c.x,c.y)) / (1f*enemy[i].currentHP/enemy[i].type.maximumHealth);
 		}
 	}
 	public void moveTowardsHighThreat(CharacterCharacter ai, CharacterCharacter c){
@@ -61,20 +65,27 @@ public class ThreatDetermination : MonoBehaviour {
 		 double closest =9001.0;
 		 int closestIndex = 0;
 		 possibleMoves = ((LimitedSpaces)(ai.type.movement)).GetPossibleMoves();
-		 for(int i = 0; i<possibleMoves.Count-1;i++){
-		  if(distance(possibleMoves[i].x, possibleMoves[i].y, c.x,c.y) > closest)
+		 
+		 if(possibleMoves.Count!=0)
+		 {
+		 for(int i = 0; i<possibleMoves.Count;i++){
+		  if(Math.Abs(distance(possibleMoves[i].x, possibleMoves[i].y, c.x,c.y)-(ai.type.range)) < Math.Abs(closest-(ai.type.range)))
 		  {
 			  closest = distance(possibleMoves[i].x, possibleMoves[i].y, c.x,c.y);
 			  closestIndex =i;
 		  }
 		 }
-		 
-		 ((LimitedSpaces)(ai.type.movement)).Move(possibleMoves[closestIndex]);
+		 if(Math.Abs(distance(possibleMoves[closestIndex].x,possibleMoves[closestIndex].y,c.x,c.y)-(ai.type.range))<=Math.Abs(distance(ai.x,ai.y,c.x,c.y)-(ai.type.range)))
+		 {
+			((LimitedSpaces)(ai.type.movement)).Move(possibleMoves[closestIndex]);			 
+		 }
+			 
+		 }
 	}
 	public CharacterCharacter getHighestThreat()
 	{
 		int highIndex = 0;
-		for(int i = 0; i < ratio.Length -1; i++){
+		for(int i = 0; i < ratio.Length; i++){
 			if( ratio[i] >ratio[highIndex])
 				highIndex = i;
 		}
@@ -85,7 +96,7 @@ public class ThreatDetermination : MonoBehaviour {
 		int x = (x2-x1)*(x2-x1);
 		int y = (y2-y1)*(y2-y1);
 		
-		return Mathf.Sqrt(x+y);
+		return Math.Sqrt(x+y);
 	}
 	
 	List<CharacterCharacter> inRange(int x, int y, float range, CharacterCharacter host)
@@ -109,6 +120,23 @@ public class ThreatDetermination : MonoBehaviour {
 			}
 		}
 		return charTargets;
+	}
+	
+	public void useStrongestAbility(CharacterCharacter user, CharacterCharacter target)
+	{
+		Ability abilityToUse=null;
+		foreach(Ability a in user.specialAbilities)
+		{
+			if(a.ultimate==true&&a.cooldownTimer<=0)
+				abilityToUse=a;
+		}
+		
+		while(abilityToUse==null||abilityToUse.cooldownTimer>0)
+		{
+			abilityToUse=user.specialAbilities[(int)UnityEngine.Random.Range(0,user.specialAbilities.Length-1)];
+		}
+		
+		abilityToUse.AIUse(target);
 	}
 	
 }

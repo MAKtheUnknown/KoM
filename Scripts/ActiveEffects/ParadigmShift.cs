@@ -41,6 +41,7 @@ public class ParadigmShift : ActiveEffect {
 		OldTile();
 		NewTile();
 		lastTile = base.subject.tile;
+		base.turnsLeft++;
 	}
 
 	public override void Finish()

@@ -75,4 +75,44 @@ public class ElixirOfLife : CharachterTargeter  {
 
 	}
 	
+	public override void AIUse(CharacterCharacter target)
+	{
+		int count=0;
+		
+		chance = (int)Random.Range(1,4);
+		charachterTargets= new List<CharacterCharacter>();
+		foreach(CharacterCharacter c in base.GetAllTargetsInRange(specs.owner.x,specs.owner.y,specs.range))
+		{
+			if(c.team==specs.owner.team&&count<numberOfTargets)
+			{
+				charachterTargets.Add(c);
+				count++;
+			}
+		}
+		
+		foreach (CharacterCharacter c in charachterTargets) 
+		{
+			if(chance==1)
+			{
+				c.activeEffects.Add(new ElixirHealth(c));					
+			}
+			else if (chance==2)
+			{
+				c.activeEffects.Add(new ElixirDamage(c));					
+			}
+			else if (chance==3)
+			{
+				c.activeEffects.Add(new ElixirSpeed(c));					
+			}
+			else
+			{
+				c.activeEffects.Add(new ElixirDefense(c));					
+			}
+		}
+		
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
+	}
+	
 }

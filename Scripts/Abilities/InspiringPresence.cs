@@ -40,6 +40,7 @@ public class InspiringPresence : CharachterTargeter  {
 
 	public override void Use()
 	{
+		range=1;
 		foreach (CharacterCharacter c in specs.owner.team.pieces) 
 		{
 			int rsqrd = (int)(range * range);
@@ -61,6 +62,7 @@ public class InspiringPresence : CharachterTargeter  {
 	
 	public override bool Available()
 	{
+		range=1;
 		bool found=false;
 		foreach (CharacterCharacter c in specs.owner.team.pieces) 
 		{
@@ -75,5 +77,10 @@ public class InspiringPresence : CharachterTargeter  {
 		}
 		return found;
 		
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		this.Use();
 	}
 }

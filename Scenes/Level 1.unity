@@ -832,6 +832,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 136498381}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &143845060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 143845061}
+  - component: {fileID: 143845062}
+  m_Layer: 0
+  m_Name: Threat Determination
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &143845061
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 143845060}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.665401, y: 3.102465, z: 29.131227}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 236691727}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &143845062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 143845060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd508f48f97e2843ac625d06dfc63fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &187176232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,6 +1154,7 @@ Transform:
   m_Children:
   - {fileID: 2124415772}
   - {fileID: 1500078926}
+  - {fileID: 143845061}
   m_Father: {fileID: 691831152}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3083,7 +3124,6 @@ MonoBehaviour:
   teams: {fileID: 0}
   highlighter: {fileID: 0}
   ui: {fileID: 0}
-  uiCameraPosition: {x: 0, y: 0}
 --- !u!4 &691831152
 Transform:
   m_ObjectHideFlags: 0
@@ -3517,7 +3557,7 @@ MonoBehaviour:
   maximumHealth: 14
   attack: 4
   defense: 5
-  range: 1
+  range: 2
   moves: 10
   maxXP: 55
   morale: 100
@@ -3993,7 +4033,7 @@ MonoBehaviour:
   maximumHealth: 14
   attack: 4
   defense: 5
-  range: 1
+  range: 2
   moves: 10
   maxXP: 55
   morale: 100
@@ -6557,6 +6597,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114007097359125990, guid: 31e2182c72867e14ebb40a87f6e62557,
+        type: 2}
+      propertyPath: numberOfTargets
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114007097359125990, guid: 31e2182c72867e14ebb40a87f6e62557,
+        type: 2}
+      propertyPath: targetsToAquire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114007097359125990, guid: 31e2182c72867e14ebb40a87f6e62557,
+        type: 2}
+      propertyPath: range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114007097359125990, guid: 31e2182c72867e14ebb40a87f6e62557,
+        type: 2}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31e2182c72867e14ebb40a87f6e62557, type: 2}
   m_IsPrefabParent: 0
@@ -6610,7 +6670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7741dc49b9f13e049bce2e31d38df389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   name: Team B
   pieces: []
   map: {fileID: 0}

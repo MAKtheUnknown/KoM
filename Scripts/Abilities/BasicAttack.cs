@@ -41,6 +41,7 @@ public class BasicAttack : CharachterTargeter {
 	public override void Use()
 	{
 		damage=specs.attack;
+		range=specs.range;
 		if (targetsAquired == false) 
 		{
 			base.GetEnemyTargets(specs.owner.x, specs.owner.y, range, specs.owner.team);
@@ -57,5 +58,28 @@ public class BasicAttack : CharachterTargeter {
 			cooldownTimer=cooldown;
 		}
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		int count=0;
+		charachterTargets= new List<CharacterCharacter>();
+		foreach(CharacterCharacter c in base.GetTargetsInRange(specs.owner.x,specs.owner.y,specs.range))
+		{
+			if(c!=null&c.team!=specs.owner.team&&count<numberOfTargets)
+			{
+				charachterTargets.Add(c);
+				count++;
+			}
+		}
+		
+		
+		foreach (CharacterCharacter t in charachterTargets) 
+		{
+			t.damage (damage);
+		}
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
 	}
 }

@@ -25,7 +25,7 @@ public class Stalwart : ActiveEffect  {
 
 	public override void Act()
 	{
-		
+		base.turnsLeft++;
 	}
 
 	public override void Finish()

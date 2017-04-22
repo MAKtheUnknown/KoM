@@ -34,6 +34,7 @@ public class Healing : CharachterTargeter {
 
 	public override void Use()
 	{
+		range=specs.range;
 		addedHealth= specs.attack*2;
 		if (targetsAquired == false) 
 		{
@@ -51,5 +52,42 @@ public class Healing : CharachterTargeter {
 			cooldownTimer=cooldown;
 		}
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		int count =0;
+		addedHealth= specs.attack*2;
+		range=specs.range;
+			
+		foreach(CharacterCharacter c in base.GetTargetsInRange(specs.owner.x,specs.owner.y,specs.range))
+		{
+			if(c.team==specs.owner.team&&count<numberOfTargets)
+			{
+				charachterTargets.Add(c);
+				count++;
+			}
+			else
+			{
+				foreach(CharacterCharacter c2 in charachterTargets)
+				{
+					if(c.team==specs.owner.team&&c.currentHP<c2.currentHP)
+					{
+						charachterTargets.Remove(c2);
+						charachterTargets.Add(c);
+						break;
+					}
+				}
+			}
+		}
+		
+		foreach (CharacterCharacter t in charachterTargets) 
+		{
+			t.heal (addedHealth);
+		}
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
+		
 	}
 }

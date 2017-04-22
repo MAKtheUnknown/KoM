@@ -27,6 +27,7 @@ public class Martyr : ActiveEffect {
 
 	public override void Act()
 	{
+		base.turnsLeft++;
 	}
 
 	public override void Finish()

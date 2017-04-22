@@ -39,6 +39,7 @@ public class GuardianAngel : CharachterTargeter  {
 
 	public override void Use()
 	{
+		range=specs.range;
 		if (targetsAquired == false) 
 		{
 			base.GetTargets(specs.owner.x, specs.owner.y, range);
@@ -55,6 +56,42 @@ public class GuardianAngel : CharachterTargeter  {
 			cooldownTimer=cooldown;
 		}
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		range=specs.range;
+		int count =0;
+			
+		foreach(CharacterCharacter c in base.GetTargetsInRange(specs.owner.x,specs.owner.y,specs.range))
+		{
+			if(c.team==specs.owner.team&&count<numberOfTargets)
+			{
+				charachterTargets.Add(c);
+				count++;
+			}
+			else
+			{
+				foreach(CharacterCharacter c2 in charachterTargets)
+				{
+					if(c.team==specs.owner.team&&c.currentHP<c2.currentHP)
+					{
+						charachterTargets.Remove(c2);
+						charachterTargets.Add(c);
+						break;
+					}
+				}
+			}
+		}
+		
+		foreach (CharacterCharacter c in charachterTargets) 
+		{
+			c.activeEffects.Add(new Guarded(c));
+		}
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
+		
 	}
 	
 }

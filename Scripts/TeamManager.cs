@@ -8,6 +8,7 @@ public class TeamManager : MonoBehaviour {
 
 	public TileArrangement map;
 	public Team[] teams;
+	ThreatDetermination threatDet;
 	
 	int turn;
 
@@ -15,6 +16,7 @@ public class TeamManager : MonoBehaviour {
 	{
 		map = this.GetComponentInParent<TileArrangement> ();
 		teams = this.GetComponentsInChildren<Team> ();
+		threatDet = this.GetComponentInChildren<ThreatDetermination>();
 	}
 
 	// Use this for initialization
@@ -100,6 +102,15 @@ public class TeamManager : MonoBehaviour {
 			}
 		}
 		
+		if(teams[turn].type==Team.PlayerType.computer)
+		{
+			foreach(CharacterCharacter c in teams[turn].pieces)
+			{
+				threatDet.Threat(c);
+			}
+			rotate();
+		}
+		
 		
 		
 		
@@ -162,7 +173,8 @@ public class TeamManager : MonoBehaviour {
 				
 				foreach(CharacterCharacter p in t.pieces)
 				{
-					GameObject.Destroy (p.gameObject);
+					if(p!=null)
+						GameObject.Destroy (p.gameObject);
 				}
 			}
 			

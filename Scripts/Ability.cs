@@ -21,6 +21,8 @@ public abstract class Ability : MonoBehaviour
 
 	public abstract void Use();
 	
+	public abstract void AIUse(CharacterCharacter target);
+	
 	//virtual means that it is implemented, but can still be overridden
 	public virtual bool Available()
 	{

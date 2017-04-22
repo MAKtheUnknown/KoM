@@ -42,6 +42,8 @@ public class HolySmite : CharachterTargeter {
 	public override void Use()
 	{
 		damage=specs.attack;
+		range=specs.range;
+		damage=specs.attack;
 		if (targetsAquired == false) 
 		{
 			base.GetEnemyTargets(specs.owner.x, specs.owner.y, range, specs.owner.team);
@@ -59,5 +61,32 @@ public class HolySmite : CharachterTargeter {
 			cooldownTimer=cooldown;
 		}
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		damage=specs.attack;
+		range=specs.range;
+		int count=0;
+		charachterTargets= new List<CharacterCharacter>();
+		foreach(CharacterCharacter c in base.GetTargetsInRange(specs.owner.x,specs.owner.y,specs.range))
+		{
+			if(c.team!=specs.owner.team&&count<numberOfTargets)
+			{
+				charachterTargets.Add(c);
+				count++;
+			}
+		}
+		
+		
+		foreach (CharacterCharacter t in charachterTargets) 
+		{
+			t.damage(t.currentHP*.3);
+			t.damage (damage);
+		}
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
+		
 	}
 }

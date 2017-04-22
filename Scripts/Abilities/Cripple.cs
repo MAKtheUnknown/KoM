@@ -6,7 +6,8 @@ public class Cripple : CharachterTargeter
 {
 
 	ClassSpecifications specs;
-	public int damage;
+	int damage;
+	public int extraDamage;
 	public int range;
 
 	// Use this for initialization
@@ -34,7 +35,8 @@ public class Cripple : CharachterTargeter
 
 	public override void Use()
 	{
-		damage=1;
+		damage=specs.attack;
+		range=specs.range;
 		if (targetsAquired == false) 
 		{
 			base.GetEnemyTargets(specs.owner.x, specs.owner.y, range, specs.owner.team);
@@ -43,7 +45,7 @@ public class Cripple : CharachterTargeter
 		{
 			foreach (CharacterCharacter c in charachterTargets) 
 			{
-				c.damage (damage);
+				c.damage (damage+extraDamage);
 				c.activeEffects.Add(new Slowed(c));
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
@@ -52,6 +54,17 @@ public class Cripple : CharachterTargeter
 			cooldownTimer=cooldown;
 		}
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		damage=specs.attack;
+		range=specs.range;
+		target.damage (damage+extraDamage);
+		target.activeEffects.Add(new Slowed(target));
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;		
 	}
 
 }

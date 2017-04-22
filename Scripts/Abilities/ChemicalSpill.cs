@@ -46,6 +46,7 @@ public class ChemicalSpill : TileTargeter  {
 
 	public override void Use()
 	{
+		range=specs.range;
 		damage=specs.attack/3.0;
 		if (targetsAquired == false) 
 		{
@@ -65,5 +66,23 @@ public class ChemicalSpill : TileTargeter  {
 		}
 		
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		damage=specs.attack+3;
+		range=specs.range;
+		tileTargets= new List<TileAttributes>();
+		tileTargets.Add(target.tile);
+		base.GetFullTargets(size);
+		foreach(TileAttributes t in fullTileTargets)
+		{
+			t.tileEffects.Add(new Poisoned(t,specs.owner, damage));
+		}
+		
+		
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
 	}
 }
