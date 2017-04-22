@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="4">
+   <npc name="" entries="1">
+      <speach>The druids, keepers of the relics, were so affected by the leaking hatred of the relics that their keeper, Wynston Griffith, committed a massacre that clamied half of the lives of the druids still reaming in Aldurnia.</speach>
+</npc>
+	  <npc name = "" entries ="1">
+	  <speach>A few isolated, lesser events later, the few that remained drew the connection between the relics and the recent tradgedies and worked to develop techniques to prevent hatred from consuming them.</speach>
+</npc>
+	  <npc name = "" entries ="1">
+      <speach>Eventually, they decided that the best way to protect the relics was to split them up among themselves and disperse them throughout the land.</speach>
+</npc>
+	  <npc name = "" entries ="1">
+	  <speach>In this way, the leakage would not be as concentrated and they would not be tempted, or able, to kill one another..... or so they thought.</speach>
+   </npc>
+</npcs>
