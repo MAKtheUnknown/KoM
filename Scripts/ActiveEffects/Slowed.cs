@@ -13,10 +13,28 @@ public class Slowed : ActiveEffect
 	{
 		Init(c, 1);
 	}
+	
+	public Slowed (CharacterCharacter c, int r)
+	{
+		Init(c, r);
+	}
+	
+	public Slowed (CharacterCharacter c, int rounds, int reduction)
+	{
+		Init(c, rounds, reduction);
+	}
+
 
 	public new void Init(CharacterCharacter c, int rounds)
 	{
 		base.Init (c, rounds);
+		((LimitedSpaces)(c.type.movement)).timeToMove-=movementReduction;
+	}
+	
+	public void Init(CharacterCharacter c, int rounds, int reduction)
+	{
+		base.Init (c, rounds);
+		movementReduction=reduction;
 		((LimitedSpaces)(c.type.movement)).timeToMove-=movementReduction;
 	}
 

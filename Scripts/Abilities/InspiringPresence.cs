@@ -2,11 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class InspiringPresence : CharachterTargeter  {
+public class InspiringPresence : Ability  {
 
 	public ClassSpecifications specs;
 
 	public float range;
+	TileArrangement map;
 
 	// Use this for initialization
 	public override void Start () 
@@ -14,12 +15,6 @@ public class InspiringPresence : CharachterTargeter  {
 		name = "Inspiring Presence";
 		specs = GetComponentInParent<ClassSpecifications> ();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
-		targets = new List<TileAttributes> ();
-		charachterTargets = new List<CharacterCharacter> ();
-		targetsAquired = false;
-		targetsToAquire = numberOfTargets;
-		GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
-		base.Start ();
 	}
 	
 	// Update is called once per frame

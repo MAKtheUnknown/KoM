@@ -138,6 +138,53 @@ public abstract class CharachterTargeter : Ability {
 			instructionLabel.text = "";
 		}
 	}
+	//doesn't include self
+	public void GetOtherAllyTargets(int x, int y, float range, Team team)
+	{
+		List<CharacterCharacter> inRange = GetTargetsInRange (x, y, range);
+		
+		foreach (GameObject g in GameObject.FindGameObjectsWithTag("Possible Move Highlighters")) 
+		{
+			GameObject.Destroy (g);
+		}
+		map.highlighter.mode = Highlighter.SelectionMode.SELECT_TARGETS;
+		if (instructionLabel.text.Equals ("Select " + targetsToAquire + "pieces.") == false) 
+		{
+			GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
+		}
+		instructionLabel.text = "Select " + targetsToAquire + " pieces.";
+
+		if (targets.Count > 0) 
+		{
+			TileAttributes t = targets [0];
+			if (t.containedCharacter != null) 
+			{
+				if (inRange.Contains (t.containedCharacter)&&t.containedCharacter.team==team) 
+				{
+					charachterTargets.Add (t.containedCharacter);
+					targetsToAquire--;
+				}
+				else
+				{
+					map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+					instructionLabel.text = "";
+				}
+			}
+			else 
+			{
+				instructionLabel.text = "";
+				map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+			}
+			targets.Remove (t);
+		}
+
+		if (targetsToAquire <= 0) 
+		{
+			targetsAquired = true;
+			instructionLabel.text = "";
+		}
+	}
+		
 	
 	public void GetEnemyTargets(int x, int y, float range, Team team)
 	{
@@ -184,6 +231,8 @@ public abstract class CharachterTargeter : Ability {
 			instructionLabel.text = "";
 		}
 	}
+	
+	//Following are use to find possible targets
 	public List<CharacterCharacter> GetTargetsInRange(int x, int y, float range)
 	{
 		List<CharacterCharacter> charTargets = new List<CharacterCharacter> ();

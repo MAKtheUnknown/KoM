@@ -53,6 +53,8 @@ public class CharacterCharacter : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
+		if(type.type==ClassSpecifications.CharacterType.Hero)
+			((IncomprehensibleRage)passive).Check();
 		//while (true) {
 		//}
 		if(lastTile!=tile&&type.type==ClassSpecifications.CharacterType.Alchemist)
@@ -175,12 +177,18 @@ public class CharacterCharacter : MonoBehaviour
 			}
 		}
 	}
+	
+	public void heal(double d)
+	{
+		heal((int)d);
+	}
 
 	public void kill()
 	{
 		//Remove this if statement if we Finish/Remove active effects after a character dies
 		
 		team.TeamDamage(this.type.morale); 
+		team.activePieces--;
 		x=-500;
 		y=-500;
 		tile=null;

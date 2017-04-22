@@ -207,6 +207,10 @@ public class Highlighter : MonoBehaviour {
 			break;
 		case SelectionMode.USE_ABILITY:
 			abilityInUse.Use();
+				foreach (GameObject g in possibleMoveHighlighters) 
+				{
+					GameObject.Destroy (g);
+				}
 			break;
 		case SelectionMode.SELECT_TARGETS:
 			abilityInUse.Use ();

@@ -161,6 +161,12 @@ public class TeamManager : MonoBehaviour {
 			c.activeEffects.Add(c.passive);
 		}
 		
+		if(c.type.type==ClassSpecifications.CharacterType.Hero)
+		{
+			c.passive = new IncomprehensibleRage(c);
+			c.activeEffects.Add(c.passive);
+		}
+		
 	}
 	
 	public void RemoveTeam(Team selectedTeam) //Sets selectedTeam's type to "dead"

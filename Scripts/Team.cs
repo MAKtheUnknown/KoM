@@ -19,6 +19,8 @@ public class Team : MonoBehaviour {
 	
 	public float maxMorale;
 	
+	public int activePieces;
+	
 	public GameObject moraleBar; // Morale bar corresponding to team
 	
 	public GameObject moraleText;// Morale text corresponding to team
@@ -32,6 +34,7 @@ public class Team : MonoBehaviour {
 		map = this.GetComponentInParent<TileArrangement> ();
 		manager = this.GetComponentInParent<TeamManager> ();
 		pieces = this.GetComponentsInChildren<CharacterCharacter> ();
+		activePieces=pieces.Length;
 	}
 
 	// Use this for initialization
