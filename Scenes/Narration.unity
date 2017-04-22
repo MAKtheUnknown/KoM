@@ -328,7 +328,7 @@ MonoBehaviour:
   - Xander
   - Lucius
   - 
-  Source: Assets/chat.xml
+  Source: Assets/narration.xml
 --- !u!81 &746194787
 AudioListener:
   m_ObjectHideFlags: 0

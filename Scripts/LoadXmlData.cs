@@ -17,7 +17,8 @@ public class LoadXmlData : MonoBehaviour
 	int npcNum;
 	int showData;
 	string [] data;
-	string [] NpcName;
+	public string [] NpcName;
+	public string Source;
 	//simple gui to show read data
 	public void OnGUI()
 	{
@@ -33,7 +34,7 @@ public class LoadXmlData : MonoBehaviour
 			GUI.Label(new Rect(20,Screen.height-120,200,20), NpcName[showData],nameStyle);
 			GUI.Box(new Rect(20,Screen.height-100,Screen.width-40,60), data[showData],style);
 
-			if(GUI.Button(new Rect(Screen.width/2 -40,Screen.height-20,100,20),"Next"))
+			if(GUI.Button(new Rect(((Screen.width-80)/2) ,Screen.height-20,100,20),"Next"))
 			{
 				//Debug.Log(showData);
 				//Debug.Log(data[showData]);
@@ -58,7 +59,7 @@ public class LoadXmlData : MonoBehaviour
 		data = null;
 
 		//readxml from chat.xml in project folder (Same folder where Assets and Library are in the Editor)
-XmlReader reader = XmlReader.Create("Assets/chat.xml");
+XmlReader reader = XmlReader.Create(Source);
 		//while there is data read it
 		while(reader.Read())
 		{
@@ -68,7 +69,7 @@ XmlReader reader = XmlReader.Create("Assets/chat.xml");
 			//Debug.Log(maxData);
 			//allocate string pointer array
 			data = new string[maxData];
-			NpcName = new string[maxData];
+			//NpcName = new string[maxData];
 			}
 			//when you find a npc tag do this
 			if(reader.IsStartElement("npc"))
@@ -97,13 +98,7 @@ XmlReader reader = XmlReader.Create("Assets/chat.xml");
 			}
 		  
 		}
-	NpcName[0] = "";
-	NpcName[1] = "Lucius";
-	NpcName[2] = "Xander";
-	NpcName[3] = "Lucius";
-	NpcName[4] = "Xander";
-	NpcName[5] = "Lucius";
-	NpcName[6] = "";
+
 						showData=0;
 	}
 }
