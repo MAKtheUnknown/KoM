@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Martyr : ActiveEffect {
+public class Martyr : Passive {
 
 	private Team team;
 	private int moraleDamage;
@@ -30,9 +30,9 @@ public class Martyr : ActiveEffect {
 		base.turnsLeft++;
 	}
 
-	public override void Finish()
+	public override void Check()
 	{
-		if(!done)
+		if(!done&&base.subject.currentHP<=0)
 		{
 			foreach(Team t in team.manager.teams)
 			{

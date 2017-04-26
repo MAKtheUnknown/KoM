@@ -41,7 +41,7 @@ public class Vent : CharachterTargeter  {
 
 	public override void Use()
 	{
-		specs.owner.heal(((IncomprehensibleRage)specs.owner.passive).Reset()*healPerKill*specs.maximumHealth);
+		specs.owner.heal(((IncomprehensibleRage)specs.passive).Reset()*healPerKill*specs.maximumHealth);
 		
 		map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 		Start ();
@@ -51,7 +51,7 @@ public class Vent : CharachterTargeter  {
 	
 	public override bool Available()
 	{
-		return (((IncomprehensibleRage)specs.owner.passive).getAttackBonus()>0);
+		return (((IncomprehensibleRage)specs.passive).getAttackBonus()>0);
 	}
 	
 	public override void AIUse(CharacterCharacter target)

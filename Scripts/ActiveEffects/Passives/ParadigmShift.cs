@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ParadigmShift : ActiveEffect {
+public class ParadigmShift : Passive {
 
 	private TileAttributes lastTile;
 	
@@ -35,20 +35,16 @@ public class ParadigmShift : ActiveEffect {
 		NewTile();
 		specs=c.type;
 	}
-
-	public override void Act()
-	{
-		OldTile();
-		NewTile();
-		lastTile = base.subject.tile;
-		base.turnsLeft++;
-	}
-
-	public override void Finish()
-	{
-		
-	}
 	
+	public override void Check()
+	{
+		if(lastTile.type!=base.subject.tile.type)
+		{
+			OldTile();
+			NewTile();
+			lastTile = base.subject.tile;
+		}		
+	}
 	void OldTile()
 	{
 		if(lastTile.type==TileAttributes.TileType.mountains)

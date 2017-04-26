@@ -138,33 +138,33 @@ public class TeamManager : MonoBehaviour {
 	{
 		if(c.type.type==ClassSpecifications.CharacterType.Swordsman)
 		{
-			c.passive = new Stalwart(c);
-			c.activeEffects.Add(c.passive);
+			c.type.passive = new Stalwart(c);
+			c.activeEffects.Add(c.type.passive);
 		}
 		
 		if(c.type.type==ClassSpecifications.CharacterType.Alchemist)
 		{
-			c.passive = new ParadigmShift(c);
-			c.activeEffects.Add(c.passive);
+			c.type.passive = new ParadigmShift(c);
+			c.activeEffects.Add(c.type.passive);
 			
 		}
 		
 		if(c.type.type==ClassSpecifications.CharacterType.Bard)
 		{
-			c.passive = new RisingTempo(c);
-			c.activeEffects.Add(c.passive);
+			c.type.passive = new RisingTempo(c);
+			c.activeEffects.Add(c.type.passive);
 		}
 		
 		if(c.type.type==ClassSpecifications.CharacterType.Priest)
 		{
-			c.passive = new Martyr(c);
-			c.activeEffects.Add(c.passive);
+			c.type.passive = new Martyr(c);
+			c.activeEffects.Add(c.type.passive);
 		}
 		
 		if(c.type.type==ClassSpecifications.CharacterType.Hero)
 		{
-			c.passive = new IncomprehensibleRage(c);
-			c.activeEffects.Add(c.passive);
+			c.type.passive = new IncomprehensibleRage(c);
+			c.activeEffects.Add(c.type.passive);
 		}
 		
 	}

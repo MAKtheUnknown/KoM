@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RisingTempo : ActiveEffect {
+public class RisingTempo : Passive {
 
 	private int turnCounter;
 
@@ -41,8 +41,7 @@ public class RisingTempo : ActiveEffect {
 			}
 		}
 	}
-
-	public override void Finish()
+	public override void Check()
 	{
 		
 	}

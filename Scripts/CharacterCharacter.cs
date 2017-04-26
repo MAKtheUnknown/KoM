@@ -19,8 +19,6 @@ public class CharacterCharacter : MonoBehaviour
 	public Team team;
 
 	public Ability[] specialAbilities;
-	
-	public ActiveEffect passive;
 
 	public ClassSpecifications type; 
 
@@ -29,7 +27,7 @@ public class CharacterCharacter : MonoBehaviour
 	public List<ActiveEffect> activeEffects;
 	
 	//used to detect terrain changes
-	TileAttributes lastTile;
+	public TileAttributes lastTile;
 
 	public int x;
 	public int y;
@@ -53,26 +51,6 @@ public class CharacterCharacter : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		if(type.type==ClassSpecifications.CharacterType.Hero)
-			((IncomprehensibleRage)passive).Check();
-		//while (true) {
-		//}
-		if(lastTile!=tile&&type.type==ClassSpecifications.CharacterType.Alchemist)
-		{
-			passive.Act();
-			lastTile=tile;
-		}
-		//Note: These are not currently working. Can't update after gameObject destoryed? (probably) Added death-based conditions to kill method
-		if(currentHP==0&&type.type==ClassSpecifications.CharacterType.Priest)
-		{
-			passive.Finish();
-			currentHP=-1;
-		}
-		if(currentHP==0&&type.type==ClassSpecifications.CharacterType.Swordsman)
-		{
-			passive.Finish();
-			currentHP=-1;
-		}
 			
 	}
 
@@ -198,6 +176,7 @@ public class CharacterCharacter : MonoBehaviour
 		//{
 		//	a.Finish();
 		//}
+		type.passive.Check();
 		GameObject.Destroy (this.gameObject);
 		/*if(type.type==ClassSpecifications.CharacterType.Priest)
 		{

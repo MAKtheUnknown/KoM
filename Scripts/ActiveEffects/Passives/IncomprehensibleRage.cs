@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class IncomprehensibleRage : ActiveEffect {
+public class IncomprehensibleRage : Passive {
 	
 	int attackBonus=0;
 	int attackPerKill=3;
@@ -16,7 +16,7 @@ public class IncomprehensibleRage : ActiveEffect {
 		Init (c);
 	}
 	
-	public void Check()
+	public override void Check()
 	{
 		if(specs.owner.usedAbility!=justUsed)//Has an ability been used and passive hasn't activated yet?
 		{

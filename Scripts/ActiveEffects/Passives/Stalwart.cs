@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Stalwart : ActiveEffect  {
+public class Stalwart : Passive  {
 
 	private double changeInDefense=.15;
 	bool done =false;
@@ -21,11 +21,6 @@ public class Stalwart : ActiveEffect  {
 	{
 		base.Init (c, rounds);
 		c.team.teamDefense+=changeInDefense;
-	}
-
-	public override void Act()
-	{
-		base.turnsLeft++;
 	}
 
 	public override void Finish()
