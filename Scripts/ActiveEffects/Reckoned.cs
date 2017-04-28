@@ -24,6 +24,7 @@ public class Reckoned : ActiveEffect {
 		else
 			changeInDefense=10;
 		c.type.defense-=changeInDefense;
+		type=ActiveEffect.EffectType.debuff;
 	}
 
 	public override void Act()

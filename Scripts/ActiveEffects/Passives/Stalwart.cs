@@ -22,15 +22,14 @@ public class Stalwart : Passive  {
 		base.Init (c, rounds);
 		c.team.teamDefense+=changeInDefense;
 	}
-	public override void Check()
+	public override void Activate()
 	{
-		if(base.subject.currentHP==0)
-		{
-			if(!done)
-			{
-				subject.team.teamDefense-=changeInDefense;
-				done=true;
-			}			
-		}
+		subject.team.teamDefense-=changeInDefense;
+		done=true;
+	}
+	
+	public override bool Condition()
+	{
+		return base.subject.currentHP==0&&!done;
 	}
 }

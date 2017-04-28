@@ -2,39 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BardLinked : ActiveEffect {
-	private List<CharacterCharacter> linked= new List<CharacterCharacter>();
+public class BardLinked : ContinuousEffect {
+	private List<CharacterCharacter> linked;
+	int[] currentHP;
+	CharacterCharacter user;
 
-
-	public BardLinked(CharacterCharacter c, List<CharacterCharacter> l)
+	/**c is the one linked, l are the units to whom c is linked, u is caster of effect**/
+	public BardLinked(CharacterCharacter u, List<CharacterCharacter> l)
 	{
-		Init (c, l);
+		Init (u, l);
 	}
 
-	public void Init(CharacterCharacter c, List<CharacterCharacter> l)
+	public void Init(CharacterCharacter u, List<CharacterCharacter> l)
 	{
-		this.Init (c, l,3);
+		this.Init (u, l,3);
 	}
 
-	public void Init(CharacterCharacter c, List<CharacterCharacter> l, int rounds)
+	public void Init(CharacterCharacter u, List<CharacterCharacter> l, int rounds)
 	{
-		base.Init (c, rounds);
+		base.Init (l[0], rounds);
 		linked=l;
-			foreach(CharacterCharacter d in linked)
-			{
-				foreach(CharacterCharacter t in linked)
-				{
-					if(t!=d)
-						d.bardLinked.Add(t);
-				}
-			}
+		user = u;
+		currentHP=new int[l.Count];
 	}
 
 	public override void Act()
 	{	
-		bool active=true;
 		base.turnsLeft++;
-		foreach(Ability a in subject.type.classAbilities)
+		foreach(Ability a in user.specialAbilities)
 		{
 			if(a.ultimate==true)
 				a.cooldownTimer++;
@@ -43,42 +38,83 @@ public class BardLinked : ActiveEffect {
 		{
 			if(c==null)
 			{
-				active=false;
+				Finish();
+				break;
 			}
 		}
-		if(!active)
-		{
-			this.Finish();
-		}
-		
-		
-			
 	}
 
 	public override void Finish()
 	{
-		
-		foreach(Ability a in subject.type.classAbilities)
+		if(user!=null)
 		{
-			if(a.ultimate==true)
-				a.cooldownTimer--;
-		}
-		foreach(CharacterCharacter c in linked)
+			foreach(Ability a in user.specialAbilities)
 			{
-				foreach(CharacterCharacter t in c.bardLinked)
-				{
-					foreach(CharacterCharacter d in linked)
-					{
-						bool occured=false;
-						if(t.bardLinked.Contains(d)&&occured==false)
-						{
-							t.bardLinked.Remove(d);
-							occured=true;
-						}
-						
-					}
-				}
-					
+				if(a.ultimate==true)
+					a.cooldownTimer=3;
 			}
+			
+		}
+	}
+	
+	public override bool Condition()
+	{
+		return currentHP==CurrentHealth();
+	}
+	
+	public override void Activate()
+	{
+		int[] updatedHealth = CurrentHealth();
+		int[] changeInHealth= new int[updatedHealth.Length];
+		for(int i = 0; i<changeInHealth.Length;i++)
+		{
+			changeInHealth[i]=currentHP[i]-updatedHealth[i];
+		}
+		for(int i = 0; i<changeInHealth.Length;i++)
+		{
+			DamageOthers(linked[i],changeInHealth[i]);
+		}
+		currentHP=updatedHealth;
+		
+		for(int i = 0; i<currentHP.Length;i++)
+		{
+			if(currentHP[i]==0)
+			{
+				Finish();
+				base.subject.activeEffects.Remove(this);
+				break;
+			}
+		}
+	}
+	
+	public int[] CurrentHealth()
+	{
+		int[] updatedHealth= new int[linked.Count];
+		for(int i = 0; i<linked.Count; i++)
+		{
+			updatedHealth[i]=linked[i].currentHP;
+		}
+		return updatedHealth;
+	}
+	
+	public void DamageOthers(CharacterCharacter t, int d)
+	{
+		if(d>0) //when damage has been done
+		{
+			foreach(CharacterCharacter c in linked)
+			{
+				if(c!=t)
+					c.damage(d);				
+			}
+		}
+			
+		if(d<0)
+		{
+			foreach(CharacterCharacter c in linked)
+			{
+				if(c!=t)
+					c.heal(-d);				
+			}
+		}
 	}
 }

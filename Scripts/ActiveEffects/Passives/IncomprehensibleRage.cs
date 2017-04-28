@@ -16,17 +16,20 @@ public class IncomprehensibleRage : Passive {
 		Init (c);
 	}
 	
-	public override void Check()
+	public override bool Condition()
 	{
-		if(specs.owner.usedAbility!=justUsed)//Has an ability been used and passive hasn't activated yet?
-		{
+		return specs.owner.usedAbility!=justUsed;
+	}
+	
+	public override void Activate()
+	{
 			if(remainingEnemies!=this.CurrentEnemyCount())
 			{
 				this.OnKill();
 				remainingEnemies=this.CurrentEnemyCount();
 			}
 			justUsed=true;
-		}
+		
 	}
 
 	public void Init(CharacterCharacter c)

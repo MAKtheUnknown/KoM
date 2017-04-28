@@ -26,6 +26,7 @@ public class Guarded : ActiveEffect {
 		base.Init (c, rounds);
 		changeInDefense=9001;
 		c.type.defense+=changeInDefense;
+		type=ActiveEffect.EffectType.buff;
 	}
 
 	//r is a supposed to a percent (r=.7 := 70% damage reduction)
@@ -34,6 +35,7 @@ public class Guarded : ActiveEffect {
 		base.Init (c, rounds);
 		changeInDefense=(int)(r*50);
 		c.type.defense+=changeInDefense;
+		type=ActiveEffect.EffectType.buff;
 	}
 	
 	//d is the flat increase of a unit's defense
@@ -42,6 +44,7 @@ public class Guarded : ActiveEffect {
 		base.Init (c, rounds);
 		changeInDefense=d;
 		c.type.defense+=changeInDefense;
+		type=ActiveEffect.EffectType.buff;
 	}
 
 	public override void Act()

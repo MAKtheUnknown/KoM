@@ -14,17 +14,19 @@ public class TacticalManeuver : Passive {
 		Init (c);
 	}
 	
-	public override void Check()
+	public override void Activate()
 	{
-		if(specs.owner.usedAbility!=justUsed)//Has an ability been used and passive hasn't activated yet?
+		if(allTeamMorale!=UpdateTeamMorale())
 		{
-			if(allTeamMorale!=UpdateTeamMorale())
-			{
-				this.OnKill(allTeamMorale,UpdateTeamMorale());
-				allTeamMorale=UpdateTeamMorale();
-			}
-			justUsed=true;
+			this.OnKill(allTeamMorale,UpdateTeamMorale());
+			allTeamMorale=UpdateTeamMorale();
 		}
+		justUsed=true;
+	}
+	
+	public override bool Condition()
+	{
+		return specs.owner.usedAbility!=justUsed;
 	}
 
 	public void Init(CharacterCharacter c)

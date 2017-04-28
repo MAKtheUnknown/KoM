@@ -22,6 +22,7 @@ public class Inspired : ActiveEffect {
 		changeInDamage = (int)(c.type.attack*0.1);
 		c.type.attack+=changeInDamage;
 		c.type.defense+=2;
+		type=ActiveEffect.EffectType.buff;
 	}
 
 	public override void Act()

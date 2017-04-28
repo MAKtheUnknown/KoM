@@ -19,6 +19,7 @@ public class Stunned : ActiveEffect {
 	public new void Init(CharacterCharacter c, int rounds)
 	{
 		base.Init (c, rounds);
+		type=ActiveEffect.EffectType.debuff;
 	}
 
 	public override void Act()

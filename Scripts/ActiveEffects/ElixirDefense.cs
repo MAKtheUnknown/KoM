@@ -21,6 +21,7 @@ public class ElixirDefense : ActiveEffect {
 		base.Init (c, rounds);
 		changeInDefense=6;
 		c.type.defense+=changeInDefense;
+		type=ActiveEffect.EffectType.buff;
 	}
 
 	public override void Act()

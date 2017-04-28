@@ -22,6 +22,7 @@ public class ElixirSpeed : ActiveEffect {
 		base.Init (c, rounds);
 		changeInMovement=3;
 		((LimitedSpaces)base.subject.type.movement).timeToMove+=changeInMovement;
+		type=ActiveEffect.EffectType.buff;
 	}
 
 	public override void Act()

@@ -23,7 +23,7 @@ public class ParadigmShift : Passive {
 
 	public void Init(CharacterCharacter c)
 	{
-		this.Init (c, 100);
+		Init (c, 100);
 	}
 
 	public new void Init(CharacterCharacter c, int rounds)
@@ -36,15 +36,18 @@ public class ParadigmShift : Passive {
 		specs=c.type;
 	}
 	
-	public override void Check()
+	public override void Activate()
 	{
-		if(lastTile.type!=base.subject.tile.type)
-		{
-			OldTile();
-			NewTile();
-			lastTile = base.subject.tile;
-		}		
+		OldTile();
+		NewTile();
+		lastTile = base.subject.tile;
+}
+	
+	public override bool Condition()
+	{
+		return lastTile.type!=base.subject.tile.type;
 	}
+	
 	void OldTile()
 	{
 		if(lastTile.type==TileAttributes.TileType.mountains)

@@ -56,7 +56,6 @@ public class ClassSpecifications : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		passive.Check();
 	}
 	
 	public enum CharacterType

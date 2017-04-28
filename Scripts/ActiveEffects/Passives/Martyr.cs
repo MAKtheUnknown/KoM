@@ -30,18 +30,20 @@ public class Martyr : Passive {
 		base.turnsLeft++;
 	}
 
-	public override void Check()
+	public override bool Condition()
 	{
-		if(!done&&base.subject.currentHP<=0)
+		return !done&&base.subject.currentHP<=0;
+	}
+	public override void Activate()
+	{
+		foreach(Team t in team.manager.teams)
 		{
-			foreach(Team t in team.manager.teams)
+			if(t!=team)
 			{
-				if(t!=team)
-				{
-					t.TeamDamage(moraleDamage);
-				}
+				t.TeamDamage(moraleDamage);
 			}
-			done=true;
 		}
+		done=true;
+		
 	}
 }

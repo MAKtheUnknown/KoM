@@ -29,6 +29,7 @@ public class Slowed : ActiveEffect
 	{
 		base.Init (c, rounds);
 		((LimitedSpaces)(c.type.movement)).timeToMove-=movementReduction;
+		type=ActiveEffect.EffectType.debuff;
 	}
 	
 	public void Init(CharacterCharacter c, int rounds, int reduction)

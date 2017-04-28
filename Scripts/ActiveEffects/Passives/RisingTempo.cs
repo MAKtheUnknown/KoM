@@ -41,7 +41,11 @@ public class RisingTempo : Passive {
 			}
 		}
 	}
-	public override void Check()
+	public override bool Condition()
+	{
+		return false;
+	}
+	public override void Activate()
 	{
 		
 	}

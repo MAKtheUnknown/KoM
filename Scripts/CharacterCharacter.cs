@@ -10,7 +10,6 @@ public class CharacterCharacter : MonoBehaviour
 	public int currentXP;
 	public int maxMovesPerTurn;
 	public int movesLeftThisTurn;
-	public List<CharacterCharacter> bardLinked;
 
 	public IDictionary<TileAttributes, int> tilesToMoves; 
 
@@ -37,7 +36,6 @@ public class CharacterCharacter : MonoBehaviour
 		team = GetComponentInParent<Team> ();
 		type = GetComponentInChildren<ClassSpecifications> ();
 		specialAbilities = GetComponentsInChildren<Ability> ();
-		bardLinked = new List<CharacterCharacter>();
 		usedAbility = false;
 		activeEffects = new List<ActiveEffect> ();
 	}
@@ -50,8 +48,9 @@ public class CharacterCharacter : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
-			
+	void Update () 
+	{
+		EffectCheck();
 	}
 
 	public void putOnBoard()
@@ -78,16 +77,6 @@ public class CharacterCharacter : MonoBehaviour
 	void damage(int dmg)
 	{
 		currentHP-=dmg*(100-2*type.defense)/100;
-		if(bardLinked!=null)
-		{
-			foreach(CharacterCharacter c in bardLinked)
-			{
-				if(c!=null)
-				{
-					c.currentHP-=dmg*(100-2*c.type.defense)/200;
-				}
-			}
-		}	
 	}
 	
 	public void HighlightMoves()
@@ -113,21 +102,6 @@ public class CharacterCharacter : MonoBehaviour
 		{
 			this.kill();
 		}
-		
-		if(bardLinked!=null)
-		{	
-			foreach(CharacterCharacter c in bardLinked)
-			{
-				if(c!=null)
-				{
-					c.currentHP-=(int)(d*(100.0-2*c.type.defense)/200);
-					if(c.currentHP <= 0)
-					{
-						c.kill();
-					}
-				}
-			}
-		}
 	
 	}
 
@@ -138,21 +112,6 @@ public class CharacterCharacter : MonoBehaviour
 		if (currentHP > type.maxXP) 
 		{
 			currentHP = type.maxXP;
-		}
-		
-		if(bardLinked!=null)
-		{
-			foreach(CharacterCharacter c in bardLinked)
-			{
-				if(c!=null)
-				{
-					c.currentHP+=h/2;
-					if (c.currentHP > c.type.maxXP) 
-					{
-						c.currentHP = c.type.maxXP;
-					}
-				}
-			}
 		}
 	}
 	
@@ -176,11 +135,17 @@ public class CharacterCharacter : MonoBehaviour
 		//{
 		//	a.Finish();
 		//}
-		type.passive.Check();
+		EffectCheck();
 		GameObject.Destroy (this.gameObject);
 		/*if(type.type==ClassSpecifications.CharacterType.Priest)
 		{
 			passive.Finish();
 		}*/
+	}
+	
+	void EffectCheck()
+	{
+		foreach(ContinuousEffect e in activeEffects)
+			e.Check();
 	}
 }

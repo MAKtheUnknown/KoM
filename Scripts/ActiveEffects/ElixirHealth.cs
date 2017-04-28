@@ -25,6 +25,7 @@ public class ElixirHealth : ActiveEffect {
 		changeInMaxHP=Dround((c.type.maximumHealth*(percentHealthIncrease-1)));
 		c.type.maximumHealth+=changeInMaxHP;
 		c.currentHP=Dround((c.currentHP*percentHealthIncrease));
+		type=ActiveEffect.EffectType.buff;
 	}
 
 	public override void Act()

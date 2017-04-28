@@ -55,8 +55,6 @@ public class TeamManager : MonoBehaviour {
 		
 		List<ActiveEffect> effectsToRemove= new List<ActiveEffect>();
 		//Increments tile effects
-		foreach(TileAttributes t in map.tiles)
-		UpdateTiles(t);
 		turn = (turn+1)%teams.Length;
 		map.highlighter.currentTeam = teams [turn];
 
@@ -92,6 +90,9 @@ public class TeamManager : MonoBehaviour {
 			}
 		}
 		
+		foreach(TileEffect t in teams[turn].tileEffects)
+			UpdateTiles(t);
+		
 		//bolds the active team's text
 		foreach(Team x in teams)
 		{
@@ -116,21 +117,19 @@ public class TeamManager : MonoBehaviour {
 		
 	}
 	
-	void UpdateTiles(TileAttributes t)
+	void UpdateTiles(TileEffect e)
 	{
 		List<TileEffect> tileEffectsToRemove = new List<TileEffect>();
-		foreach(TileEffect e in t.tileEffects)
-			{
-				e.turnsLeft--;
-				e.Act ();
-				if (e.turnsLeft <= 0) 
-				{
-					e.Finish ();
-					tileEffectsToRemove.Add(e);
-				}
-			}
-			foreach(TileEffect e in tileEffectsToRemove)
-				t.tileEffects.Remove(e);
+		e.turnsLeft--;
+		e.Act ();
+		if (e.turnsLeft <= 0) 
+		{
+			e.Finish ();
+			tileEffectsToRemove.Add(e);
+		}
+		
+		foreach(TileEffect t in tileEffectsToRemove)
+			teams[turn].tileEffects.Remove(t);
 	}
 	
 	//adds passives for characters as effects

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public abstract class Passive : ContinuousEffect
+public abstract class ContinuousEffect : ActiveEffect
 {
 	/**
 	 * Initialize the effect with a charachter and a time.
@@ -12,26 +12,19 @@ public abstract class Passive : ContinuousEffect
 
 	/**
 	 * A method that is executed with each round.
-	 */
-	public override void Init(CharacterCharacter c, int rounds)
-	{
-		subject = c;
-		turnsLeft=rounds;
-		type = ActiveEffect.EffectType.passive;
-	}
-	
-	public override void Act()
-	{
-		turnsLeft++;
-	}
-	
+	 */	
 
 	/**
 	 * A method to reset everything once the Effect's time is up;.
 	 */
-	
-	public override void Finish()
+	 
+	public void Check()
 	{
-		
+			if(Condition())
+				Activate();
 	}
+	
+	public abstract bool Condition();
+	
+	public abstract void Activate();
 }

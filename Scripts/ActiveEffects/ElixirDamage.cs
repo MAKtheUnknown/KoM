@@ -23,6 +23,7 @@ public class ElixirDamage : ActiveEffect {
 		percentDamageIncrease=1.3;
 		changeInDamage=(int)(c.type.attack*(percentDamageIncrease-1));
 		c.type.attack+=changeInDamage;
+		type=ActiveEffect.EffectType.buff;
 	}
 
 	public override void Act()

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
@@ -28,6 +29,8 @@ public class Team : MonoBehaviour {
 	public MoraleTextAlign textAlign;//Alignment of text
 	
 	public double teamDefense=0; //defense against morale damage 
+	
+	public List<TileEffect> tileEffects;
 
 	void Awake()
 	{
@@ -40,7 +43,7 @@ public class Team : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
+		tileEffects= new List<TileEffect>();		
 	}
 	
 	

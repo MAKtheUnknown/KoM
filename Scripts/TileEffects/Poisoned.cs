@@ -6,26 +6,25 @@ public class Poisoned : TileEffect {
 	
 	private double DOT;
 
-	public Poisoned(TileAttributes t, CharacterCharacter c, double d)
+	public Poisoned(TileAttributes s, Team t, double d)
 	{
-		Init (t, c, d);
+		Init (s, t, d);
 	}
 
-	public void Init(TileAttributes t, CharacterCharacter c, double d)
+	public void Init(TileAttributes s, Team t, double d)
 	{
-		this.Init (t, c, d, 3);
+		this.Init (s, t, d, 3);
 	}
 
-	public void Init(TileAttributes t, CharacterCharacter c, double d, int rounds)
+	public void Init(TileAttributes s, Team t, double d, int rounds)
 	{
-		base.Init (t, c, rounds);
+		base.Init (s, t, rounds);
 		DOT=d;
-		source=c;
 	}
 
 	public override void Act()
 	{
-		if(base.subject.containedCharacter!=null&&base.subject.containedCharacter.team!=base.source.team)
+		if(base.subject.containedCharacter!=null&&base.subject.containedCharacter.team!=base.source)
 		{
 			base.subject.containedCharacter.damage(DOT);
 		}
