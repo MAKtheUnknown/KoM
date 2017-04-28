@@ -18,6 +18,7 @@ public class TileAttributes : MonoBehaviour {
 
 	/**The charachter occupying the space*/
 	public CharacterCharacter containedCharacter;
+	public List<TileEffect> tileEffects;
 
 	public int x;
 	public int y;
@@ -30,8 +31,8 @@ public class TileAttributes : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () 
-	{
-		
+	{		
+		tileEffects=new List<TileEffect>();
 	}
 	
 	// Update is called once per frame
@@ -64,7 +65,7 @@ public class TileAttributes : MonoBehaviour {
 		
 	}
 
-	public bool spaceIsOdccupied()
+	public bool spaceIsOccupied()
 	{
 		return (containedCharacter != null);
 	}
@@ -76,6 +77,7 @@ public class TileAttributes : MonoBehaviour {
 		hills,
 		mountains,
 		water,
-		trees
+		trees,
+		bridge
 	};
 }

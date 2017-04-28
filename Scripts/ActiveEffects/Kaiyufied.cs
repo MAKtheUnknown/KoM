@@ -21,7 +21,7 @@ public class Kaiyufied : ActiveEffect {
 		base.Init (c, rounds);
 		originalName = c.name;
 		c.name = "Kaiyu";
-		c.team.teamMorale -= 3.0f;
+		c.team.TeamDamage(3.0);
 	}
 
 	public override void Act()

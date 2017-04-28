@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class TileArrangement : MonoBehaviour 
 {
 	/**The 1d array of all tiles. Used temporarily.*/
-	TileAttributes[] tiles;
+	public TileAttributes[] tiles;
 
 	/**The 2d array of all tiles. Set up on Awake().*/
 	public TileAttributes[,] tileMap;
@@ -17,6 +17,10 @@ public class TileArrangement : MonoBehaviour
 	public Highlighter highlighter;
 
 	public GameObject ui;
+	
+	/** Used for ability label: using the map to store its initial position**/
+	//public Vector2 uiCameraPosition;
+	//public float uiCameraSize;
 
 	//The lowest and highest positions of the physical tiles.
 	int lowX = 0;
@@ -39,6 +43,10 @@ public class TileArrangement : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		/**for abilityselector retrieval
+		//uiCameraPosition=GameObject.Find("UI Camera").transform.position;
+		//uiCameraSize=GameObject.Find("UI Camera").GetComponent<Camera>().orthographicSize;
+		**/
 		//start the highlighter somewhere. TODO: make the highlighter start constantly at the bottom leftmost corner.
 		//we currently use tiles[0] for this only because tileMap[0,0] would risk a null entry.
 		highlighter.selectedTile = tiles[0];

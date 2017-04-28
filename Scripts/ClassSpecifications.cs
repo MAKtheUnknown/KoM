@@ -25,13 +25,18 @@ public class ClassSpecifications : MonoBehaviour
 	public int attack;
 	
 	public int defense;
+	
+	public int range;
+	
+	public int moves;
 
 	public int maxXP;
 
 	public int morale;
 
-
-	public 
+	public CharacterType type;
+	
+	public Passive passive;
 
 	void Awake()
 	{
@@ -45,11 +50,20 @@ public class ClassSpecifications : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-
 	}
+	
+	public enum CharacterType
+	{
+		Swordsman,
+		Alchemist,
+		Bard,
+		Priest,
+		Hero,
+	};
 }

@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class CharachterTargeter : MonoBehaviour, Ability {
+public abstract class CharachterTargeter : Ability {
 
 	public TileArrangement map;
-
-	public string name;
-
-	public string description;
 
 	public List<TileAttributes> targets;
 	public List<CharacterCharacter> charachterTargets;
@@ -22,7 +18,7 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 	public Text instructionLabel;
 
 	// Use this for initialization
-	public virtual void Start () 
+	public override void Start () 
 	{
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		targets = new List<TileAttributes> ();
@@ -34,17 +30,17 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 	}
 
 	// Update is called once per frame
-	public void Update () 
+	public override void Update () 
 	{
 
 	}
 
-	public string GetName()
+	public override string GetName()
 	{
 		return name;
 	}
 
-	public string GetDescription()
+	public override string GetDescription()
 	{
 		return description;
 	}
@@ -96,8 +92,148 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 			instructionLabel.text = "";
 		}
 	}
+	
+	public void GetAllyTargets(int x, int y, float range, Team team)
+	{
+		List<CharacterCharacter> inRange = GetAllTargetsInRange (x, y, range);
+		
+		foreach (GameObject g in GameObject.FindGameObjectsWithTag("Possible Move Highlighters")) 
+		{
+			GameObject.Destroy (g);
+		}
+		map.highlighter.mode = Highlighter.SelectionMode.SELECT_TARGETS;
+		if (instructionLabel.text.Equals ("Select " + targetsToAquire + "pieces.") == false) 
+		{
+			GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
+		}
+		instructionLabel.text = "Select " + targetsToAquire + " pieces.";
 
-	List<CharacterCharacter> GetTargetsInRange(int x, int y, float range)
+		if (targets.Count > 0) 
+		{
+			TileAttributes t = targets [0];
+			if (t.containedCharacter != null) 
+			{
+				if (inRange.Contains (t.containedCharacter)&&t.containedCharacter.team==team) 
+				{
+					charachterTargets.Add (t.containedCharacter);
+					targetsToAquire--;
+				}
+				else
+				{
+					map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+					instructionLabel.text = "";
+				}
+			}
+			else 
+			{
+				instructionLabel.text = "";
+				map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+			}
+			targets.Remove (t);
+		}
+
+		if (targetsToAquire <= 0) 
+		{
+			targetsAquired = true;
+			instructionLabel.text = "";
+		}
+	}
+	//doesn't include self
+	public void GetOtherAllyTargets(int x, int y, float range, Team team)
+	{
+		List<CharacterCharacter> inRange = GetTargetsInRange (x, y, range);
+		
+		foreach (GameObject g in GameObject.FindGameObjectsWithTag("Possible Move Highlighters")) 
+		{
+			GameObject.Destroy (g);
+		}
+		map.highlighter.mode = Highlighter.SelectionMode.SELECT_TARGETS;
+		if (instructionLabel.text.Equals ("Select " + targetsToAquire + "pieces.") == false) 
+		{
+			GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
+		}
+		instructionLabel.text = "Select " + targetsToAquire + " pieces.";
+
+		if (targets.Count > 0) 
+		{
+			TileAttributes t = targets [0];
+			if (t.containedCharacter != null) 
+			{
+				if (inRange.Contains (t.containedCharacter)&&t.containedCharacter.team==team) 
+				{
+					charachterTargets.Add (t.containedCharacter);
+					targetsToAquire--;
+				}
+				else
+				{
+					map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+					instructionLabel.text = "";
+				}
+			}
+			else 
+			{
+				instructionLabel.text = "";
+				map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+			}
+			targets.Remove (t);
+		}
+
+		if (targetsToAquire <= 0) 
+		{
+			targetsAquired = true;
+			instructionLabel.text = "";
+		}
+	}
+		
+	
+	public void GetEnemyTargets(int x, int y, float range, Team team)
+	{
+		List<CharacterCharacter> inRange = GetTargetsInRange (x, y, range);
+		
+		foreach (GameObject g in GameObject.FindGameObjectsWithTag("Possible Move Highlighters")) 
+		{
+			GameObject.Destroy (g);
+		}
+		map.highlighter.mode = Highlighter.SelectionMode.SELECT_TARGETS;
+		if (instructionLabel.text.Equals ("Select " + targetsToAquire + "pieces.") == false) 
+		{
+			GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
+		}
+		instructionLabel.text = "Select " + targetsToAquire + " pieces.";
+
+		if (targets.Count > 0) 
+		{
+			TileAttributes t = targets [0];
+			if (t.containedCharacter != null) 
+			{
+				if (inRange.Contains (t.containedCharacter)&&t.containedCharacter.team!=team) 
+				{
+					charachterTargets.Add (t.containedCharacter);
+					targetsToAquire--;
+				}
+				else
+				{
+					map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+					instructionLabel.text = "";
+				}
+			}
+			else 
+			{
+				instructionLabel.text = "";
+				map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
+			}
+			targets.Remove (t);
+		}
+
+		if (targetsToAquire <= 0) 
+		{
+			targetsAquired = true;
+			instructionLabel.text = "";
+		}
+	}
+	
+	//Following are use to find possible targets
+	public List<CharacterCharacter> GetTargetsInRange(int x, int y, float range)
 	{
 		List<CharacterCharacter> charTargets = new List<CharacterCharacter> ();
 
@@ -117,8 +253,29 @@ public abstract class CharachterTargeter : MonoBehaviour, Ability {
 		}
 		return charTargets;
 	}
+	
+	//Included self
+	public List<CharacterCharacter> GetAllTargetsInRange(int x, int y, float range)
+	{
+		List<CharacterCharacter> charTargets = new List<CharacterCharacter> ();
 
-	public virtual void Use()
+		foreach (Team t in map.teams.teams) 
+		{
+			foreach (CharacterCharacter c in t.pieces) 
+			{
+				int rsqrd = (int)(range * range);
+				int dxsqrd = (x - c.x) * (x - c.x);
+				int dysqrd = (y - c.y) * (y - c.y);
+				if (rsqrd >= dxsqrd + dysqrd) 
+				{
+					charTargets.Add (c);
+				}
+			}
+		}
+		return charTargets;
+	}
+
+	public override void Use()
 	{
 		
 	}

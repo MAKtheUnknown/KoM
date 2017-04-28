@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
@@ -7,6 +8,7 @@ public class TeamManager : MonoBehaviour {
 
 	public TileArrangement map;
 	public Team[] teams;
+	ThreatDetermination threatDet;
 	
 	int turn;
 
@@ -14,6 +16,7 @@ public class TeamManager : MonoBehaviour {
 	{
 		map = this.GetComponentInParent<TileArrangement> ();
 		teams = this.GetComponentsInChildren<Team> ();
+		threatDet = this.GetComponentInChildren<ThreatDetermination>();
 	}
 
 	// Use this for initialization
@@ -30,6 +33,14 @@ public class TeamManager : MonoBehaviour {
 		}
 		teams[0].moraleText.GetComponent<Text>().fontStyle=FontStyle.Bold;
 		
+		//Sets passives as active effects for specific classes
+		foreach(Team t in teams)
+		{
+			foreach(CharacterCharacter c in t.pieces)
+			{
+				addPassive(c);
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -41,25 +52,46 @@ public class TeamManager : MonoBehaviour {
 
 	public void rotate()
 	{
+		
+		List<ActiveEffect> effectsToRemove= new List<ActiveEffect>();
+		//Increments tile effects
 		turn = (turn+1)%teams.Length;
 		map.highlighter.currentTeam = teams [turn];
 
 		//prepare all the team's pieces for the new turn.
 		foreach (CharacterCharacter c in teams[turn].pieces) 
 		{
-			c.type.movement.Reset ();
-			c.usedAbility = false;
-			foreach (ActiveEffect e in c.activeEffects) 
+			if(c!=null)
 			{
-				e.turnsLeft--;
-				e.Act ();
-				if (e.turnsLeft <= 0) 
+				c.type.movement.Reset ();
+				c.usedAbility = false;
+
+				foreach (ActiveEffect e in c.activeEffects) 
 				{
-					e.Finish ();
+					e.turnsLeft--;
+					e.Act ();
+					if (e.turnsLeft <= 0) 
+					{
+						e.Finish ();
+						effectsToRemove.Add(e);
+					}
+				}
+				foreach(ActiveEffect e in effectsToRemove)
 					c.activeEffects.Remove (e);
+				effectsToRemove= new List<ActiveEffect>();
+
+				foreach (Ability a in c.type.classAbilities) 
+				{
+					if(a.cooldownTimer > 0) 
+					{
+						a.cooldownTimer--;
+					}
 				}
 			}
 		}
+		
+		foreach(TileEffect t in teams[turn].tileEffects)
+			UpdateTiles(t);
 		
 		//bolds the active team's text
 		foreach(Team x in teams)
@@ -71,8 +103,68 @@ public class TeamManager : MonoBehaviour {
 			}
 		}
 		
+		if(teams[turn].type==Team.PlayerType.computer)
+		{
+			foreach(CharacterCharacter c in teams[turn].pieces)
+			{
+				threatDet.Threat(c);
+			}
+			rotate();
+		}
 		
 		
+		
+		
+	}
+	
+	void UpdateTiles(TileEffect e)
+	{
+		List<TileEffect> tileEffectsToRemove = new List<TileEffect>();
+		e.turnsLeft--;
+		e.Act ();
+		if (e.turnsLeft <= 0) 
+		{
+			e.Finish ();
+			tileEffectsToRemove.Add(e);
+		}
+		
+		foreach(TileEffect t in tileEffectsToRemove)
+			teams[turn].tileEffects.Remove(t);
+	}
+	
+	//adds passives for characters as effects
+	void addPassive(CharacterCharacter c)
+	{
+		if(c.type.type==ClassSpecifications.CharacterType.Swordsman)
+		{
+			c.type.passive = new Stalwart(c);
+			c.activeEffects.Add(c.type.passive);
+		}
+		
+		if(c.type.type==ClassSpecifications.CharacterType.Alchemist)
+		{
+			c.type.passive = new ParadigmShift(c);
+			c.activeEffects.Add(c.type.passive);
+			
+		}
+		
+		if(c.type.type==ClassSpecifications.CharacterType.Bard)
+		{
+			c.type.passive = new RisingTempo(c);
+			c.activeEffects.Add(c.type.passive);
+		}
+		
+		if(c.type.type==ClassSpecifications.CharacterType.Priest)
+		{
+			c.type.passive = new Martyr(c);
+			c.activeEffects.Add(c.type.passive);
+		}
+		
+		if(c.type.type==ClassSpecifications.CharacterType.Hero)
+		{
+			c.type.passive = new IncomprehensibleRage(c);
+			c.activeEffects.Add(c.type.passive);
+		}
 		
 	}
 	
@@ -86,7 +178,8 @@ public class TeamManager : MonoBehaviour {
 				
 				foreach(CharacterCharacter p in t.pieces)
 				{
-					GameObject.Destroy (p.gameObject);
+					if(p!=null)
+						GameObject.Destroy (p.gameObject);
 				}
 			}
 			

@@ -19,7 +19,7 @@ public class FlickeringLight : MonoBehaviour {
     [HideInInspector]public bool MakeSourceStationary;
     [HideInInspector]public float positionOffset;
 
-    private Light light;
+    new private Light light;
 
     private float intensityOrigin;
     private float intensityOffset;

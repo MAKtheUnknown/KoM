@@ -23,26 +23,28 @@ public class BasicAttack : CharachterTargeter {
 	}
 	
 	// Update is called once per frame
-	public void Update () 
+	public override void Update () 
 	{
 	
 	}
 		
-	public string GetName()
+	public override string GetName()
 	{
 		return name;
 	}
 
-	public string GetDescription()
+	public override string GetDescription()
 	{
 		return description;
 	}
 
 	public override void Use()
 	{
+		damage=specs.attack;
+		range=specs.range;
 		if (targetsAquired == false) 
 		{
-			base.GetTargets(specs.owner.x, specs.owner.y, range);
+			base.GetEnemyTargets(specs.owner.x, specs.owner.y, range, specs.owner.team);
 		}
 		if (targetsAquired == true) 
 		{
@@ -53,7 +55,31 @@ public class BasicAttack : CharachterTargeter {
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
 			specs.owner.usedAbility = true;
+			cooldownTimer=cooldown;
 		}
 
+	}
+	
+	public override void AIUse(CharacterCharacter target)
+	{
+		int count=0;
+		charachterTargets= new List<CharacterCharacter>();
+		foreach(CharacterCharacter c in base.GetTargetsInRange(specs.owner.x,specs.owner.y,specs.range))
+		{
+			if(c!=null&c.team!=specs.owner.team&&count<numberOfTargets)
+			{
+				charachterTargets.Add(c);
+				count++;
+			}
+		}
+		
+		
+		foreach (CharacterCharacter t in charachterTargets) 
+		{
+			t.damage (damage);
+		}
+		Start ();
+		specs.owner.usedAbility = true;
+		cooldownTimer=cooldown;
 	}
 }

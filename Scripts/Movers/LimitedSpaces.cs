@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿	using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 /**
  * This method of movement allows a limited time to move.
@@ -24,11 +25,12 @@ public class LimitedSpaces : MonoBehaviour, Mover
 	/**The set of tiles and the difficulties with which this class can cover them*/
 	public IDictionary<TileAttributes.TileType, double> tileTypeTimes;
 
-	public double grassTime = 1;
-	public double hillTime = 1;
-	public double mountainTime = 1;
-	public double forestTime = 1;
-	public double shallowWaterTime = 1;
+	double grassTime = 2;
+	double hillTime = 3;
+	double mountainTime = 4;
+	double forestTime = 3;
+	double shallowWaterTime = 9001;
+	double bridgeTime = 1 ;
 
 	public double[,] times;
 
@@ -42,12 +44,13 @@ public class LimitedSpaces : MonoBehaviour, Mover
 		tileTypeTimes.Add (TileAttributes.TileType.mountains, mountainTime);
 		tileTypeTimes.Add (TileAttributes.TileType.trees, forestTime);
 		tileTypeTimes.Add (TileAttributes.TileType.water, shallowWaterTime);
+		tileTypeTimes.Add (TileAttributes.TileType.bridge, bridgeTime);
 	}
 
 	// Use this for initialization
 	void Start () 
 	{
-
+		timeToMove=moved.moves;
 	}
 	
 	// Update is called once per frame
@@ -66,7 +69,7 @@ public class LimitedSpaces : MonoBehaviour, Mover
 
 		times = new double[m.GetLength (0), m.GetLength (1)];
 
-		propogateTimes (t, timeSpent);
+		propogateTimes (t, timeSpent-tileTypeTimes[moved.owner.tile.type]);
 
 		times [moved.owner.x, moved.owner.y] = 0;
 
@@ -119,9 +122,9 @@ public class LimitedSpaces : MonoBehaviour, Mover
 		moved.owner.transform.position = t.transform.position;
 		moved.owner.x = t.x;
 		moved.owner.y = t.y;
-
-        //timeSpent += times[t.x,t.y];
-        timeSpent = timeToMove;
+		
+        timeSpent = times[t.x,t.y];
+        //timeSpent = timeToMove;
 	}
 
 	public void Reset()

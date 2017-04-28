@@ -104,6 +104,7 @@ public class Highlighter : MonoBehaviour {
         GameObject.FindGameObjectWithTag("Health Indicator").transform.localScale = new Vector3(11.80754f, 71.82333f * selectedTile.containedCharacter.currentHP / selectedTile.containedCharacter.type.maximumHealth, 85.7285f);
         GameObject.FindGameObjectWithTag("Health Indicator").transform.localPosition = new Vector3(369.7f, 17f + 72f * selectedTile.containedCharacter.currentHP / selectedTile.containedCharacter.type.maximumHealth, -102);
         GameObject.FindGameObjectWithTag("Health Label").GetComponent<Text>().text = selectedTile.containedCharacter.currentHP + "/" + selectedTile.containedCharacter.type.maximumHealth;
+		GameObject.FindGameObjectWithTag("Name Label").GetComponent<Text>().text = selectedTile.containedCharacter.name;
     }
 
 	void move(Direction d)
@@ -167,7 +168,7 @@ public class Highlighter : MonoBehaviour {
 				if ((Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp (0)) && selectedTile.containedCharacter.usedAbility == false) 
 				{
 					chosenCharacter = selectedTile.containedCharacter;
-					abilitySelectorObject = GameObject.Instantiate (savedAbilitySelectorObject, new Vector3(0,0,0) /*new Vector3(308, 0, -101)*/, new Quaternion(), map.ui.transform);
+					abilitySelectorObject = GameObject.Instantiate (savedAbilitySelectorObject, (new Vector3(0f,0f,0f))/*GameObject.Find("Ability Instruction Panel").transform.position*/ /*new Vector3(0,0,0)*/ /*new Vector3(308, 0, -101)*/, new Quaternion(), map.ui.transform);
 					abilitySelector = abilitySelectorObject.GetComponent<AbilitySelector> ();
 
 
@@ -206,12 +207,23 @@ public class Highlighter : MonoBehaviour {
 			break;
 		case SelectionMode.USE_ABILITY:
 			abilityInUse.Use();
+				foreach (GameObject g in possibleMoveHighlighters) 
+				{
+					GameObject.Destroy (g);
+				}
 			break;
 		case SelectionMode.SELECT_TARGETS:
 			abilityInUse.Use ();
 			if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp (0)) 
 			{
 				((CharachterTargeter)abilityInUse).targets.Add (selectedTile);
+			}
+			break;
+		case SelectionMode.SELECT_TILES:
+			abilityInUse.Use();
+			if (Input.GetKeyUp (KeyCode.Return) || Input.GetMouseButtonUp (0)) 
+			{
+				((TileTargeter)abilityInUse).targets.Add (selectedTile);
 			}
 			break;
 		}
@@ -243,6 +255,7 @@ public class Highlighter : MonoBehaviour {
 		MOVE_TO_TILE,
 		USE_ABILITY,
 		SELECT_TARGETS,
+		SELECT_TILES,
 		INACTIVE
 	}
 }

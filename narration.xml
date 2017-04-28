@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="7">
+   <npc name="" entries="1">
+      <speach>You feel tired; like you have woken up from a bad dream. The loud pounding on the door doesn't help either. You open the door and Lucius, the Head of the Guard, is there, looking furious as always.</speach>
+</npc>
+	  <npc name = "Lucius" entries ="1">
+	  <speach>Where were you?</speach>
+</npc>
+	  <npc name = "MC" entries ="1">
+      <speach>You'd be sleeping too if you had the graveyard shift all week. Why? What happened?</speach>
+</npc>
+	  <npc name = "Lucius" entries ="1">
+	  <speach>Well, while you were sleeping, someone killed the Keeper.</speach>
+   </npc>
+	  <npc name = "MC" entries ="1">
+	  <speach>Wha.....?</speach>
+   </npc>
+	  <npc name = "Lucius" entries ="1">
+	  <speach>You heard me. Now get up or I'll drag you out of bed.</speach>
+   </npc>
+	  <npc name = "" entries ="1">
+	  <speach>You decide that it's not worth arguing with Lucius when he's like this. You would like to keep as many of your limbs as possible.</speach>
+   </npc>   
+</npcs>
