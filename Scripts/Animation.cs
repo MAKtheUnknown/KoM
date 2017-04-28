@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Animation
+public abstract class Animation
 {
+	public GameObject subject;
 
 	// Use this for initialization
-	void Init (GameObject subject);
+	public abstract void Init ();
 
-	void Action ();
+	public abstract void Action ();
 
-	bool IsFinished ();
+	public abstract bool IsFinished ();
 
-	void OnFinish();
+	public abstract void OnFinish();
 }

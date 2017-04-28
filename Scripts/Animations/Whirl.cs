@@ -4,28 +4,43 @@ using UnityEngine;
 
 public class Whirl : Animation 
 {
+	bool rotateClockwise;
+	double speedOfRotation;
+	bool revolveClockwise; 
+	double radiusOfRevolution; 
+	double speedOfRevolution; 
+	long time;
 
-	public Whirl(bool rotateClockwise, double speedOfRotation, bool revolveClockwise, double radiusOfRevolution, double speedOfRevolution, int turns, int revolutions)
+	long startTime;
+
+	Quaternion origionalRotation;
+
+	public Whirl(bool rotateClockwise, double speedOfRotation, bool revolveClockwise, double radiusOfRevolution, double speedOfRevolution, long time)
 	{
-
+		this.speedOfRotation = speedOfRotation;
+		this.speedOfRevolution = speedOfRevolution;
+		this.rotateClockwise = rotateClockwise;
+		this.revolveClockwise = revolveClockwise;
+		this.time = time;
 	}
 
-	public void Init(GameObject g)
+	public override void Init()
 	{
-
+		origionalRotation = subject.transform.rotation;
 	}
 
-	public void Action()
+	public override void Action()
 	{
-
+		//Vector2 rot = rotateClockwise ? new Vector2(Mathf.Cos(-speedOfRotation),Mathf.Sin(-speedOfRotation)): new Vector2(Mathf.Cos(speedOfRotation),Mathf.Sin(speedOfRotation));
+		subject.transform.Rotate (rot);
 	}
 
-	public bool IsFinished()
+	public override bool IsFinished()
 	{
 		return true;
 	}
 
-	public void OnFinish()
+	public override void OnFinish()
 	{
 
 	}
