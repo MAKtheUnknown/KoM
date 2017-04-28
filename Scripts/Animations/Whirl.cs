@@ -32,7 +32,7 @@ public class Whirl : Animation
 	public override void Action()
 	{
 		//Vector2 rot = rotateClockwise ? new Vector2(Mathf.Cos(-speedOfRotation),Mathf.Sin(-speedOfRotation)): new Vector2(Mathf.Cos(speedOfRotation),Mathf.Sin(speedOfRotation));
-		subject.transform.Rotate (rot);
+		//subject.transform.Rotate (speedOfRotation);
 	}
 
 	public override bool IsFinished()
