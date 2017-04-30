@@ -57,7 +57,7 @@ public class ChemicalSpill : TileTargeter  {
 			base.GetFullTargets(size);
 			foreach(TileAttributes t in fullTileTargets)
 			{
-				specs.owner.team.tileEffects.Add(new Poisoned(t,specs.owner.team, damage));
+				specs.owner.team.tileEffects.Add(new PoisonedTile(t,specs.owner.team, damage));
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
@@ -77,7 +77,7 @@ public class ChemicalSpill : TileTargeter  {
 		base.GetFullTargets(size);
 		foreach(TileAttributes t in fullTileTargets)
 		{
-				specs.owner.team.tileEffects.Add(new Poisoned(t,specs.owner.team, damage));
+				specs.owner.team.tileEffects.Add(new PoisonedTile(t,specs.owner.team, damage));
 		}
 		
 		

@@ -9,7 +9,7 @@ public class TacticalManeuver : Passive {
 	bool justUsed;
 	float[] allTeamMorale;
 
-	public void TactiacalManeuver(CharacterCharacter c)
+	public TacticalManeuver(CharacterCharacter c)
 	{
 		Init (c);
 	}
@@ -72,5 +72,10 @@ public class TacticalManeuver : Passive {
 		
 		return teamsMorale;
 		
+	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new TacticalManeuver(c);
 	}
 }

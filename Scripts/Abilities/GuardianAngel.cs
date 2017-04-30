@@ -42,7 +42,7 @@ public class GuardianAngel : CharachterTargeter  {
 		range=specs.range;
 		if (targetsAquired == false) 
 		{
-			base.GetTargets(specs.owner.x, specs.owner.y, range);
+			base.GetAllyTargets(specs.owner.x, specs.owner.y, range, specs.owner.team);
 		}
 		if (targetsAquired == true) 
 		{

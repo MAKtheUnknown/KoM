@@ -50,6 +50,8 @@ public class BasicAttack : CharachterTargeter {
 		{
 			foreach (CharacterCharacter t in charachterTargets) 
 			{
+				/** theif passive**/
+				if(!t.type.passive.GetType().Equals(typeof(AcrobaticLeap))  ||  Random.Range(0.0f,1.0f)>.25)
 				t.damage (damage);
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;

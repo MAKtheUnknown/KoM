@@ -12,6 +12,11 @@ public class ElixirDamage : ActiveEffect {
 		Init (c);
 	}
 
+	public ElixirDamage(CharacterCharacter c, int r)
+	{
+		Init (c, r);
+	}
+
 	public void Init(CharacterCharacter c)
 	{
 		this.Init (c, 4);
@@ -34,5 +39,10 @@ public class ElixirDamage : ActiveEffect {
 	public override void Finish()
 	{
 		base.subject.type.attack-=changeInDamage;
+	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new ElixirDamage(c, turnsLeft);
 	}
 }

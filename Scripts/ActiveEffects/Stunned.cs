@@ -11,9 +11,14 @@ public class Stunned : ActiveEffect {
 		Init (c);
 	}
 
+	public Stunned(CharacterCharacter c, int r)
+	{
+		Init (c,r);
+	}
+
 	public void Init(CharacterCharacter c)
 	{
-		this.Init (c, 1);
+		this.Init (c, 2);
 	}
 
 	public new void Init(CharacterCharacter c, int rounds)
@@ -30,5 +35,11 @@ public class Stunned : ActiveEffect {
 
 	public override void Finish()
 	{
+		subject.usedAbility=false;
+	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new Stunned(c,turnsLeft);
 	}
 }

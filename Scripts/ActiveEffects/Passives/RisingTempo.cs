@@ -49,4 +49,9 @@ public class RisingTempo : Passive {
 	{
 		
 	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new RisingTempo(c);
+	}
 }

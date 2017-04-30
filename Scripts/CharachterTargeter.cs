@@ -236,7 +236,7 @@ public abstract class CharachterTargeter : Ability {
 	public List<CharacterCharacter> GetTargetsInRange(int x, int y, float range)
 	{
 		List<CharacterCharacter> charTargets = new List<CharacterCharacter> ();
-
+		
 		foreach (Team t in map.teams.teams) 
 		{
 			foreach (CharacterCharacter c in t.pieces) 
@@ -251,6 +251,8 @@ public abstract class CharachterTargeter : Ability {
 				}
 			}
 		}
+		
+		RemoveStealthed(charTargets);		
 		return charTargets;
 	}
 	
@@ -272,11 +274,32 @@ public abstract class CharachterTargeter : Ability {
 				}
 			}
 		}
+		RemoveStealthed(charTargets);
 		return charTargets;
 	}
 
 	public override void Use()
 	{
 		
+	}
+	
+	public void RemoveStealthed(List<CharacterCharacter> l)
+	{
+		List<CharacterCharacter> Stealthed=new List<CharacterCharacter>();
+		foreach(CharacterCharacter c in l)
+		{
+			foreach(ActiveEffect e in c.activeEffects)
+			{
+				if(e.GetType().Equals(typeof(Stealthed)))
+				{
+					Stealthed.Add(c);
+				}
+			}
+		}
+		
+		foreach(CharacterCharacter c in Stealthed)
+		{
+			l.Remove(c);
+		}
 	}
 }

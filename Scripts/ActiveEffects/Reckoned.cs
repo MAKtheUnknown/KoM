@@ -10,6 +10,11 @@ public class Reckoned : ActiveEffect {
 	{
 		Init (c);
 	}
+	
+	public Reckoned(CharacterCharacter c, int r)
+	{
+		Init (c,r );
+	}
 
 	public void Init(CharacterCharacter c)
 	{
@@ -36,5 +41,10 @@ public class Reckoned : ActiveEffect {
 	public override void Finish()
 	{
 		subject.type.defense+=changeInDefense;
+	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new Reckoned(c,turnsLeft);
 	}
 }

@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cripple : CharachterTargeter
+public class PoisonedDagger : CharachterTargeter
 {
 
 	ClassSpecifications specs;
-	int damage;
-	public int extraDamage;
+	double damage;
 	public int range;
 
 	// Use this for initialization
@@ -21,7 +20,7 @@ public class Cripple : CharachterTargeter
 		targetsToAquire = numberOfTargets;
 		GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
 		base.Start ();
-		name = "Cripple";
+		name = "PoisonedDagger";
 	}
 	
 	// Update is called once per frame
@@ -42,7 +41,7 @@ public class Cripple : CharachterTargeter
 
 	public override void Use()
 	{
-		damage=specs.attack;
+		damage=specs.attack/3.0;
 		range=specs.range;
 		if (targetsAquired == false) 
 		{
@@ -52,8 +51,7 @@ public class Cripple : CharachterTargeter
 		{
 			foreach (CharacterCharacter c in charachterTargets) 
 			{
-				c.damage (damage+extraDamage);
-				c.activeEffects.Add(new Slowed(c));
+				c.activeEffects.Add(new Poisoned(c,damage,3));
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
@@ -65,10 +63,9 @@ public class Cripple : CharachterTargeter
 	
 	public override void AIUse(CharacterCharacter target)
 	{
-		damage=specs.attack;
+		damage=specs.attack/3.0;
 		range=specs.range;
-		target.damage (damage+extraDamage);
-		target.activeEffects.Add(new Slowed(target));
+		target.activeEffects.Add(new Poisoned(target,damage,3));
 		Start ();
 		specs.owner.usedAbility = true;
 		cooldownTimer=cooldown;		

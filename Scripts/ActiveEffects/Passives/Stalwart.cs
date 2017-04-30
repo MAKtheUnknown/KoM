@@ -32,4 +32,9 @@ public class Stalwart : Passive  {
 	{
 		return base.subject.currentHP==0&&!done;
 	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new Stalwart(c);
+	}
 }

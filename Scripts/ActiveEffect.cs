@@ -29,6 +29,8 @@ public abstract class ActiveEffect {
 	 */
 	public abstract void Finish();
 	
+	public abstract ActiveEffect Clone(CharacterCharacter c);
+	
 	/** Types of effects **/
 	public enum EffectType
 	{

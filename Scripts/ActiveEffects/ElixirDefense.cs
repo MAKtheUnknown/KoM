@@ -10,6 +10,11 @@ public class ElixirDefense : ActiveEffect {
 	{
 		Init (c);
 	}
+	
+	public ElixirDefense(CharacterCharacter c, int r)
+	{
+		Init (c,r);
+	}
 
 	public void Init(CharacterCharacter c)
 	{
@@ -32,5 +37,10 @@ public class ElixirDefense : ActiveEffect {
 	public override void Finish()
 	{
 		subject.type.defense-=changeInDefense;
+	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new ElixirDefense(c,turnsLeft);
 	}
 }

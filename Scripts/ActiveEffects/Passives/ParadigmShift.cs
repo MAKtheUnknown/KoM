@@ -138,4 +138,9 @@ public class ParadigmShift : Passive {
 	{
 		return (int)Math.Round(d);
 	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new ParadigmShift(c);
+	}
 }

@@ -13,7 +13,7 @@ public class SilverTongue : CharachterTargeter {
 	// Use this for initialization
 	public override void Start () 
 	{
-		name="A Well-Planned Attack";
+		name="Silver Tongue";
 		specs = GetComponentInParent<ClassSpecifications> ();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		targets = new List<TileAttributes> ();

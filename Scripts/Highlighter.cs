@@ -38,15 +38,15 @@ public class Highlighter : MonoBehaviour {
 	void Awake()
 	{
 		map = GetComponentInParent<TileArrangement> ();
+		chosenTiles = new Stack<TileAttributes> ();
+		possibleMoveHighlighters = new List<GameObject> ();
+		abilitySelectorObject = savedAbilitySelectorObject;
+		abilitySelector = abilitySelectorObject.GetComponent<AbilitySelector> ();
 	}
 
 	// Use this for initialization
 	void Start () 
 	{
-		chosenTiles = new Stack<TileAttributes> ();
-		possibleMoveHighlighters = new List<GameObject> ();
-		abilitySelectorObject = savedAbilitySelectorObject;
-		abilitySelector = abilitySelectorObject.GetComponent<AbilitySelector> ();
 		currentTeam = map.teams.teams [0];
 	}
 	

@@ -33,4 +33,9 @@ public class Kaiyufied : ActiveEffect {
 	{
 		subject.name = originalName;
 	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new Kaiyufied(c);
+	}
 }

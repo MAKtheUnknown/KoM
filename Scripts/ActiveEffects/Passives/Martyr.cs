@@ -46,4 +46,9 @@ public class Martyr : Passive {
 		done=true;
 		
 	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new Martyr(c);
+	}
 }

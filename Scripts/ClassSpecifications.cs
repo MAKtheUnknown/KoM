@@ -65,5 +65,7 @@ public class ClassSpecifications : MonoBehaviour
 		Bard,
 		Priest,
 		Hero,
+		Noble,
+		Thief,
 	};
 }

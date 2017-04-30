@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Vent : CharachterTargeter  {
 
 	public ClassSpecifications specs;
+	// Percent of max health healed for each unit killed (1:= 100%)
 	public double healPerKill;
 
 	// Use this for initialization

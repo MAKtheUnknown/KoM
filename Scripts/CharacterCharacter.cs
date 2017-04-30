@@ -109,9 +109,9 @@ public class CharacterCharacter : MonoBehaviour
 	{
 		this.currentHP += h;		
 
-		if (currentHP > type.maxXP) 
+		if (currentHP > type.maximumHealth) 
 		{
-			currentHP = type.maxXP;
+			currentHP = type.maximumHealth;
 		}
 	}
 	
@@ -145,7 +145,11 @@ public class CharacterCharacter : MonoBehaviour
 	
 	void EffectCheck()
 	{
-		foreach(ContinuousEffect e in activeEffects)
+		List<ContinuousEffect> contEffects = new List<ContinuousEffect>();
+		foreach(ActiveEffect e in activeEffects)
+			if(e.GetType().Equals(typeof(ContinuousEffect)))
+				contEffects.Add((ContinuousEffect)e);
+		foreach(ContinuousEffect e in contEffects)
 			e.Check();
 	}
 }

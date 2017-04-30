@@ -10,7 +10,12 @@ public class ElixirHealth : ActiveEffect {
 
 	public ElixirHealth(CharacterCharacter c)
 	{
-		Init (c);
+		Init(c);
+	}
+
+	public ElixirHealth(CharacterCharacter c, int rounds)
+	{
+		Init (c, rounds);
 	}
 
 	public void Init(CharacterCharacter c)
@@ -46,6 +51,11 @@ public class ElixirHealth : ActiveEffect {
 		{
 			base.subject.currentHP=base.subject.type.maximumHealth;
 		}
+	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new ElixirHealth(c,turnsLeft);
 	}
 	
 	int Dround(double d)

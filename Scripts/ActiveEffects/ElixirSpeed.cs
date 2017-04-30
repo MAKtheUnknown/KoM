@@ -11,6 +11,11 @@ public class ElixirSpeed : ActiveEffect {
 	{
 		Init (c);
 	}
+	
+	public ElixirSpeed(CharacterCharacter c, int r)
+	{
+		Init (c,r);
+	}
 
 	public void Init(CharacterCharacter c)
 	{
@@ -34,5 +39,10 @@ public class ElixirSpeed : ActiveEffect {
 	{
 		((LimitedSpaces)base.subject.type.movement).timeToMove-=changeInMovement;
 		((LimitedSpaces)base.subject.type.movement).timeSpent=Math.Max(((LimitedSpaces)base.subject.type.movement).timeSpent,0);
+	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new ElixirSpeed(c,turnsLeft);
 	}
 }

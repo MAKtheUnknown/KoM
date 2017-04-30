@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Poisoned : TileEffect {
+public class PoisonedTile : TileEffect {
 	
 	private double DOT;
 
-	public Poisoned(TileAttributes s, Team t, double d)
+	public PoisonedTile(TileAttributes s, Team t, double d)
 	{
 		Init (s, t, d);
 	}

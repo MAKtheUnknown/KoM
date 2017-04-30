@@ -85,4 +85,9 @@ public class IncomprehensibleRage : Passive {
 	{
 		return attackBonus;
 	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new IncomprehensibleRage(c);
+	}
 }

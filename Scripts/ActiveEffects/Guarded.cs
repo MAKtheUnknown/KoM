@@ -16,6 +16,11 @@ public class Guarded : ActiveEffect {
 		this.Init(c,1,r);
 	}
 	
+	public Guarded(CharacterCharacter c, int r, int d)
+	{
+		this.Init(c,r,d);
+	}
+	
 	public void Init(CharacterCharacter c)
 	{
 		this.Init (c, 1);
@@ -55,5 +60,10 @@ public class Guarded : ActiveEffect {
 	public override void Finish()
 	{
 		base.subject.type.defense-=changeInDefense;
+	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new Guarded(c,turnsLeft,changeInDefense);
 	}
 }

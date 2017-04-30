@@ -11,6 +11,11 @@ public class Inspired : ActiveEffect {
 		Init (c);
 	}
 
+	public Inspired(CharacterCharacter c,int r)
+	{
+		Init (c,r);
+	}
+
 	public void Init(CharacterCharacter c)
 	{
 		this.Init (c, 6);
@@ -34,5 +39,10 @@ public class Inspired : ActiveEffect {
 	{
 		subject.type.attack -= changeInDamage;
 		subject.type.defense-=2;
+	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new Inspired(c,turnsLeft);
 	}
 }

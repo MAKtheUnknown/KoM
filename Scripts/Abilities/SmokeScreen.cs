@@ -2,12 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ElixirOfLife : CharachterTargeter  {
+public class SmokeScreen : CharachterTargeter  {
 
 	public ClassSpecifications specs;
 
 	public float range;
-	int chance;
 
 	// Use this for initialization
 	public override void Start () 
@@ -41,7 +40,7 @@ public class ElixirOfLife : CharachterTargeter  {
 
 	public override void Use()
 	{
-		chance = (int)Random.Range(1,4);
+		range=specs.range;
 		if (targetsAquired == false) 
 		{
 			base.GetAllyTargets(specs.owner.x, specs.owner.y, range,specs.owner.team);
@@ -50,22 +49,7 @@ public class ElixirOfLife : CharachterTargeter  {
 		{
 			foreach (CharacterCharacter c in charachterTargets) 
 			{
-				if(chance==1)
-				{
-					c.activeEffects.Add(new ElixirHealth(c));					
-				}
-				else if (chance==2)
-				{
-					c.activeEffects.Add(new ElixirDamage(c));					
-				}
-				else if (chance==3)
-				{
-					c.activeEffects.Add(new ElixirSpeed(c));					
-				}
-				else
-				{
-					c.activeEffects.Add(new ElixirDefense(c));					
-				}
+				c.activeEffects.Add(new Stealthed(c));
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();
@@ -78,8 +62,8 @@ public class ElixirOfLife : CharachterTargeter  {
 	public override void AIUse(CharacterCharacter target)
 	{
 		int count=0;
+		range=specs.range;
 		
-		chance = (int)Random.Range(1,4);
 		charachterTargets= new List<CharacterCharacter>();
 		foreach(CharacterCharacter c in base.GetAllTargetsInRange(specs.owner.x,specs.owner.y,specs.range))
 		{
@@ -92,23 +76,9 @@ public class ElixirOfLife : CharachterTargeter  {
 		
 		foreach (CharacterCharacter c in charachterTargets) 
 		{
-			if(chance==1)
-			{
-				c.activeEffects.Add(new ElixirHealth(c));					
-			}
-			else if (chance==2)
-			{
-				c.activeEffects.Add(new ElixirDamage(c));					
-			}
-			else if (chance==3)
-			{
-				c.activeEffects.Add(new ElixirSpeed(c));					
-			}
-			else
-			{
-				c.activeEffects.Add(new ElixirDefense(c));					
-			}
+				c.activeEffects.Add(new Stealthed(c));
 		}
+		
 		Start ();
 		specs.owner.usedAbility = true;
 		cooldownTimer=cooldown;

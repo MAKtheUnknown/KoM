@@ -12,6 +12,10 @@ public class BardLinked : ContinuousEffect {
 	{
 		Init (u, l);
 	}
+	public BardLinked(CharacterCharacter u, List<CharacterCharacter> l, int r)
+	{
+		Init (u, l,r);
+	}
 
 	public void Init(CharacterCharacter u, List<CharacterCharacter> l)
 	{
@@ -56,6 +60,15 @@ public class BardLinked : ContinuousEffect {
 			
 		}
 	}
+	
+	/** Should never be called**/
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new BardLinked(c,linked, turnsLeft);
+	}
+	
+	
+	
 	
 	public override bool Condition()
 	{

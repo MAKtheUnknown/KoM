@@ -6,7 +6,6 @@ public class Misdirection : CharachterTargeter
 {
 
 	ClassSpecifications specs;
-	public int extraDamage;
 	public int range;
 	public int turns;
 	public int movementReduction;
@@ -15,6 +14,13 @@ public class Misdirection : CharachterTargeter
 	public override void Start () 
 	{
 		specs = GetComponentInParent<ClassSpecifications> ();
+		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
+		targets = new List<TileAttributes> ();
+		charachterTargets = new List<CharacterCharacter> ();
+		targetsAquired = false;
+		targetsToAquire = numberOfTargets;
+		GameObject.Destroy (GameObject.FindGameObjectWithTag("Ability Selector"));
+		base.Start ();
 		name = "Misdirection";
 	}
 	

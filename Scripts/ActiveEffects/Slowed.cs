@@ -48,6 +48,11 @@ public class Slowed : ActiveEffect
 	{
 		((LimitedSpaces)(base.subject.type.movement)).timeToMove+=movementReduction;
 	}
+	
+	public override ActiveEffect Clone(CharacterCharacter c)
+	{
+		return new Slowed(c,turnsLeft,movementReduction);
+	}
 }
 
 
