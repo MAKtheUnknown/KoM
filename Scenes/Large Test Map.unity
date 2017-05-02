@@ -5006,11 +5006,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
-  maximumHealth: 14
-  attack: 4
-  defense: 5
-  range: 1
-  moves: 10
+  maximumHealth: 80
+  attack: 12
+  defense: 2
+  range: 2
+  moves: 4
   maxXP: 55
   morale: 100
   type: 3
@@ -9773,11 +9773,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
-  maximumHealth: 14
-  attack: 4
-  defense: 5
+  maximumHealth: 100
+  attack: 20
+  defense: 4
   range: 1
-  moves: 10
+  moves: 6
   maxXP: 55
   morale: 100
   type: 0
@@ -10134,6 +10134,11 @@ Prefab:
     - target: {fileID: 4194052188242560, guid: d9b17e2f2970819429b98d6b89045ad1, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114975255349253450, guid: d9b17e2f2970819429b98d6b89045ad1,
+        type: 2}
+      propertyPath: timeToMove
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9b17e2f2970819429b98d6b89045ad1, type: 2}
@@ -10643,6 +10648,11 @@ Prefab:
         type: 2}
       propertyPath: shallowWaterTime
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114975255349253450, guid: d9b17e2f2970819429b98d6b89045ad1,
+        type: 2}
+      propertyPath: timeToMove
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9b17e2f2970819429b98d6b89045ad1, type: 2}
@@ -12272,11 +12282,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
-  maximumHealth: 14
-  attack: 4
-  defense: 5
+  maximumHealth: 100
+  attack: 15
+  defense: 3
   range: 1
-  moves: 10
+  moves: 6
   maxXP: 55
   morale: 100
   type: 4
@@ -12331,11 +12341,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
-  maximumHealth: 14
-  attack: 4
-  defense: 5
+  maximumHealth: 80
+  attack: 12
+  defense: 2
   range: 1
-  moves: 10
+  moves: 4
   maxXP: 55
   morale: 100
   type: 2
@@ -28819,11 +28829,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
-  maximumHealth: 14
-  attack: 4
-  defense: 5
+  maximumHealth: 80
+  attack: 18
+  defense: 3
   range: 1
-  moves: 10
+  moves: 6
   maxXP: 55
   morale: 100
   type: 6
@@ -30931,11 +30941,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
-  maximumHealth: 14
-  attack: 4
-  defense: 5
-  range: 1
-  moves: 10
+  maximumHealth: 90
+  attack: 15
+  defense: 3
+  range: 2
+  moves: 4
   maxXP: 55
   morale: 100
   type: 1
@@ -31829,6 +31839,11 @@ Prefab:
         type: 2}
       propertyPath: shallowWaterTime
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114975255349253450, guid: d9b17e2f2970819429b98d6b89045ad1,
+        type: 2}
+      propertyPath: timeToMove
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9b17e2f2970819429b98d6b89045ad1, type: 2}
@@ -33475,11 +33490,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
-  maximumHealth: 14
-  attack: 4
-  defense: 5
+  maximumHealth: 90
+  attack: 15
+  defense: 3
   range: 1
-  moves: 10
+  moves: 6
   maxXP: 55
   morale: 100
   type: 5
@@ -35899,11 +35914,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
-  maximumHealth: 14
-  attack: 4
-  defense: 5
-  range: 1
-  moves: 10
+  maximumHealth: 80
+  attack: 20
+  defense: 0
+  range: 2
+  moves: 6
   maxXP: 55
   morale: 100
   type: 7
