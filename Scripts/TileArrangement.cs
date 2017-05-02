@@ -16,6 +16,8 @@ public class TileArrangement : MonoBehaviour
 	/**The thing that selects and highlights tiles.*/
 	public Highlighter highlighter;
 
+	public List<Animation> runningAnimations;
+
 	public GameObject ui;
 	
 	/** Used for ability label: using the map to store its initial position**/
@@ -59,7 +61,7 @@ public class TileArrangement : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		RunAnimations ();
 	}
 
 	/**A method to make and return a 2d array of tiles.
@@ -188,6 +190,30 @@ public class TileArrangement : MonoBehaviour
 	public int HighY {
 		get {
 			return highY;
+		}
+	}
+
+	public void RunAnimations ()
+	{
+		foreach (Animation a in runningAnimations) 
+		{
+			if (a.IsFinished ()) 
+			{
+				a.OnFinish ();
+				foreach (Animation n in a.endTriggers) 
+				{
+					runningAnimations.Add (n);
+				}
+				runningAnimations.Remove (a);
+			}
+			else 
+			{
+				if (!a.initialized) 
+				{
+					a.Init ();
+				}
+				a.Action ();
+			}
 		}
 	}
 }

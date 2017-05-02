@@ -152,4 +152,5 @@ public class CharacterCharacter : MonoBehaviour
 		foreach(ContinuousEffect e in contEffects)
 			e.Check();
 	}
+
 }
