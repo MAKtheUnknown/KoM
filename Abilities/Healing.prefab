@@ -51,6 +51,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6501ccc5c6e1141a404ed4a50dca33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Healing
   description: Heals the unit 3 hitpoints.
+  cooldown: 0
+  cooldownTimer: 0
+  ultimate: 0
+  map: {fileID: 0}
+  targets: []
+  charachterTargets: []
+  numberOfTargets: 1
+  targetsToAquire: 1
+  targetsAquired: 0
+  instructionLabel: {fileID: 0}
   addedHealth: 3
+  range: 0
+  specs: {fileID: 0}

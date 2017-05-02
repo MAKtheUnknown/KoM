@@ -67,5 +67,6 @@ public class ClassSpecifications : MonoBehaviour
 		Hero,
 		Noble,
 		Thief,
+		Magician,
 	};
 }

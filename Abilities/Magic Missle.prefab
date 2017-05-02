@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1252118327767392}
+  m_RootGameObject: {fileID: 1660739372124240}
   m_IsPrefabParent: 1
---- !u!1 &1252118327767392
+--- !u!1 &1660739372124240
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4944937344583954}
-  - component: {fileID: 114133953265739122}
+  - component: {fileID: 4714040594619300}
+  - component: {fileID: 114782787743720424}
   m_Layer: 0
-  m_Name: Vent
+  m_Name: Magic Missle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4944937344583954
+--- !u!4 &4714040594619300
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252118327767392}
+  m_GameObject: {fileID: 1660739372124240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.905556, y: 3.1571116, z: 29.131227}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,27 +40,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114133953265739122
+--- !u!114 &114782787743720424
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252118327767392}
+  m_GameObject: {fileID: 1660739372124240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcd8c391d2138fa48b9e98742a6f3e1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 78fd8afa87b71f149858d5eb627316b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
-  cooldown: 5
+  cooldown: 0
   cooldownTimer: 0
-  ultimate: 1
+  ultimate: 0
   map: {fileID: 0}
   targets: []
   charachterTargets: []
-  numberOfTargets: 0
-  targetsToAquire: 0
+  numberOfTargets: 1
+  targetsToAquire: 1
   targetsAquired: 0
   instructionLabel: {fileID: 0}
   specs: {fileID: 0}
-  healPerKill: 0.2
+  damage: 1
+  range: 2

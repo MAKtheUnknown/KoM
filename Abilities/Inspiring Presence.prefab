@@ -53,12 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: 
   cooldown: 0
-  map: {fileID: 0}
-  targets: []
-  charachterTargets: []
-  numberOfTargets: 0
-  targetsToAquire: 0
-  targetsAquired: 0
-  instructionLabel: {fileID: 0}
+  cooldownTimer: 0
+  ultimate: 0
   specs: {fileID: 0}
-  range: 0
+  range: 1
