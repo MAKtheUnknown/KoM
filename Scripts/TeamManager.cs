@@ -97,9 +97,22 @@ public class TeamManager : MonoBehaviour {
 		foreach(Team x in teams)
 		{
 			x.moraleText.GetComponent<Text>().fontStyle= FontStyle.Normal;
-			if(x==teams[turn%teams.Length])
+			if (x == teams [turn % teams.Length]) 
 			{
-				x.moraleText.GetComponent<Text>().fontStyle= FontStyle.Bold;
+				x.moraleText.GetComponent<Text> ().fontStyle = FontStyle.Bold;
+				foreach (CharacterCharacter c in x.pieces) 
+				{
+					SpriteRenderer sr = c.gameObject.GetComponent<SpriteRenderer> ();
+					sr.color = new Color(1f, 1f, 1f, 1f);
+				}
+			}
+			else 
+			{
+				foreach (CharacterCharacter c in x.pieces) 
+				{
+					SpriteRenderer sr = c.gameObject.GetComponent<SpriteRenderer> ();
+					sr.color = new Color(1f,1f,1f,0.6f);
+				}
 			}
 		}
 		

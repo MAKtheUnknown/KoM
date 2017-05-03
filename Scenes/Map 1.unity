@@ -140,12 +140,12 @@ MonoBehaviour:
   currentXP: 0
   maxMovesPerTurn: 0
   movesLeftThisTurn: 0
-  bardLinked: []
   tile: {fileID: 0}
   team: {fileID: 0}
   specialAbilities: []
   type: {fileID: 0}
   usedAbility: 0
+  lastTile: {fileID: 0}
   x: 0
   y: 0
 --- !u!212 &2498751
@@ -7337,12 +7337,12 @@ MonoBehaviour:
   currentXP: 0
   maxMovesPerTurn: 0
   movesLeftThisTurn: 0
-  bardLinked: []
   tile: {fileID: 0}
   team: {fileID: 0}
   specialAbilities: []
   type: {fileID: 0}
   usedAbility: 0
+  lastTile: {fileID: 0}
   x: 0
   y: 0
 --- !u!212 &323324382
@@ -13260,12 +13260,12 @@ MonoBehaviour:
   currentXP: 0
   maxMovesPerTurn: 0
   movesLeftThisTurn: 0
-  bardLinked: []
   tile: {fileID: 0}
   team: {fileID: 0}
   specialAbilities: []
   type: {fileID: 0}
   usedAbility: 0
+  lastTile: {fileID: 0}
   x: 0
   y: 0
 --- !u!212 &655375424
@@ -24606,12 +24606,12 @@ MonoBehaviour:
   currentXP: 0
   maxMovesPerTurn: 0
   movesLeftThisTurn: 0
-  bardLinked: []
   tile: {fileID: 0}
   team: {fileID: 0}
   specialAbilities: []
   type: {fileID: 0}
   usedAbility: 0
+  lastTile: {fileID: 0}
   x: 0
   y: 0
 --- !u!212 &1272014051
@@ -28628,6 +28628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1500078926}
   - component: {fileID: 1500078927}
+  - component: {fileID: 1500078928}
   m_Layer: 0
   m_Name: Team 2
   m_TagString: Untagged
@@ -28663,17 +28664,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7741dc49b9f13e049bce2e31d38df389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   name: Team B
   pieces: []
   map: {fileID: 0}
   manager: {fileID: 0}
   teamMorale: 100
   maxMorale: 100
+  activePieces: 0
   moraleBar: {fileID: 314807018}
   moraleText: {fileID: 1489659906}
   textAlign: 1
   teamDefense: 0
+--- !u!114 &1500078928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1500078925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd508f48f97e2843ac625d06dfc63fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1510696398
 GameObject:
   m_ObjectHideFlags: 0
@@ -38848,6 +38861,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   teamMorale: 100
   maxMorale: 100
+  activePieces: 0
   moraleBar: {fileID: 1265286119}
   moraleText: {fileID: 1202299010}
   textAlign: 0
