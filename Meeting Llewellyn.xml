@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="10">
+   <npc name="" entries="1">
+      <speach>After being unceremoniously evicted from the Keeper's manor, you find yourself at a tavern, attempting to drink away your sorrows. You overhear an old man's conversation with the tavern keeper. </speach>
+</npc>
+	  <npc name = "Old Man" entries ="1">
+	  <speach> So what's the news in town?</speach>
+</npc>
+	  <npc name = "Tavern Keeper" entries ="1">
+      <speach>Haven't you heard? It sounds like there's been some trouble at the Keeper's Manor. </speach>
+</npc>
+	  <npc name = "Old Man" entries ="1">
+	  <speach> .......</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach>The old man turns as white as a ghost upon hearing this. Fearful of his health, you ask him what's wrong.</speach>
+   </npc>
+  <npc name = "Old Man" entries ="1">
+	  <speach> What? Oh, nothing. It's just that an old friend of mine resides in the Keeper's Manor and I'm worried about her. </speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> There is a concerned look on the old man's face. </speach>
+   </npc>
+  <npc name = "Xander" entries ="1">
+	  <speach>I was .... employed by the Manor until recently. Perhaps I can get you inside so you can check on her.</speach>
+   </npc>
+  <npc name = "Old Man" entries ="1">
+	  <speach>*gasp* Good, I don't know what I'd do if anything happened to Trina.</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> Xander and the old man made their way to the Manor just as darkness fell over the town. It would appear that Lucius kept his promise; there are guards everywhere.</speach>
+   </npc>
+</npcs>

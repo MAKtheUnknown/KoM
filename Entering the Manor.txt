@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="10">
+   <npc name="" entries="1">
+      <speach> The front entrance is well guarded;however, it doesn't appear that Lucius changed the guard patrols. </speach>
+</npc>
+	  <npc name = "Xander" entries ="1">
+	  <speach> We'll need to take a detour.</speach>
+</npc>
+	  <npc name = "Old Man" entries ="1">
+      <speach> Lead the way. </speach>
+</npc>
+	  <npc name = "" entries ="1">
+	  <speach> At first, you wonder how such as old man will keep up with you but, he seems much younger than his appearance might suggest.In due time, you have reached the foyer of the Manor.</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach>Looking out the window, you see a hill with a large tree growing on it. Underneath it, you see a tombstone with the words TRINA
+	  KEEPER OF MAGIC inscribed on it. Around the grave is a priest, Lucius and two guardsmen tasked with carrying the casket. After a short pause, the two guardsmen turn around and begin to climb down the hill. Quickly, the old man darts into nearest room, leaving Xander scrabbling for a hiding place.  </speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> He found shelter behind a curtain and after the weary guards trodded to the barracks, Xander found his way to the Keeper's room, where the old man was standing dumbfounded. </speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> The state of the room is a mess. The window which once held the best view of the capital city of Aldurnia was smashed to pieces and the bed was covered in gashes and blood stains. The chest of drawers was overturned and the box that once contained the Relics of Harmony has placed haphazardly on the ground. The box was empty, and the Relic were nowhere to be found.</speach>
+   </npc>
+  <npc name = "Old Man" entries ="1">
+	  <speach>What happened here? I mean, the Relics are gone, Trina is ... gone.</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach>The old man catches his breath and upon seeing your puzzled expressing says</speach>
+   </npc>
+  <npc name = "Old Man" entries ="1">
+	  <speach> I suppose you deserve to know the truth. As you may have guessed, I am no ordinary man. My name is Llewellyn Coed, the last of the druids in Aldurnia...</speach>
+   </npc>
+</npcs>

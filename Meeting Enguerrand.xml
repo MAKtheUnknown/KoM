@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="11">
+   <npc name=" " entries="1">
+      <speach> You decide to go to the bistro, whose owner is a known dealer of information. And no, Lucretia never lets you out of her sight the entire time.</speach>
+</npc>
+	  <npc name = " " entries ="1">
+	  <speach> You attempted to chat with the owner. However, before you get any useful information, your conversation with the owner was disrupted by a ruckus coming from outside. </speach>
+</npc>
+	  <npc name = "" entries ="1">
+      <speach> A group of young mercenaries entered the bistro and quarreled loudly. From their conversation, the you learned that, in the wee hours of the morning, several natural disasters just struck the land of Aldurnia, including a deadly avalanche happened on a snowy mountain close to the northern border. The avalanche was so severe that it buried an entire town, which happened to be the hometown of those poor mercenaries. </speach>
+</npc>
+	  <npc name = "Gruff Mercenary" entries ="1">
+	  <speach> We need to go back to the village. They need us more there than we need to be here.   </speach>
+   </npc>
+  <npc name = " Young Mercenary" entries ="1">
+	  <speach> And what are you going to do when you get there? You can't dig out the town yourselves. It's better to stay here and gather supplies first. </speach>
+   </npc>
+  <npc name = "Gruff Mercenary" entries ="1">
+	  <speach> Listen, I'm the leader here. What I say goes and if you don't like it, you can leave.</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> With that, the leader gathered the rest of the mercenaries and left the bistro, presumably to return to their village. The young man stood alone in the bistro and you decide to to talk to him. </speach>
+   </npc>
+   <npc name = " Xander" entries ="1">
+	  <speach> That was pretty rough there. What are you going to do now?  </speach>
+   </npc>
+  <npc name = "Young Mercenary" entries ="1">
+	  <speach> Whatever, the fools will probably freeze to death. I wish people would listen to me for once. Just because I'm young doesn't mean that I don't know anything. As for your question, I'll probably stay here a little while and then continue wandering. Why?</speach>
+   </npc>
+  <npc name = "Xander" entries ="1">
+	  <speach> I'm putting together a team to go on a quest. If you want, you can join us. You will be fairly compensated, of course.</speach>
+   </npc>
+	<npc name = "Enguerrand" entries ="1">
+	  <speach> The pay doesn't matter that much to me. I'd rather not stay in this town any more than I have to. Oh, if we're to travel together, proper introductions should be made. I am Enguerrand.</speach>
+   </npc>
+</npcs>

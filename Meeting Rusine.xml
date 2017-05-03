@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="10">
+   <npc name="" entries="1">
+      <speach>Thud! A shadowy figure leaps through the door and lands on top of you. It gets to its feet so quickly, you scarcely have time to draw your sword. </speach>
+</npc>
+	  <npc name = "????" entries ="1">
+	  <speach> There is no need for that. I have no interest in quarrelling with you. </speach>
+</npc>
+	  <npc name = "Xander" entries ="1">
+      <speach>What are you doing here?</speach>
+</npc>
+	  <npc name = "????" entries ="1">
+	  <speach> I suppose I could ask the same to you. If I'm not mistaken, this palce is forbidden to disgraced bodyguards and decrepit old men as well.</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach>Her words are as sharp as daggers.</speach>
+   </npc>
+  <npc name = "????" entries ="1">
+	  <speach> Listen, we don’t have much time left. Any minute now, the guards will find us unless we leave now. </speach>
+   </npc>
+  <npc name = "Xander" entries ="1">
+	  <speach> As much as I don’t trust you, it would be foolish to betray each other now. </speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> The trio sneak around the Keeper’s Manor until they find the exit.</speach>
+   </npc>
+  <npc name = "Llewellyn" entries ="1">
+	  <speach>There’s something I must do before I go.</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> The downtrodden look in his eyes tells you everything you need to know.</speach>
+   </npc>
+</npcs>

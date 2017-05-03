@@ -334,7 +334,7 @@ MonoBehaviour:
   - 
   - Lucius
   - 
-  Source: Assets/narration2.xml
+  Source: Assets/KoM/narration2.xml
 --- !u!81 &746194787
 AudioListener:
   m_ObjectHideFlags: 0

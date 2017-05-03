@@ -25,14 +25,14 @@ public class LoadXmlData : MonoBehaviour
 		style.wordWrap = true;
 		style.fontSize = 14;
 		style.normal.textColor = Color.black;
-		style.normal.background = new Texture2D(Screen.width, Screen.height-100);
+		style.normal.background = new Texture2D(Screen.width, Screen.height-80);
 		nameStyle.fontSize = 16;
 		nameStyle.normal.textColor = Color.yellow;
 		// ensures I don't try to show data I don't have
 		if(showData<maxData)
 		{
 			GUI.Label(new Rect(20,Screen.height-120,200,20), NpcName[showData],nameStyle);
-			GUI.Box(new Rect(20,Screen.height-100,Screen.width-40,60), data[showData],style);
+			GUI.Box(new Rect(20,Screen.height-100,Screen.width-40,80), data[showData],style);
 
 			if(GUI.Button(new Rect(((Screen.width-80)/2) ,Screen.height-20,100,20),"Next"))
 			{

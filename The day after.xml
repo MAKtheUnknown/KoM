@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="13">
+   <npc name=" " entries="1">
+      <speach> With the fall of their commander, the remaining guards retreat, allowing Llewellyn and you to exit the Keeper's Manor. </speach>
+</npc>
+	  <npc name = "" entries ="1">
+	  <speach> The next day...  </speach>
+</npc>
+	  <npc name = "Crowd" entries ="1">
+      <speach> WE WANT TRINA. WE WANT TRINA. </speach>
+</npc>
+	  <npc name = "" entries ="1">
+	  <speach> You awake to the sounds of shouting in the streets. An angry mob has gathered in the plaza facing the Keeper’s Manor. You watch as the inexperienced guards struggle to hold back the surging crowd. Without their leader, they are helpless as the commoners and peasants slowly march up the courtyard of the Keeper’s Manor and begin to breach the door. At this point, the guards realize their predicament and aggressively lunge at the crowd . A melee breaks out and guards quickly retreat back into the Manor to regroup. Finally, the crowd starts to subside and the leaders are quickly picked out of the crowd.  </speach>
+   </npc>
+  <npc name = " Alchemist Leader" entries ="1">
+	  <speach> For too long, the Relics have been hoarded by those with power and kept away from the people they were made to protect. They have been used as leverage against us, not unlike a chain around a wolfhound’s neck. We were powerless to resist and lead to places we did not want to go.</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> He pauses, possibly for dramatic effect.</speach>
+   </npc>
+  <npc name = "Alchemist Leader" entries ="1">
+	  <speach> But now is the time to end the cycle. With Trina’s death comes an opportunity to take the Relics and the power for ourselves. Although no single alchemist can wield the Relics, together we can bring about glory that Aldernia has not seen since before the Great War </speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach>The crowd is whipped into a frenzy. It is obvious that they believe that whoever wields the Relics, holds the power of the kingdom. </speach>
+   </npc>
+  <npc name = "????" entries ="1">
+	  <speach>That's enough out of you.</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> The words cut through the excitement and revelry of the crowd like an icy wind. The leader of the magicians appears suddenly from a cloud of smoke.</speach>
+  </npc>
+  <npc name = "Magician Leader" entries ="1">
+	  <speach> You are nothing more than mere children in history’s sight. Long before the first alchemist brewed his first draught, sorcerers were compiling spells and building upon the knowledge passed down from the druids. If anyone should hold the fate of the land in their hands, it should be those who have the ability to do so without resorting to potions. </speach>
+   </npc>
+   <npc name = "Alchemist Leader" entries ="1">
+	  <speach> Don’t be deceived. The alchemists are protecting the nature and tradition of magic from being polluted by greedy people like you. The power of the relics should be used to serve the people, whose rights are reinforced by the alchemists. </speach>
+   </npc>
+   <npc name = "" entries ="1">
+	  <speach> Upon hearing the dispute in front of the Keeper's Manor, you realize that Trina's death must be related to the chaos running rampant in the land. You walk into the town, deciding to find the thief from last night and Llewellyn before making any hasty decisions. </speach>
+   </npc>
+</npcs>
