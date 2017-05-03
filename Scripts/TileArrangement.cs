@@ -197,6 +197,9 @@ public class TileArrangement : MonoBehaviour
 
 	public void RunAnimations ()
 	{
+		List<Animation> toRemove = new List<Animation>();
+		List<Animation> toAdd = new List<Animation>();
+
 		foreach (Animation a in runningAnimations) 
 		{
 			if (a.IsFinished ()) 
@@ -204,9 +207,9 @@ public class TileArrangement : MonoBehaviour
 				a.OnFinish ();
 				foreach (Animation n in a.endTriggers) 
 				{
-					runningAnimations.Add (n);
+					toAdd.Add (n);
 				}
-				runningAnimations.Remove (a);
+				toRemove.Add (a);
 			}
 			else 
 			{
@@ -217,6 +220,14 @@ public class TileArrangement : MonoBehaviour
 				a.Action ();
 			}
 		}
+		foreach (Animation r in toRemove) 
+		{
+			runningAnimations.Remove (r);
+		}
+		foreach (Animation d in toAdd) 
+		{
+			runningAnimations.Add (d);
+		}
 	}
 
 	public void AddAnimation(Animation a)
@@ -226,8 +237,10 @@ public class TileArrangement : MonoBehaviour
 
 	public void AddAnimationSequence (List<Animation> l)
 	{
-		AddAnimation (l[0]);
-
+		if (l.Count>0) 
+		{
+			AddAnimation (l [0]);
+		}
 		for (int i = 1; i < l.Count; i++) 
 		{
 			l[i-1].AddEndTrigger(l[i]);

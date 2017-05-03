@@ -126,9 +126,11 @@ public class LimitedSpaces : MonoBehaviour, Mover
 
 		List<Animation> movements = new List<Animation>();
 
+		movements.Add (new global::Move (this.moved.owner.gameObject, moved.owner.tile, (paths [t.x, t.y]) [0], 1.0));
+
 		for (int i = 1; i < paths [t.x, t.y].Count; i++) 
 		{
-			movements.Add (new global::Move (this.moved.owner.gameObject, paths [t.x, t.y] [i - 1], paths [t.x, t.y] [i], 1.0));
+			movements.Add (new global::Move (this.moved.owner.gameObject, (paths [t.x, t.y]) [i - 1], (paths [t.x, t.y]) [i], 1.0));
 		}
 
 		map.AddAnimationSequence (movements);

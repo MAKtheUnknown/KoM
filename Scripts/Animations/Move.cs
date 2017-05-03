@@ -14,17 +14,21 @@ public class Move:Animation
 
 	Vector3 direction;
 
+	TileArrangement map;
+
 	public Move (GameObject subject, TileAttributes source, TileAttributes target, double speed)
 	{
 		this.subject = subject;
 		sourceX = source.x;
 		sourceY = source.y;
 		targetX = target.x;
-		targetY = source.y;
+		targetY = target.y;
 		this.speed = speed;
 		direction = (new Vector3 ((float)(targetX - sourceX), (float)(targetY - sourceY), 0.0f));
 		direction = direction.normalized;
 		direction.Scale (new Vector3 ((float)speed, (float)speed, (float)speed));
+
+		map = target.map;
 	}
 
 	public override void Init()
@@ -39,7 +43,7 @@ public class Move:Animation
 
 	public override bool IsFinished()
 	{
-		if (Math.Abs (subject.transform.position.x - targetX) < 5 && Math.Abs (subject.transform.position.y - targetY) < 5) 
+		if ( Math.Pow(Math.Pow(subject.transform.position.x-map.LowX - targetX, 2) + Math.Pow(subject.transform.position.y-map.LowY - targetY, 2), .5) < .5) 
 		{
 			return true;
 		}
