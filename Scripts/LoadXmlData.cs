@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using System.Text;
 using System.Xml;
 using System.IO;
@@ -10,6 +11,7 @@ public class LoadXmlData : MonoBehaviour
 {
 	public GUIStyle style;
 	public GUIStyle nameStyle;
+	public string nextScene;
 	string npcName;
 
 	int maxData;
@@ -40,9 +42,10 @@ public class LoadXmlData : MonoBehaviour
 				//Debug.Log(data[showData]);
 				//Debug.Log(NpcName[showData]);
 				// wrap
-				if(showData == maxData - 1)
-					showData=0;
-				else 
+				if (showData == maxData - 1) {
+					SceneManager.LoadScene(nextScene);
+				}
+					else 
 				showData = (showData +1);
 				
 			    
