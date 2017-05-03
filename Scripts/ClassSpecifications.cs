@@ -10,6 +10,7 @@ public class ClassSpecifications : MonoBehaviour
 	/**The charachter of this class*/
 	public CharacterCharacter owner;
 
+	public Sprite defaultSprite;
 
 	/**The class to which this class advances.*/
 	public ClassSpecifications nextLevel;

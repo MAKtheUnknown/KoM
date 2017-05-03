@@ -17100,6 +17100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  defaultSprite: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
   maximumHealth: 14
@@ -18665,6 +18666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  defaultSprite: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
   maximumHealth: 14
@@ -23466,6 +23468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  defaultSprite: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
   maximumHealth: 14
@@ -29403,6 +29406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  defaultSprite: {fileID: 0}
   nextLevel: {fileID: 0}
   classAbilities: []
   maximumHealth: 14
