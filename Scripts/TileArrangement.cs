@@ -216,4 +216,19 @@ public class TileArrangement : MonoBehaviour
 			}
 		}
 	}
+
+	public void AddAnimation(Animation a)
+	{
+		runningAnimations.Add (a);
+	}
+
+	public void AddAnimationSequence (List<Animation> l)
+	{
+		AddAnimation (l[0]);
+
+		for (int i = 1; i < l.Count; i++) 
+		{
+			l[i-1].AddEndTrigger(l[i]);
+		}
+	}
 }

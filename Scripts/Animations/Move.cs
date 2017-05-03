@@ -21,7 +21,8 @@ public class Move:Animation
 		sourceY = source.y;
 		targetX = target.x;
 		targetY = source.y;
-		direction = (new Vector3 (targetX - sourceX, targetY - sourceY, 0.0)).normalized.Scale (new Vector3 (speed, speed, speed));
+		direction = (new Vector3 ((float)(targetX - sourceX), (float)(targetY - sourceY), 0.0f)).normalized;
+		direction.Scale (new Vector3 ((float)speed, (float)speed, (float)speed));
 	}
 
 	public override void Init()

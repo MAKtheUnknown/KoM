@@ -33,6 +33,7 @@ public class LimitedSpaces : MonoBehaviour, Mover
 	double bridgeTime = 1 ;
 
 	public double[,] times;
+	public List<TileAttributes>[,] paths;
 
 	void Awake()
 	{
@@ -69,7 +70,7 @@ public class LimitedSpaces : MonoBehaviour, Mover
 
 		times = new double[m.GetLength (0), m.GetLength (1)];
 
-		propogateTimes (t, timeSpent-tileTypeTimes[moved.owner.tile.type]);
+		propogateTimes (t, timeSpent-tileTypeTimes[moved.owner.tile.type], new List<TileAttributes>());
 
 		times [moved.owner.x, moved.owner.y] = 0;
 
@@ -86,40 +87,55 @@ public class LimitedSpaces : MonoBehaviour, Mover
 
 		return possibilities;
 	}
-
-	public void propogateTimes(TileAttributes t, double time)
+		
+	public void propogateTimes(TileAttributes t, double time, List<TileAttributes> path)
 	{
+		
 		double newTime = time + tileTypeTimes[t.type];
+		List<TileAttributes> newPath = new List<TileAttributes> (path);
+		newPath.Add (t);
+
 		if (newTime <= timeToMove
 			&& (newTime < times[t.x,t.y] || times[t.x,t.y] == 0))
 		{
 			times[t.x,t.y] = newTime;
+			paths [t.x, t.y] = newPath;
 
 			if (t.north != null && t.north.containedCharacter == null) 
 			{
-				propogateTimes (t.north, newTime);
+				propogateTimes (t.north, newTime, newPath);
 			} 
 			if (t.south != null && t.south.containedCharacter == null) 
 			{
-				propogateTimes (t.south, newTime);
+				propogateTimes (t.south, newTime, newPath);
 			}
 			if (t.east != null && t.east.containedCharacter == null) 
 			{
-				propogateTimes (t.east, newTime);
+				propogateTimes (t.east, newTime, newPath);
 			}
 			if (t.west != null && t.west.containedCharacter == null) 
 			{
-				propogateTimes (t.west, newTime);
+				propogateTimes (t.west, newTime, newPath);
 			}
 		}
 	}
 
 	public void Move(TileAttributes t)
 	{
+
+		List<Animation> movements = new List<Animation>();
+
+		for (int i = 1; i < paths [t.x, t.y].Count; i++) 
+		{
+			movements.Add (new global::Move (this.moved.owner.gameObject, paths [t.x, t.y] [i - 1], paths [t.x, t.y] [i], 1.0));
+		}
+
+		map.AddAnimationSequence (movements);
+
 		t.containedCharacter = moved.owner;
 		moved.owner.tile.containedCharacter = null;
 		moved.owner.tile = t;
-		moved.owner.transform.position = t.transform.position;
+		//moved.owner.transform.position = t.transform.position;
 		moved.owner.x = t.x;
 		moved.owner.y = t.y;
 		
