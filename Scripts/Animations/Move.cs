@@ -21,7 +21,9 @@ public class Move:Animation
 		sourceY = source.y;
 		targetX = target.x;
 		targetY = source.y;
-		direction = (new Vector3 ((float)(targetX - sourceX), (float)(targetY - sourceY), 0.0f)).normalized;
+		this.speed = speed;
+		direction = (new Vector3 ((float)(targetX - sourceX), (float)(targetY - sourceY), 0.0f));
+		direction = direction.normalized;
 		direction.Scale (new Vector3 ((float)speed, (float)speed, (float)speed));
 	}
 
@@ -37,7 +39,10 @@ public class Move:Animation
 
 	public override bool IsFinished()
 	{
-		
+		if (Math.Abs (subject.transform.position.x - targetX) < 5 && Math.Abs (subject.transform.position.y - targetY) < 5) 
+		{
+			return true;
+		}
 		return false;
 	}
 
