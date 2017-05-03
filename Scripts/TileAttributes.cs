@@ -27,12 +27,17 @@ public class TileAttributes : MonoBehaviour {
 	{
 		//find and set the map parent.
 		map = this.GetComponentInParent<TileArrangement> ();
+		
+		tileEffects=new List<TileEffect>();
+		foreach(TileEffect t in GetComponentsInChildren<TileEffect>())
+		{
+			tileEffects.Add(t);
+		}
 	}
 
 	// Use this for initialization
 	void Start () 
 	{		
-		tileEffects=new List<TileEffect>();
 	}
 	
 	// Update is called once per frame
@@ -78,6 +83,8 @@ public class TileAttributes : MonoBehaviour {
 		mountains,
 		water,
 		trees,
-		bridge
+		bridge,
+		brokenBridge,
+		breakableBridge,
 	};
 }

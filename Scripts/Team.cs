@@ -95,7 +95,8 @@ public class Team : MonoBehaviour {
 	{
 		human,
 		computer,
-		dead
+		dead,
+		neutral,
 	}
 	
 	public enum MoraleTextAlign

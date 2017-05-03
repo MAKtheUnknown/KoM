@@ -30,6 +30,8 @@ public class CharacterCharacter : MonoBehaviour
 
 	public int x;
 	public int y;
+	
+	TileAttributes originalTile;
 
 	void Awake()
 	{
@@ -45,6 +47,7 @@ public class CharacterCharacter : MonoBehaviour
 	{
 		putOnBoard ();
 		currentHP = type.maximumHealth;
+		originalTile=tile;
 	}
 	
 	// Update is called once per frame
@@ -141,6 +144,17 @@ public class CharacterCharacter : MonoBehaviour
 		{
 			passive.Finish();
 		}*/
+	}
+	
+	public void returnToStart()
+	{
+		tile.containedCharacter=null;
+		tile=originalTile;
+		tile.containedCharacter=this;
+		x=originalTile.x;
+		y=originalTile.y;
+		
+        //timeSpent = times[t.x,t.y];
 	}
 	
 	void EffectCheck()

@@ -112,9 +112,11 @@ public class TeamManager : MonoBehaviour {
 			rotate();
 		}
 		
-		
-		
-		
+		if(teams[turn].type==Team.PlayerType.neutral)
+		{
+			rotate();
+		}
+				
 	}
 	
 	void UpdateTiles(TileEffect e)

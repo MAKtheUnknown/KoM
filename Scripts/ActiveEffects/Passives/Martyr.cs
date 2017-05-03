@@ -25,11 +25,6 @@ public class Martyr : Passive {
 		team=c.team;
 	}
 
-	public override void Act()
-	{
-		base.turnsLeft++;
-	}
-
 	public override bool Condition()
 	{
 		return !done&&base.subject.currentHP<=0;

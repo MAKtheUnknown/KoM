@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class TileEffect {
+public abstract class TileEffect:MonoBehaviour {
 
 	public Team source;
 	public int turnsLeft;

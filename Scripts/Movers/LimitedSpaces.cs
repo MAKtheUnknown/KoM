@@ -30,7 +30,9 @@ public class LimitedSpaces : MonoBehaviour, Mover
 	double mountainTime = 4;
 	double forestTime = 3;
 	double shallowWaterTime = 9001;
-	double bridgeTime = 1 ;
+	double bridgeTime = 2 ;
+	double brokenBridgeTime = 9001;
+	double breakableBridgeTime = 2;
 
 	public double[,] times;
 	public List<TileAttributes>[,] paths;
@@ -46,6 +48,8 @@ public class LimitedSpaces : MonoBehaviour, Mover
 		tileTypeTimes.Add (TileAttributes.TileType.trees, forestTime);
 		tileTypeTimes.Add (TileAttributes.TileType.water, shallowWaterTime);
 		tileTypeTimes.Add (TileAttributes.TileType.bridge, bridgeTime);
+		tileTypeTimes.Add (TileAttributes.TileType.brokenBridge, brokenBridgeTime);
+		tileTypeTimes.Add (TileAttributes.TileType.breakableBridge, breakableBridgeTime);
 	}
 
 	// Use this for initialization

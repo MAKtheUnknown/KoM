@@ -27,10 +27,6 @@ public class FantasiasReturn : Passive {
 				ultimate=a;
 		}
 	}
-
-	public override void Act()
-	{
-	}
 	public override bool Condition()
 	{
 		return ultCD!=(ultimate.cooldownTimer<=0);
