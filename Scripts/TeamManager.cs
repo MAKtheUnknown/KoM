@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class TeamManager : MonoBehaviour {
 
@@ -247,9 +248,34 @@ public class TeamManager : MonoBehaviour {
 			{
 				if(t.type!=Team.PlayerType.dead)
 				{
-					this.DeclareVictory(t.name);
+					Advance(t);
 				}
 			}
+		}
+	}
+	
+	void Advance(Team t)
+	{
+		String str= SceneManager.GetActiveScene().name;
+		if(String.Equals(str,"Map 1")||String.Equals(str,"Multiplayer Map 2"))
+			SceneManager.LoadScene("TitleScreen");
+		
+		if(t==teams[0])
+		{
+			if(String.Equals(str,"Hill Map"))
+			{
+				SceneManager.LoadScene("The day after");
+			}
+			
+			if(String.Equals(str,"Small Room"))
+			{
+				SceneManager.LoadScene("Narration");
+			}
+		}
+		
+		if(t==teams[1])
+		{
+			SceneManager.LoadScene(str);
 		}
 	}
 	
