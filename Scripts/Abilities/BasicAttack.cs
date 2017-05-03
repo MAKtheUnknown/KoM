@@ -53,6 +53,8 @@ public class BasicAttack : CharachterTargeter {
 				/** theif passive**/
 				if(!t.type.passive.GetType().Equals(typeof(AcrobaticLeap))  ||  Random.Range(0.0f,1.0f)>.25)
 				t.damage (damage);
+
+				map.AddAnimation (new Shake(t.gameObject, .05, 6, new Vector3(1f,1f,0), 9));
 			}
 			map.highlighter.mode = Highlighter.SelectionMode.PIECE_TO_USE;
 			Start ();

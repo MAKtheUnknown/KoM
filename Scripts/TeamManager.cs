@@ -102,16 +102,22 @@ public class TeamManager : MonoBehaviour {
 				x.moraleText.GetComponent<Text> ().fontStyle = FontStyle.Bold;
 				foreach (CharacterCharacter c in x.pieces) 
 				{
-					SpriteRenderer sr = c.gameObject.GetComponent<SpriteRenderer> ();
-					sr.color = new Color(1f, 1f, 1f, 1f);
+					if (c.gameObject != null) 
+					{
+						SpriteRenderer sr = c.gameObject.GetComponent<SpriteRenderer> ();
+						sr.color = new Color (1f, 1f, 1f, 1f);
+					}
 				}
 			}
 			else 
 			{
 				foreach (CharacterCharacter c in x.pieces) 
 				{
-					SpriteRenderer sr = c.gameObject.GetComponent<SpriteRenderer> ();
-					sr.color = new Color(1f,1f,1f,0.6f);
+					if (c.gameObject != null) 
+					{
+						SpriteRenderer sr = c.gameObject.GetComponent<SpriteRenderer> ();
+						sr.color = new Color (1f, 1f, 1f, 1f);
+					}
 				}
 			}
 		}
@@ -125,11 +131,9 @@ public class TeamManager : MonoBehaviour {
 			rotate();
 		}
 		
-		if(teams[turn].type==Team.PlayerType.neutral)
-		{
-			rotate();
-		}
-				
+		
+		
+		
 	}
 	
 	void UpdateTiles(TileEffect e)
