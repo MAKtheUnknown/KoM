@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ActiveEffect {
+public abstract class ActiveEffect{
 
 	public CharacterCharacter subject;
 	public int turnsLeft;

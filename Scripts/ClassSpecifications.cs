@@ -38,6 +38,8 @@ public class ClassSpecifications : MonoBehaviour
 	public CharacterType type;
 	
 	public Passive passive;
+	
+	public List<ContinuousEffect> passives;
 
 	void Awake()
 	{
@@ -45,6 +47,7 @@ public class ClassSpecifications : MonoBehaviour
 		movement = GetComponentInChildren<Mover> ();
 		classAbilities = GetComponentsInChildren<Ability> ();
 		nextLevel = GetComponentInChildren<ClassSpecifications> ();
+		passives = new List<ContinuousEffect>();
 
 	}
 
@@ -57,6 +60,10 @@ public class ClassSpecifications : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		foreach(ContinuousEffect e in passives)
+		{
+			e.Check();
+		}
 	}
 	
 	public enum CharacterType

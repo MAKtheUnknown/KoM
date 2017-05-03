@@ -31,6 +31,10 @@ public class Team : MonoBehaviour {
 	public double teamDefense=0; //defense against morale damage 
 	
 	public List<TileEffect> tileEffects;
+	
+	public Vector3 initialScale;
+	
+	public float lastMorale;
 
 	void Awake()
 	{
@@ -43,7 +47,7 @@ public class Team : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		tileEffects= new List<TileEffect>();		
+		tileEffects= new List<TileEffect>();	
 	}
 	
 	
@@ -78,15 +82,16 @@ public class Team : MonoBehaviour {
 	
 	public void changeMorale()
 	{	//First half to change morale bar
-		moraleBar.GetComponent<Transform>().transform.localScale = Vector3.Scale(moraleBar.GetComponent<Transform>().transform.localScale, new Vector3(1,0,1))+new Vector3(0,(float)(teamMorale)/maxMorale*100,0); //Currently using 100 as placeholder. Later use variable maxMorale
+		moraleBar.GetComponent<Transform>().transform.localScale = Vector3.Scale(initialScale, new Vector3(1,0,1))+new Vector3(0,(float)(teamMorale)/maxMorale*100,0); //Currently using 100 as placeholder. Later use variable maxMorale
 		if(textAlign==Team.MoraleTextAlign.left)
 		{
-			moraleBar.GetComponent<Transform>().transform.localPosition -=new Vector3((float)(maxMorale-teamMorale)/maxMorale*100,0,0);
+			moraleBar.GetComponent<Transform>().transform.localPosition -=new Vector3((float)(lastMorale-teamMorale)/maxMorale*100,0,0);
 		}
 		else
 		{
-			moraleBar.GetComponent<Transform>().transform.localPosition +=new Vector3((float)(maxMorale-teamMorale)/maxMorale*100,0,0);
+			moraleBar.GetComponent<Transform>().transform.localPosition +=new Vector3((float)(lastMorale-teamMorale)/maxMorale*100,0,0);
 		}
+		lastMorale=teamMorale;
 		//Changes morale text
 		moraleText.GetComponent<Text>().text=name+": "+teamMorale+"/"+maxMorale;
 	}

@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BuffedTile : TileEffect {
+public abstract class BuffedTile : MonoBehaviour {
+
+	public Team source;
+	public int turnsLeft;
+	public TileAttributes subject;
 
 	public void Start()
 	{
@@ -11,22 +15,11 @@ public abstract class BuffedTile : TileEffect {
 		turnsLeft=100;
 	}
 	
-	public override void Act()
-	{
-		turnsLeft++;
-	}
-
-	public override void Finish()
-	{
-		
-	}
-	
 	public void Update()
 	{
 		if(subject.containedCharacter!=null)
 		{
 			GiveBuff(subject.containedCharacter);
-			subject.tileEffects.Remove(this);
 			GameObject.Destroy(this);
 		}
 	}

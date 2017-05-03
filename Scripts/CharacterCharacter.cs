@@ -161,14 +161,32 @@ public class CharacterCharacter : MonoBehaviour
 		y=t.y;
 	}
 	
+	public TileAttributes FindSafeTile()
+	{
+		return NearestSafeTile(tile, 1);
+	}
+	
+	TileAttributes NearestSafeTile(TileAttributes t, int r)
+	{
+		int j;
+		TileAttributes[,] map = t.map.tileMap;
+		for(int i = -1*r; i<=r;i++)
+		{
+			j=Math.Abs(i)-r;
+			if(map[t.x+i,t.y+j]!=null&&map[t.x+i,t.y+j].containedCharacter==null&&((LimitedSpaces)(type.movement)).tileTypeTimes[map[t.x+i,t.y+j].type]<9000)
+					return map[t.x+i,t.y+j];
+			j=-1*j;
+			if(map[t.x+i,t.y+j]!=null&&map[t.x+i,t.y+j].containedCharacter==null&&((LimitedSpaces)(type.movement)).tileTypeTimes[map[t.x+i,t.y+j].type]<9000)
+					return map[t.x+i,t.y+j];
+			
+		}
+		
+		return NearestSafeTile(t,r+1);
+	}
+	
 	void EffectCheck()
 	{
-		List<ContinuousEffect> contEffects = new List<ContinuousEffect>();
-		foreach(ActiveEffect e in activeEffects)
-			if(e.GetType().Equals(typeof(ContinuousEffect)))
-				contEffects.Add((ContinuousEffect)e);
-		foreach(ContinuousEffect e in contEffects)
-			e.Check();
+		
 	}
 
 }

@@ -29,10 +29,6 @@ public class TileAttributes : MonoBehaviour {
 		map = this.GetComponentInParent<TileArrangement> ();
 		
 		tileEffects=new List<TileEffect>();
-		foreach(TileEffect t in GetComponentsInChildren<TileEffect>())
-		{
-			tileEffects.Add(t);
-		}
 	}
 
 	// Use this for initialization
@@ -86,5 +82,7 @@ public class TileAttributes : MonoBehaviour {
 		bridge,
 		brokenBridge,
 		breakableBridge,
+		impassable,
+		stone,	
 	};
 }

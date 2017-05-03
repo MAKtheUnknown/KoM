@@ -32,7 +32,7 @@ public class IncomprehensibleRage : Passive {
 		
 	}
 
-	public void Init(CharacterCharacter c)
+	public override void Init(CharacterCharacter c)
 	{
 		this.Init (c, 100);
 	}

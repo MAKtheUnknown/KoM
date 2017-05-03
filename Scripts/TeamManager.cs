@@ -30,6 +30,8 @@ public class TeamManager : MonoBehaviour {
 			teams[i].moraleBar=GameObject.FindGameObjectWithTag("Morale Bar "+(i+1));
 			teams[i].moraleText=GameObject.FindGameObjectWithTag("Morale Text "+(i+1));
 			teams[i].moraleText.GetComponent<Text>().text=teams[i].name+": "+teams[i].teamMorale+"/"+teams[i].maxMorale;
+			teams[i].initialScale = teams[i].moraleBar.GetComponent<Transform>().transform.localScale;
+			teams[i].lastMorale=teams[i].maxMorale;
 		}
 		teams[0].moraleText.GetComponent<Text>().fontStyle=FontStyle.Bold;
 		
@@ -104,7 +106,7 @@ public class TeamManager : MonoBehaviour {
 				x.moraleText.GetComponent<Text> ().fontStyle = FontStyle.Bold;
 				foreach (CharacterCharacter c in x.pieces) 
 				{
-					if (c.gameObject != null) 
+					if (c != null) 
 					{
 						SpriteRenderer sr = c.gameObject.GetComponent<SpriteRenderer> ();
 						sr.color = new Color (1f, 1f, 1f, 1f);
@@ -115,7 +117,7 @@ public class TeamManager : MonoBehaviour {
 			{
 				foreach (CharacterCharacter c in x.pieces) 
 				{
-					if (c.gameObject != null) 
+					if (c != null) 
 					{
 						SpriteRenderer sr = c.gameObject.GetComponent<SpriteRenderer> ();
 						sr.color = new Color (1f, 1f, 1f, 1f);
@@ -204,6 +206,8 @@ public class TeamManager : MonoBehaviour {
 			c.type.passive = new FantasiasReturn(c);
 			c.activeEffects.Add(c.type.passive);
 		}
+		
+		c.type.passives.Add(c.type.passive);
 		
 	}
 	

@@ -13,6 +13,13 @@ public abstract class Passive : ContinuousEffect
 	/**
 	 * A method that is executed with each round.
 	 */
+	public virtual void Init(CharacterCharacter c)
+	{
+		subject = c;
+		turnsLeft=100;
+		type = ActiveEffect.EffectType.passive;
+	}
+	
 	public override void Init(CharacterCharacter c, int rounds)
 	{
 		subject = c;

@@ -105,10 +105,16 @@ public class RepairBridge : Ability  {
 			RepairNearbyBridges(t.west);
 		}
 	}
-	
+	/*
 	void FixBridge(TileAttributes t)
 	{
 		t.type=TileAttributes.TileType.breakableBridge;
+		t.GetComponent<Renderer>().material=breakableBridgeMat;
+	}
+	*/
+	void FixBridge(TileAttributes t)
+	{
+		t.type=TileAttributes.TileType.bridge;
 		t.GetComponent<Renderer>().material=breakableBridgeMat;
 	}
 }
