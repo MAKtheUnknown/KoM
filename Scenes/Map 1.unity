@@ -148,6 +148,7 @@ MonoBehaviour:
   lastTile: {fileID: 0}
   x: 0
   y: 0
+  originalTile: {fileID: 0}
 --- !u!212 &2498751
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -251,6 +252,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &3938577
@@ -356,6 +358,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &7002118
@@ -461,6 +464,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &10770418
@@ -566,6 +570,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &12601162
@@ -671,6 +676,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &16233518
@@ -776,6 +782,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &19932809
@@ -882,13 +889,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 23058586}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 112
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &23058588
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -923,6 +930,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &23058590
@@ -939,7 +947,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -987,13 +995,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 23619259}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 1, y: 9, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 102
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &23619261
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1028,6 +1036,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &23619263
@@ -1044,7 +1053,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1139,13 +1148,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 32539090}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 7, y: 7, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 208
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &32539092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1180,6 +1189,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &32539094
@@ -1196,7 +1206,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1285,6 +1295,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &40094890
@@ -1390,6 +1401,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &40464789
@@ -1569,6 +1581,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &49607848
@@ -1674,6 +1687,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &50190292
@@ -1779,6 +1793,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &55608033
@@ -1884,6 +1899,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &56010209
@@ -1989,6 +2005,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &57999380
@@ -2053,13 +2070,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60212412}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 6, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 185
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &60212414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2094,6 +2111,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &60212416
@@ -2110,7 +2128,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2199,6 +2217,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &65153908
@@ -2263,13 +2282,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 74181653}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 3, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 143
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &74181655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2304,6 +2323,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &74181657
@@ -2320,7 +2340,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2409,6 +2429,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &92521720
@@ -2514,6 +2535,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &95504692
@@ -2619,6 +2641,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &99259487
@@ -2724,6 +2747,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &111072711
@@ -2829,6 +2853,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &119230562
@@ -2934,6 +2959,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &127921512
@@ -3039,6 +3065,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &135234385
@@ -3207,7 +3234,7 @@ GameObject:
   - component: {fileID: 137038361}
   - component: {fileID: 137038360}
   m_Layer: 0
-  m_Name: Bridge Tile (4)
+  m_Name: Breakable Bridge Tile (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3220,13 +3247,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 137038358}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 4, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 148
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!61 &137038360
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3258,9 +3285,10 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 5
+  type: 7
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &137038362
@@ -3277,7 +3305,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 14faa3cc7d0fca64db9db82155ddd3eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3366,6 +3394,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &143805274
@@ -3471,6 +3500,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &154712808
@@ -3576,6 +3606,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &155961238
@@ -3681,6 +3712,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &157463488
@@ -3786,6 +3818,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &158080927
@@ -3891,6 +3924,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &159083192
@@ -3996,6 +4030,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &172394209
@@ -4101,6 +4136,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &172642026
@@ -4165,13 +4201,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 172931060}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 124
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &172931062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4206,6 +4242,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &172931064
@@ -4222,7 +4259,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4311,6 +4348,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &176701754
@@ -4416,6 +4454,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &179672403
@@ -4521,6 +4560,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &184866772
@@ -4626,6 +4666,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &188101473
@@ -4731,6 +4772,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &188548909
@@ -4836,6 +4878,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &192224843
@@ -4941,6 +4984,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &194615595
@@ -5046,6 +5090,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &195850432
@@ -5208,6 +5253,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &210213122
@@ -5313,6 +5359,7 @@ MonoBehaviour:
   type: 1
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &210908665
@@ -5460,6 +5507,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &218235471
@@ -5565,6 +5613,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &218785143
@@ -5670,6 +5719,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &221320717
@@ -5908,6 +5958,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &246329385
@@ -6013,6 +6064,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &247194039
@@ -6118,6 +6170,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &252658028
@@ -6223,6 +6276,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &254231694
@@ -6287,13 +6341,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 267595881}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 80
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &267595883
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6328,6 +6382,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &267595885
@@ -6344,7 +6399,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6433,6 +6488,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &274743887
@@ -6538,6 +6594,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &283030526
@@ -6643,6 +6700,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &283180746
@@ -6748,6 +6806,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &288366092
@@ -6853,6 +6912,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &291194140
@@ -6958,6 +7018,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &301965076
@@ -7063,6 +7124,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &306562300
@@ -7250,6 +7312,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &318322882
@@ -7345,6 +7408,7 @@ MonoBehaviour:
   lastTile: {fileID: 0}
   x: 0
   y: 0
+  originalTile: {fileID: 0}
 --- !u!212 &323324382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7505,6 +7569,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &327702569
@@ -7610,6 +7675,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &348968202
@@ -7715,6 +7781,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &357067449
@@ -7825,6 +7892,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &367559603
@@ -7930,6 +7998,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &372668131
@@ -8117,6 +8186,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &374425148
@@ -8222,6 +8292,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &374626842
@@ -8286,13 +8357,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 384744247}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 4, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 160
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &384744249
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8327,6 +8398,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &384744251
@@ -8343,7 +8415,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8432,6 +8504,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &388077705
@@ -8537,6 +8610,7 @@ MonoBehaviour:
   type: 1
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &390578110
@@ -8642,6 +8716,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &395457483
@@ -8747,6 +8822,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &398665454
@@ -8853,13 +8929,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 407720140}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 5, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 179
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &407720142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8894,6 +8970,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &407720144
@@ -8910,7 +8987,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8999,6 +9076,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &410567052
@@ -9063,13 +9141,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 413816601}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 5, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 167
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &413816603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9101,9 +9179,10 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 5
+  type: 7
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &413816605
@@ -9120,7 +9199,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 14faa3cc7d0fca64db9db82155ddd3eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9209,6 +9288,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &415860709
@@ -9314,6 +9394,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &416479868
@@ -9419,6 +9500,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &426040454
@@ -9538,6 +9620,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &426324514
@@ -9717,6 +9800,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &446674045
@@ -9781,13 +9865,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 447892781}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 9, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 81
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &447892783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9822,6 +9906,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &447892785
@@ -9838,7 +9923,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9927,6 +10012,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &452079709
@@ -10032,6 +10118,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &458446128
@@ -10137,6 +10224,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &461155876
@@ -10242,6 +10330,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &467493848
@@ -10347,6 +10436,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &477001548
@@ -10475,13 +10565,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 486359702}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 6, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 197
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &486359704
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10516,6 +10606,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &486359706
@@ -10532,7 +10623,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10621,6 +10712,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &506040398
@@ -10726,6 +10818,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &507208069
@@ -10831,6 +10924,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &509976678
@@ -10936,6 +11030,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &512904816
@@ -11041,6 +11136,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &513144633
@@ -11146,6 +11242,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &515559190
@@ -11251,6 +11348,7 @@ MonoBehaviour:
   type: 1
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &526025996
@@ -11356,6 +11454,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &528890077
@@ -11461,6 +11560,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &532208436
@@ -11566,6 +11666,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &539433096
@@ -11630,13 +11731,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 555113323}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 88
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &555113325
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11671,6 +11772,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &555113327
@@ -11687,7 +11789,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11776,6 +11878,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &557185691
@@ -11881,6 +11984,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &575276323
@@ -11986,6 +12090,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &585854029
@@ -12138,6 +12243,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &588828396
@@ -12243,6 +12349,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &589169746
@@ -12348,6 +12455,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &596209102
@@ -12453,6 +12561,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &614137827
@@ -12558,6 +12667,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &614341719
@@ -12663,6 +12773,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &623531835
@@ -12768,6 +12879,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &627021885
@@ -12873,6 +12985,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &627637428
@@ -12978,6 +13091,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &644472874
@@ -13083,6 +13197,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &647941716
@@ -13188,6 +13303,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &651987187
@@ -13268,6 +13384,7 @@ MonoBehaviour:
   lastTile: {fileID: 0}
   x: 0
   y: 0
+  originalTile: {fileID: 0}
 --- !u!212 &655375424
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13371,6 +13488,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &658171429
@@ -13476,6 +13594,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &661744697
@@ -13581,6 +13700,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &663340037
@@ -13686,6 +13806,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &665649183
@@ -13791,6 +13912,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &667899405
@@ -13896,6 +14018,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &675391275
@@ -14001,6 +14124,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &679247791
@@ -14106,6 +14230,7 @@ MonoBehaviour:
   type: 1
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &687486060
@@ -14211,6 +14336,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &689858929
@@ -14316,6 +14442,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &691512104
@@ -14794,6 +14921,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &696596166
@@ -14899,6 +15027,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &699781543
@@ -15051,6 +15180,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &709940454
@@ -15156,6 +15286,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &712416096
@@ -15261,6 +15392,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &713546429
@@ -15366,6 +15498,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &730854543
@@ -15518,6 +15651,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &735521649
@@ -15623,6 +15757,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &747025956
@@ -15728,6 +15863,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &750051082
@@ -15833,6 +15969,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &757022985
@@ -15985,6 +16122,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &760984047
@@ -16132,6 +16270,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &772765261
@@ -16237,6 +16376,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &781652776
@@ -16342,6 +16482,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &789406165
@@ -16447,6 +16588,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &790530200
@@ -16552,6 +16694,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &791254617
@@ -16657,6 +16800,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &800280634
@@ -16762,6 +16906,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &803584804
@@ -16867,6 +17012,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &810868348
@@ -17260,6 +17406,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &835559484
@@ -17365,6 +17512,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &835820139
@@ -17429,13 +17577,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 842901038}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 1, y: 10, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 103
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &842901040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17470,6 +17618,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &842901042
@@ -17486,7 +17635,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17575,6 +17724,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &844794390
@@ -17644,13 +17794,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 850088172}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 8, y: 6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 225
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &850088174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17685,6 +17835,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &850088176
@@ -17701,7 +17852,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17790,6 +17941,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &850887560
@@ -17854,13 +18006,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 854427724}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 7, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 215
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &854427726
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17895,6 +18047,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &854427728
@@ -17911,7 +18064,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18000,6 +18153,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &854953907
@@ -18064,13 +18218,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855789681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 9, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 240
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &855789683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18105,6 +18259,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &855789685
@@ -18121,7 +18276,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18169,13 +18324,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 872917973}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2, y: 10, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 116
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &872917975
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18210,6 +18365,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &872917977
@@ -18226,7 +18382,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18315,6 +18471,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &873337074
@@ -18420,6 +18577,7 @@ MonoBehaviour:
   type: 1
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &878758705
@@ -18584,6 +18742,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &898351455
@@ -18771,6 +18930,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &920721528
@@ -18876,6 +19036,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &925107667
@@ -18981,6 +19142,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &946726504
@@ -19086,6 +19248,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &955422903
@@ -19191,6 +19354,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &959500074
@@ -19443,6 +19607,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &975337402
@@ -19548,6 +19713,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &977779061
@@ -19612,13 +19778,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 978337421}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 3, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 131
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &978337423
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19653,6 +19819,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &978337425
@@ -19669,7 +19836,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19758,6 +19925,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &989689316
@@ -19863,6 +20031,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &994266991
@@ -19927,13 +20096,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1007327781}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 8, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 233
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1007327783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19968,6 +20137,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1007327785
@@ -19984,7 +20154,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20032,13 +20202,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1012492612}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 1, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 107
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1012492614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20073,6 +20243,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1012492616
@@ -20089,7 +20260,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20178,6 +20349,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1019502798
@@ -20283,6 +20455,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1022104282
@@ -20388,6 +20561,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1024152926
@@ -20493,6 +20667,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1038822039
@@ -20672,6 +20847,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1047071982
@@ -20777,6 +20953,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1048934956
@@ -20882,6 +21059,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1052414855
@@ -20987,6 +21165,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1056670768
@@ -21092,6 +21271,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1061933630
@@ -21197,6 +21377,7 @@ MonoBehaviour:
   type: 1
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1064668937
@@ -21261,13 +21442,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1077659401}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 8, y: 7, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 226
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1077659403
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21302,6 +21483,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1077659405
@@ -21318,7 +21500,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21407,6 +21589,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1077840320
@@ -21512,6 +21695,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1099500574
@@ -21617,6 +21801,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1105071307
@@ -21722,6 +21907,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1106105778
@@ -21827,6 +22013,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1108120206
@@ -21932,6 +22119,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1115712933
@@ -22037,6 +22225,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1118879646
@@ -22142,6 +22331,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1120204850
@@ -22247,6 +22437,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1138452581
@@ -22311,13 +22502,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1139007345}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2, y: 9, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 117
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1139007347
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22352,6 +22543,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1139007349
@@ -22368,7 +22560,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22457,6 +22649,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1145025344
@@ -22562,6 +22755,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1153085637
@@ -22626,13 +22820,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1155292308}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 9, y: 6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 242
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1155292310
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22667,6 +22861,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1155292312
@@ -22683,7 +22878,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22791,6 +22986,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1157880984
@@ -22896,6 +23092,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1163519116
@@ -23001,6 +23198,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1165256824
@@ -23199,6 +23397,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1187810346
@@ -23344,6 +23543,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1197100956
@@ -23449,6 +23649,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1197823259
@@ -23702,6 +23903,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1205705161
@@ -23807,6 +24009,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1232617068
@@ -23912,6 +24115,7 @@ MonoBehaviour:
   type: 1
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1238103898
@@ -24017,6 +24221,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1243447299
@@ -24122,6 +24327,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1243751800
@@ -24227,6 +24433,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1249469899
@@ -24332,6 +24539,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1264096288
@@ -24437,6 +24645,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1264559117
@@ -24614,6 +24823,7 @@ MonoBehaviour:
   lastTile: {fileID: 0}
   x: 0
   y: 0
+  originalTile: {fileID: 0}
 --- !u!212 &1272014051
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24717,6 +24927,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1277802754
@@ -24997,6 +25208,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1280337901
@@ -25102,6 +25314,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1286274878
@@ -25207,6 +25420,7 @@ MonoBehaviour:
   type: 1
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1290232312
@@ -25312,6 +25526,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1296355923
@@ -25534,6 +25749,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1303692243
@@ -25761,6 +25977,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1311611350
@@ -25866,6 +26083,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1312352217
@@ -25971,6 +26189,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1317854900
@@ -26076,6 +26295,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1320842125
@@ -26181,6 +26401,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1337371476
@@ -26286,6 +26507,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1343025521
@@ -26391,6 +26613,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1353192905
@@ -26496,6 +26719,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1353723607
@@ -26560,13 +26784,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1356138453}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 1, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 95
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1356138455
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26601,6 +26825,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1356138457
@@ -26617,7 +26842,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26788,6 +27013,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1368020327
@@ -26898,6 +27124,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1377271760
@@ -26962,13 +27189,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1378477930}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 9, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 237
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1378477932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27003,6 +27230,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1378477934
@@ -27019,7 +27247,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27108,6 +27336,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1386175252
@@ -27275,6 +27504,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1417445953
@@ -27380,6 +27610,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1419951791
@@ -27485,6 +27716,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1423518763
@@ -27590,6 +27822,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1428458909
@@ -27695,6 +27928,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1430963910
@@ -27800,6 +28034,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1436411502
@@ -27905,6 +28140,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1437080151
@@ -28039,6 +28275,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1442532698
@@ -28144,6 +28381,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1446395426
@@ -28249,6 +28487,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1476512427
@@ -28475,6 +28714,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1491787022
@@ -28580,6 +28820,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1497595475
@@ -28676,6 +28917,7 @@ MonoBehaviour:
   moraleText: {fileID: 1489659906}
   textAlign: 1
   teamDefense: 0
+  tileEffects: []
 --- !u!114 &1500078928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28754,6 +28996,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1510696402
@@ -28859,6 +29102,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1520745092
@@ -28964,6 +29208,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1523930802
@@ -29069,6 +29314,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1528499801
@@ -29425,6 +29671,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1572037323
@@ -29530,6 +29777,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1573611298
@@ -29635,6 +29883,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1588543051
@@ -29699,13 +29948,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1594003685}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 7, y: 6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 207
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1594003687
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29740,6 +29989,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1594003689
@@ -29756,7 +30006,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29845,6 +30095,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1613678767
@@ -29950,6 +30201,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1614814295
@@ -30055,6 +30307,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1616065478
@@ -30160,6 +30413,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1625049945
@@ -30265,6 +30519,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1629143160
@@ -30370,6 +30625,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1645676025
@@ -30475,6 +30731,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1647483117
@@ -30580,6 +30837,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1652521828
@@ -30685,6 +30943,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1656342515
@@ -30790,6 +31049,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1659351279
@@ -30895,6 +31155,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1666678207
@@ -31000,6 +31261,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1670483105
@@ -31105,6 +31367,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1675334672
@@ -31211,13 +31474,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1682135405}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 7, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 203
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1682135407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31252,6 +31515,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1682135409
@@ -31268,7 +31532,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -31431,6 +31695,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1696400404
@@ -31536,6 +31801,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1701823999
@@ -31641,6 +31907,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1702717713
@@ -31746,6 +32013,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1722215836
@@ -31851,6 +32119,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1726176174
@@ -31971,6 +32240,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1730027045
@@ -32158,6 +32428,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1755746289
@@ -32263,6 +32534,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1760154090
@@ -32368,6 +32640,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1762569899
@@ -32473,6 +32746,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1765205874
@@ -32578,6 +32852,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1767366589
@@ -32683,6 +32958,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1767913644
@@ -32788,6 +33064,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1768173331
@@ -32893,6 +33170,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1769080168
@@ -32998,6 +33276,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1771705834
@@ -33103,6 +33382,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1776399853
@@ -33208,6 +33488,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1778028816
@@ -33313,6 +33594,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1781809859
@@ -33418,6 +33700,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1788247425
@@ -33528,6 +33811,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1805549795
@@ -33680,6 +33964,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1809393905
@@ -33785,6 +34070,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1812251155
@@ -33890,6 +34176,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1835861189
@@ -33995,6 +34282,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1836074166
@@ -34189,6 +34477,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1877557942
@@ -34294,6 +34583,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1877865003
@@ -34427,6 +34717,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1883340235
@@ -34532,6 +34823,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1899674877
@@ -34637,6 +34929,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1903186122
@@ -34742,6 +35035,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1903919238
@@ -34847,6 +35141,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1905221427
@@ -34952,6 +35247,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1911231573
@@ -35139,6 +35435,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1922687278
@@ -35244,6 +35541,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1923984345
@@ -35349,6 +35647,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1925553464
@@ -35454,6 +35753,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1926034304
@@ -35559,6 +35859,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1928619239
@@ -35664,6 +35965,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1929362523
@@ -35769,6 +36071,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1929969437
@@ -35833,13 +36136,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1938404486}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 9, y: 7, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 236
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &1938404488
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35874,6 +36177,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1938404490
@@ -35890,7 +36194,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35979,6 +36283,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1942134257
@@ -36201,6 +36506,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1954501118
@@ -36306,6 +36612,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1965679005
@@ -36397,6 +36704,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1968189445
@@ -36502,6 +36810,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &1969798630
@@ -36821,6 +37130,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2010472918
@@ -36926,6 +37236,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2010574053
@@ -37136,6 +37447,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2028505591
@@ -37241,6 +37553,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2033556774
@@ -37346,6 +37659,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2037783682
@@ -37451,6 +37765,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2038435021
@@ -37556,6 +37871,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2040277798
@@ -37661,6 +37977,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2057637067
@@ -37941,6 +38258,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2077040494
@@ -38005,13 +38323,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2085767144}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 76
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &2085767146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38046,6 +38364,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2085767148
@@ -38062,7 +38381,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38230,6 +38549,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2092649206
@@ -38294,13 +38614,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2100075982}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 8, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691831152}
   m_RootOrder: 221
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &2100075984
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38335,6 +38655,7 @@ MonoBehaviour:
   type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2100075986
@@ -38351,7 +38672,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9efac1c3a0235741a60a7c6cc149833, type: 2}
+  - {fileID: 2100000, guid: 1c73d09f2254caf47920d3ad0332eb3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38561,6 +38882,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2116800976
@@ -38666,6 +38988,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2118052206
@@ -38771,6 +39094,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2119809925
@@ -38866,6 +39190,7 @@ MonoBehaviour:
   moraleText: {fileID: 1202299010}
   textAlign: 0
   teamDefense: 0
+  tileEffects: []
 --- !u!1 &2125178088
 GameObject:
   m_ObjectHideFlags: 0
@@ -38933,6 +39258,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2125178092
@@ -39038,6 +39364,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2138363516
@@ -39143,6 +39470,7 @@ MonoBehaviour:
   type: 0
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2140416839
@@ -39248,6 +39576,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2142426768
@@ -39353,6 +39682,7 @@ MonoBehaviour:
   type: 3
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
+  tileEffects: []
   x: 0
   y: 0
 --- !u!212 &2147197616
