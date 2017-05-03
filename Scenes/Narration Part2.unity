@@ -322,14 +322,19 @@ MonoBehaviour:
     m_StretchHeight: 0
   NpcName:
   - 
+  - Magistrate
   - Lucius
+  - Magistrate
+  - Lucius
+  - Magistrate
+  - 
   - Xander
-  - Lucius
-  - Xander
-  - Lucius
+  - 
+  - Magistrate
   - 
   - Lucius
-  Source: Assets/narration.xml
+  - 
+  Source: Assets/narration2.xml
 --- !u!81 &746194787
 AudioListener:
   m_ObjectHideFlags: 0
