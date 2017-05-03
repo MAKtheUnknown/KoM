@@ -2206,6 +2206,7 @@ GameObject:
   - component: {fileID: 2048068923}
   - component: {fileID: 2048068922}
   - component: {fileID: 2048068921}
+  - component: {fileID: 2048068925}
   m_Layer: 5
   m_Name: Multiplayer Button
   m_TagString: Untagged
@@ -2282,7 +2283,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2048068921}
+      - m_Target: {fileID: 2048068925}
         m_MethodName: Click
         m_Mode: 1
         m_Arguments:
@@ -2328,6 +2329,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2048068919}
+--- !u!114 &2048068925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2048068919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d7263b08fcce498ae90f4b0d97507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2089573502
 GameObject:
   m_ObjectHideFlags: 0
