@@ -7,6 +7,6 @@ public class StartGameButtonClick : MonoBehaviour {
 
     public void Click()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Small Room");
     }
 }
