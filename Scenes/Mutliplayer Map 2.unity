@@ -1307,7 +1307,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 3
+  type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   tileEffects: []
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 3
+  type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   tileEffects: []
@@ -11349,7 +11349,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 3
+  type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   tileEffects: []
@@ -11856,13 +11856,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 614676403}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 6, y: 6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1971369824}
   m_RootOrder: 181
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!61 &614676405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13525,7 +13525,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 0.38754323, g: 0.4705882, b: 0.44997013, a: 1}
+  m_Color: {r: 0.26967993, g: 0.31617647, b: 0.30463248, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -13950,7 +13950,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 3
+  type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   tileEffects: []
@@ -14056,7 +14056,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 3
+  type: 6
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   tileEffects: []
@@ -16046,7 +16046,7 @@ MonoBehaviour:
   attack: 12
   defense: 2
   range: 2
-  moves: 4
+  moves: 50
   maxXP: 55
   morale: 100
   type: 3
@@ -17752,7 +17752,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 3
+  type: 6
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   tileEffects: []
@@ -22654,7 +22654,7 @@ MonoBehaviour:
   south: {fileID: 0}
   east: {fileID: 0}
   west: {fileID: 0}
-  type: 3
+  type: 5
   map: {fileID: 0}
   containedCharacter: {fileID: 0}
   tileEffects: []
@@ -23514,13 +23514,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1237297450}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 8, y: 6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1971369824}
   m_RootOrder: 217
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!61 &1237297452
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25868,13 +25868,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1352189240}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 11, y: 1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1971369824}
   m_RootOrder: 261
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!61 &1352189242
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27914,13 +27914,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1430237352}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 6, y: 1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1971369824}
   m_RootOrder: 171
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!61 &1430237354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32348,13 +32348,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1641223553}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 7, y: 4, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1971369824}
   m_RootOrder: 198
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!61 &1641223555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37523,13 +37523,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1947397744}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 10, y: 1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1971369824}
   m_RootOrder: 243
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!61 &1947397746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38583,13 +38583,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1968495055}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 8, y: 1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1971369824}
   m_RootOrder: 207
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!61 &1968495057
 BoxCollider2D:
   m_ObjectHideFlags: 0

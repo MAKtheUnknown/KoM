@@ -146,13 +146,19 @@ public class CharacterCharacter : MonoBehaviour
 	
 	public void returnToStart()
 	{
-		tile.containedCharacter=null;
-		tile=originalTile;
-		tile.containedCharacter=this;
-		x=originalTile.x;
-		y=originalTile.y;
+		Move(originalTile);
 		
         //timeSpent = times[t.x,t.y];
+	}
+	
+	public void Move(TileAttributes t)
+	{
+		tile.containedCharacter=null;
+		this.transform.position= t.transform.position;
+		tile=t;
+		tile.containedCharacter=this;
+		x=t.x;
+		y=t.y;
 	}
 	
 	void EffectCheck()

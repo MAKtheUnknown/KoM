@@ -62,7 +62,7 @@ public class BalladOfLoveAndHate : CharachterTargeter {
 	{
 		damage=specs.attack+3;
 		range=specs.range;
-		int count=0;
+		int count=2;
 		charachterTargets= new List<CharacterCharacter>();
 		foreach(CharacterCharacter c in base.GetTargetsInRange(specs.owner.x,specs.owner.y,specs.range))
 		{

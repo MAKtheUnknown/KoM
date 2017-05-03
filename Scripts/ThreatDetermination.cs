@@ -14,7 +14,7 @@ public class ThreatDetermination : MonoBehaviour {
 	public void Threat (CharacterCharacter c){
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
 		enemysInRange = new List<CharacterCharacter> ();
-		searchRadius = 5;
+		searchRadius = c.type.range;
 		
 		//check characters move + attackRange
 		enemysInRange =inRange(c.x,c.y,(float)searchRadius,c); 
