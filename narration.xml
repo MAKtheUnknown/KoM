@@ -16,14 +16,14 @@
 	  <speach>Wha.....?</speach>
    </npc>
 	  <npc name = "Lucius" entries ="1">
-	  <speach>You heard me. Now get up or I'll drag you out of bed.</speach>
+	  <speach>You heard me. Now come with me or I'll drag you out.</speach>
    </npc>
 
 	  <npc name = "" entries ="1">
 	  <speach>You decide that it's not worth arguing with Lucius when he's like this. You would like to keep as many of your limbs as possible.</speach>
    </npc>   
   <npc name = "Lucius" entries ="1">
-	  <speach>The magistriate is waiting for your arrival. Get a move on.</speach>
+	  <speach>The magistriate is waiting for your arrival. Get going.</speach>
    </npc> 
 
 </npcs>

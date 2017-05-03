@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <npcs totalentries ="11">
    <npc name="" entries="1">
-      <speach>The last keeper, Trina, walks throughout a major city while being escorted by armed guards. Suddenly, a mysterious figure runs by Trina, stealing her coin purse. The guards begin to chase the mysterious figure.</speach>
+      <speach>The last Keeper, Trina, walks throughout a major city while being escorted by armed guards. Suddenly, a mysterious figure runs by Trina, stealing her coin purse. Her guards quickly give chase.</speach>
 </npc>
 	  <npc name = "Guard" entries ="1">
 	  <speach>Kid, get back here!</speach>
 </npc>
 	  <npc name = "" entries ="1">
-      <speach>Eventually, they corner the thief into an alleyway. The thief fights the guards and they are defeated. Trina approaches the alleyway.</speach>
+      <speach>Eventually, they corner the thief into an alleyway. The thief, seeing no alternative, readies themselves for battle. With astounding quickness, the guards are defeated and the thief removes his mask to cool himself. Trina approaches the boy, who is clearly no more than 13 years old.</speach>
 </npc>
 	  <npc name = "Trina" entries ="1">
 	  <speach>Boy, are you homeless?</speach>
@@ -16,21 +16,21 @@
 	  <speach>That is none of your concern. Stay back and leave me be!</speach>
    </npc>
   <npc name = "Trina" entries ="1">
-	  <speach>Now.Now. Don't worry I am not going to harm you. I wanted to offer you a proposition. Since, you dispatched my personal guards, I know that you can fight. So how about you become a personal guard of mine?</speach>
+	  <speach>Now. Now. Don't worry. I am not going to harm you. I wanted to offer you a proposition. You dispatched my personal guards so easily. Obviously, you know how to fight. Perhaps you would like to leave the streets behind and become my bodyguard. </speach>
    </npc>
   <npc name = "????" entries ="1">
 	  <speach>But I just stole money from you. Why are you being so kind to me?</speach>
    </npc>
   <npc name = "Trina" entries ="1">
-	  <speach>If you begin to question why someone does something or why they dont, the world can become a very complex place. I know that you are starving and that you were desperate to get food. Stealing from me was a known way to get money. Now what is your answer?</speach>
+	  <speach>If you begin to question why someone does something or why they don't, the world can become a very complex place. I know that you are starving and desperate; there's no way any sane man would attack the Keeper's entourage otherwise. Now, what is your answer?</speach>
    </npc>
   <npc name = "????" entries ="1">
-	  <speach>Sure, I will become your body guard.</speach>
+	  <speach>Sure, it's not like I have a better option.</speach>
    </npc>
   <npc name = "" entries ="1">
 	  <speach>The boy hands the coin purse to Trina and helps the guards to their feet. Trina and company return back to her home in the city.</speach>
    </npc>
   <npc name = "" entries ="1">
-	  <speach>Since then years have gone by and the boy had grown stronger as a person and as a bodyguard as a result from his training.</speach>
+	  <speach>The years have since gone by and the boy grew stronger as a person and as a warrior as a result from his training. For years,he rarely left his mistress' side and protected her from countless dangers.</speach>
    </npc>
 </npcs>

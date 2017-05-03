@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <npcs totalentries ="13">
   <npc name = "" entries ="1">
-	  <speach>Lucius escorts you to courtroom. There is an old man in a long, black robe wielding his gavel with a firm grip. You conclude that he does not seem to be an apporachable person... </speach>
+	  <speach>Lucius escorts you to courtroom. There is an old man in a long, black robe wielding his gavel with a firm grip. You conclude that he does not seem to be an approachable person... </speach>
    </npc> 
   <npc name = "Magistrate" entries ="1">
-	  <speach>Lucius is this the man who was asleep when the keeper was killed and the relics were stolen?</speach>
+	  <speach>Lucius, is this the man who was asleep when the Keeper was killed and the relics were stolen?</speach>
    </npc> 
   <npc name = "Lucius" entries ="1">
-	  <speach>It is your honor.</speach>
+	  <speach>He is, your Honor.</speach>
    </npc> 
   <npc name = "Magistrate" entries ="1">
-	  <speach>Lucius please present your case.</speach>
+	  <speach>Lucius, please present your case.</speach>
    </npc> 
   <npc name = "Lucius" entries ="1">
-	  <speach>Yes your honor. Xander has neglected his duties as the keeper's body guard by falling asleep instead of being on watch. The evidence I have is that Xander was just alseep and I have dragged him here. The guards with me will testify to that as well.</speach>
+	  <speach>Yes, your Honor. Xander has neglected his duties as the Keeper's bodyguard by falling asleep instead of being on watch. The evidence I have is that Xander was not at his post during his shift and was found in bed, asleep. The guards with me will testify to that as well.</speach>
    </npc> 
  <npc name = "Magistrate" entries ="1">
-	  <speach>Your argument has been noted Lucius. Now what is your defense Xander?</speach>
+	  <speach>Your argument has been noted, Lucius. Now, what is your defense, Xander?</speach>
    </npc>
  <npc name = "" entries ="1">
-	  <speach>You begin to panic not knowing you would have to create some defense for yourself. You compose yourself to say the following.</speach>
+	  <speach>You begin to panic, not knowing you would have to defend yourself. After taking a quick breath to compose yourself, you say, </speach>
    </npc>
 
 <npc name = "Xander" entries = "1">
-<speach> I should not be resonsible for her death even if I fell asleep. </speach>
+<speach> I admit that I fell asleep. But to say that because I passed out due to shear exhaustion, I am solely responsible for her death is ridiculous. There were ten other guards on watch that night, if the Keeper died, didn't we all fail in our duties? </speach>
 </npc>
  <npc name = "" entries ="1">
-	  <speach>Silence fills the room and the magistrate strokes his beard deliberating in his mind. Seconds of silence becomes minutes as you stand before him waiting his verdict.</speach>
+	  <speach>Silence fills the room and the magistrate strokes his beard, deliberating in his mind. Seconds of silence becomes minutes as you stand before him, awaiting his verdict.</speach>
    </npc>
  <npc name = "Magistrate" entries ="1">
-	  <speach>Your agrument has been noted as well Xander. I have reached a verdict. Xander although your actions were very irresponsible and disgrace the keepers' bodyguards, I will not hold you responsible for the death of the keeper. However, you are to be evicted from this manor as soon as possible.</speach>
+	  <speach>Your argument has been noted as well, Xander. I have reached a verdict. Xander, although your actions were reckless and disgraceful of the Keeper's bodyguards, I will not hold you responsible for her death. However, you are to be removed from your post, effective immediately.</speach>
    </npc>
  <npc name = "" entries ="1">
-	  <speach>Lucius bows and then violently evicts Xander from the manor. He brutally escorts him to the door and whispers to Xander.</speach>
+	  <speach> Lucius, appearing that he is refraining from scowling, bows and then escorts you back to your quarters. After gathering your belongings, Lucuis forcefully pushes you to the door and whispers in your ear.</speach>
    </npc>
  <npc name = "Lucius" entries ="1">
 	  <speach>If you ever set foot in here again, there won't be a magistrate to protect you.</speach>
    </npc>
  <npc name = "" entries ="1">
-	  <speach>Lucius throws you onto the dirt and slams the door. There is silence and then you get up and walk towards the town.</speach>
+	  <speach>Lucius throws you onto the dirt and slams the door. There is silence as you get up and walk towards the town. As you walk, the memories coming rushing back to you. </speach>
    </npc>
 </npcs>
