@@ -7,6 +7,7 @@ public class RepairBridge : Ability  {
 	public ClassSpecifications specs;
 
 	TileArrangement map;
+	Material breakableBridgeMat;
 
 	// Use this for initialization
 	public override void Start () 
@@ -14,6 +15,7 @@ public class RepairBridge : Ability  {
 		name = "Repair Bridge";
 		specs = GetComponentInParent<ClassSpecifications> ();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
+		breakableBridgeMat = GetComponent<MeshRenderer>().material;
 	}
 	
 	// Update is called once per frame
@@ -47,25 +49,31 @@ public class RepairBridge : Ability  {
 	public override bool Available()
 	{
 		bool neighboring=false;
+		bool avail=false;
 		
-		if(specs.owner.tile.north.type==TileAttributes.TileType.brokenBridge)
+		if(specs.owner.tile.north!=null&&specs.owner.tile.north.type==TileAttributes.TileType.brokenBridge)
 		{
 			neighboring=true;
 		}
-		if(specs.owner.tile.east.type==TileAttributes.TileType.brokenBridge)
+		if(specs.owner.tile.east!=null&&specs.owner.tile.east.type==TileAttributes.TileType.brokenBridge)
 		{
 			neighboring=true;
 		}
-		if(specs.owner.tile.south.type==TileAttributes.TileType.brokenBridge)
+		if(specs.owner.tile.south!=null&&specs.owner.tile.south.type==TileAttributes.TileType.brokenBridge)
 		{
 			neighboring=true;
 		}
-		if(specs.owner.tile.west.type==TileAttributes.TileType.brokenBridge)
+		if(specs.owner.tile.west!=null&&specs.owner.tile.west.type==TileAttributes.TileType.brokenBridge)
 		{
 			neighboring=true;
 		}
 		
-		return neighboring&&specs.owner.tile.type!=TileAttributes.TileType.brokenBridge;
+		foreach(ActiveEffect e in specs.owner.activeEffects)
+		{
+			if(e.GetType().Equals(typeof(BridgeRepair)))
+				avail=true;
+		}
+		return avail&&neighboring&&specs.owner.tile.type!=TileAttributes.TileType.brokenBridge;
 		
 	}
 	
@@ -76,22 +84,22 @@ public class RepairBridge : Ability  {
 	
 	void RepairNearbyBridges(TileAttributes t)
 	{
-		if(t.north.type==TileAttributes.TileType.brokenBridge)
+		if(specs.owner.tile.north!=null&&t.north.type==TileAttributes.TileType.brokenBridge)
 		{
 			FixBridge(t.north);
 			RepairNearbyBridges(t.north);
 		}
-		if(t.east.type==TileAttributes.TileType.brokenBridge)
+		if(specs.owner.tile.east!=null&&t.east.type==TileAttributes.TileType.brokenBridge)
 		{
 			FixBridge(t.east);
 			RepairNearbyBridges(t.east);
 		}
-		if(t.south.type==TileAttributes.TileType.brokenBridge)
+		if(specs.owner.tile.south!=null&&t.south.type==TileAttributes.TileType.brokenBridge)
 		{
 			FixBridge(t.south);
 			RepairNearbyBridges(t.south);
 		}
-		if(t.west.type==TileAttributes.TileType.brokenBridge)
+		if(specs.owner.tile.west!=null&&t.west.type==TileAttributes.TileType.brokenBridge)
 		{
 			FixBridge(t.west);
 			RepairNearbyBridges(t.west);

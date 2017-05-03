@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class DestroyBridge : Ability  {
 
 	public ClassSpecifications specs;
 
 	TileArrangement map;
+	Material brokenBridgeMat;
 
 	// Use this for initialization
 	public override void Start () 
@@ -14,7 +16,7 @@ public class DestroyBridge : Ability  {
 		name = "Destroy Bridge";
 		specs = GetComponentInParent<ClassSpecifications> ();
 		map = GameObject.FindGameObjectWithTag ("Map").GetComponent<TileArrangement>();
-		//Material brokenBridgeMat = Resources.Load("Materials/MyMaterial", typeof(Material)) as Material;
+		brokenBridgeMat = GetComponent<MeshRenderer>().material;
 	}
 	
 	// Update is called once per frame
@@ -49,19 +51,19 @@ public class DestroyBridge : Ability  {
 	{
 		bool neighboring=false;
 		
-		if(specs.owner.tile.north.type==TileAttributes.TileType.breakableBridge)
+		if(specs.owner.tile.north!=null&&specs.owner.tile.north.type==TileAttributes.TileType.breakableBridge)
 		{
 			neighboring=true;
 		}
-		if(specs.owner.tile.east.type==TileAttributes.TileType.breakableBridge)
+		if(specs.owner.tile.east!=null&&specs.owner.tile.east.type==TileAttributes.TileType.breakableBridge)
 		{
 			neighboring=true;
 		}
-		if(specs.owner.tile.south.type==TileAttributes.TileType.breakableBridge)
+		if(specs.owner.tile.south!=null&&specs.owner.tile.south.type==TileAttributes.TileType.breakableBridge)
 		{
 			neighboring=true;
 		}
-		if(specs.owner.tile.west.type==TileAttributes.TileType.breakableBridge)
+		if(specs.owner.tile.west!=null&&specs.owner.tile.west.type==TileAttributes.TileType.breakableBridge)
 		{
 			neighboring=true;
 		}
@@ -77,22 +79,22 @@ public class DestroyBridge : Ability  {
 	
 	void DestroyNearbyBridges(TileAttributes t)
 	{
-		if(t.north.type==TileAttributes.TileType.breakableBridge)
+		if(specs.owner.tile.north!=null&&t.north.type==TileAttributes.TileType.breakableBridge)
 		{
 			BreakBridge(t.north);
 			DestroyNearbyBridges(t.north);
 		}
-		if(t.east.type==TileAttributes.TileType.breakableBridge)
+		if(specs.owner.tile.east!=null&&t.east.type==TileAttributes.TileType.breakableBridge)
 		{
 			BreakBridge(t.east);
 			DestroyNearbyBridges(t.east);
 		}
-		if(t.south.type==TileAttributes.TileType.breakableBridge)
+		if(specs.owner.tile.south!=null&&t.south.type==TileAttributes.TileType.breakableBridge)
 		{
 			BreakBridge(t.south);
 			DestroyNearbyBridges(t.south);
 		}
-		if(t.west.type==TileAttributes.TileType.breakableBridge)
+		if(specs.owner.tile.west!=null&&t.west.type==TileAttributes.TileType.breakableBridge)
 		{
 			BreakBridge(t.west);
 			DestroyNearbyBridges(t.west);

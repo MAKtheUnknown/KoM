@@ -38,6 +38,8 @@ public class TeamManager : MonoBehaviour {
 		{
 			foreach(CharacterCharacter c in t.pieces)
 			{
+				c.putOnBoard ();
+				c.originalTile=c.tile;
 				addPassive(c);
 			}
 		}
