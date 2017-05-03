@@ -33,10 +33,10 @@ public class LoadXmlData : MonoBehaviour
 		// ensures I don't try to show data I don't have
 		if(showData<maxData)
 		{
-			GUI.Label(new Rect(20,Screen.height-120,200,20), NpcName[showData],nameStyle);
-			GUI.Box(new Rect(20,Screen.height-100,Screen.width-40,80), data[showData],style);
+			GUI.Label(new Rect(100,400,500,20), NpcName[showData],nameStyle);
+			GUI.Box(new Rect(100,400,550,80), data[showData],style);
 
-			if(GUI.Button(new Rect(((Screen.width-80)/2) ,Screen.height-20,100,20),"Next"))
+			if(GUI.Button(new Rect(100 ,400,100,20),"Next"))
 			{
 				//Debug.Log(showData);
 				//Debug.Log(data[showData]);

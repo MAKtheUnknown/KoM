@@ -8,8 +8,8 @@ public class MultiplayerButtonClick : MonoBehaviour {
 
     public void Click()
     {
-		String[] levels ={"Map 1", "Multiplayer Map 2"};
-		int chance = UnityEngine.Random.Range(0,levels.Length-1);
+		String[] levels ={"Map 1", "Mutliplayer Map 2"};
+		int chance = UnityEngine.Random.Range(0,levels.Length);
         SceneManager.LoadScene(levels[chance]);
     }
 }
