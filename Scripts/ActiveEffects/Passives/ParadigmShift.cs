@@ -21,7 +21,7 @@ public class ParadigmShift : Passive {
 		Init (c);
 	}
 
-	public void Init(CharacterCharacter c)
+	public override void Init(CharacterCharacter c)
 	{
 		Init (c, 100);
 	}

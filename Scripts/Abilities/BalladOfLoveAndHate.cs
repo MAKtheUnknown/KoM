@@ -73,8 +73,8 @@ public class BalladOfLoveAndHate : CharachterTargeter {
 			}
 		}
 		
-		
-		specs.owner.activeEffects.Add(new BardLinked(specs.owner,charachterTargets));
+		if(count==2)
+			specs.owner.activeEffects.Add(new BardLinked(specs.owner,charachterTargets));
 		Start ();
 		specs.owner.usedAbility = true;
 		cooldownTimer=cooldown;
