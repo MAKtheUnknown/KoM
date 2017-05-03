@@ -40,6 +40,8 @@ public class TileArrangement : MonoBehaviour
 		highlighter = this.GetComponentInChildren<Highlighter> ();
 		//get the teams.
 		teams = this.GetComponentInChildren<TeamManager> ();
+
+		runningAnimations = new List<Animation> ();
 	}
 
 	// Use this for initialization
