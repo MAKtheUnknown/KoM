@@ -69,6 +69,7 @@ public class LimitedSpaces : MonoBehaviour, Mover
 		possibilities = new List<TileAttributes> ();
 
 		times = new double[m.GetLength (0), m.GetLength (1)];
+		paths = new List<TileAttributes>[m.GetLength (0), m.GetLength (1)];
 
 		propogateTimes (t, timeSpent-tileTypeTimes[moved.owner.tile.type], new List<TileAttributes>());
 
