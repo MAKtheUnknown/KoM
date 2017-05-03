@@ -31,7 +31,7 @@ public class CharacterCharacter : MonoBehaviour
 	public int x;
 	public int y;
 	
-	TileAttributes originalTile;
+	public TileAttributes originalTile;
 
 	void Awake()
 	{
@@ -45,9 +45,7 @@ public class CharacterCharacter : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		putOnBoard ();
 		currentHP = type.maximumHealth;
-		originalTile=tile;
 	}
 	
 	// Update is called once per frame
