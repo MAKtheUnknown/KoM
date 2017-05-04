@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="7">
+   <npc name=" " entries="1">
+      <speach> The crowded town bazaar seemed like an ideal location for a thief to be hanging around. You see a girl lurking around a booth, who you believe to be the thief from the night before. The girl noticed your presence and attempted to flee. Before losing sight of her, you shout, </speach>
+</npc>
+	  <npc name = " Xander" entries ="1">
+	  <speach> Stop! I need to talk to you about the relics. </speach>
+</npc>
+	  <npc name = "" entries ="1">
+      <speach> Suddenly, the girl stops running and turned around, eyeing you with a wary, yet interested gaze. You notice she was not the thief from the previous night and try to apologize. The girl grabs you by the collar, catching you off guard. </speach>
+</npc>
+	  <npc name = "Lucretia" entries ="1">
+	  <speach> My name is Lucretia and I searching for the relics. Tell me everything you know or your life is forfeit. </speach>
+   </npc>
+  <npc name = " Xander" entries ="1">
+	  <speach> I don't know what you're talking about.</speach>
+   </npc>
+  <npc name = "Lucretia" entries ="1">
+	  <speach> Yes, you do and I'm not leaving your side until the relics are in my possession.</speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> Deciding that it would be too much trouble to get rid of her, you decide to let her tag along and go to the town bistro. </speach>
+   </npc>
+</npcs>

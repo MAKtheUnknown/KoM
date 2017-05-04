@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="11">
+   <npc name="Xander" entries="1">
+      <speach> I'll come with you. </speach>
+</npc>
+	  <npc name = "Llewellyn" entries ="1">
+	  <speach> Of course. It seemed like she meant a lot to you as well.  </speach>
+</npc>
+	  <npc name = "" entries ="1">
+      <speach> Llewellyn  and you solemnly trudge up the hill where they buried Trina as the thief disappears into the night. As they stood in front of the grave, Llewellyn mutters something under his breath disapprovingly. </speach>
+</npc>
+	  <npc name = "Llewellyn" entries ="1">
+	  <speach> Fools. They didn’t even know how to give her a proper funeral. You can tell by how they named her. Simply "Trina". Druids traditionally have two names. Their first is given by their parents in hopes that they adopt the qualities the name embodies. </speach>
+   </npc>
+
+  <npc name = "Llewellyn" entries ="1">
+	  <speach> The second name is only given after death, in order to summarize the life they led. By denying her this, they imply that her life had no significance, which I cannot allow.Tradition states that the last person to be in their presence has the right to summarize their life, which I assume to be you. Tell me, what was she like and what would justly summarize her legacy? </speach>
+   </npc>
+
+  <npc name = "Xander" entries ="1">
+	  <speach> She was a wise and caring leader, who did what she thought was for the good of her people. </speach>
+   </npc>
+
+  <npc name = "Llewellyn " entries ="1">
+	  <speach> I see, then the most appropriate choice for her would be Meredith or Great Protector. </speach>
+   </npc>
+
+  <npc name = "" entries ="1">
+	  <speach> Llewellyn takes his staff and carves the newly christened name into the tombstone. </speach>
+   </npc>
+  <npc name = "Lucius" entries ="1">
+	  <speach> That’s enough. Trespassing is one thing but desecrating a grave is going too far. </speach>
+  </npc>
+
+  <npc name = "" entries ="1">
+	  <speach> As you turn around, you see that Lucius has materialized behind you, accompanied by two guards. </speach>
+   </npc>
+
+   <npc name = "Lucius" entries ="1">
+	  <speach> First, you get her killed and now you’re defacing her grave? What next, are you going to dig her up? Regardless, this is the end of the line for you. </speach>
+   </npc>
+</npcs>

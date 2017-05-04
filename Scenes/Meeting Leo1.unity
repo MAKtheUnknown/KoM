@@ -322,16 +322,17 @@ MonoBehaviour:
     m_StretchHeight: 0
   NpcName:
   - 
-  - ????
-  - Xander
-  - ????
   - 
   - ????
-  - Xander
   - 
-  - Llewellyn
   - 
-  Source: Assets/KoM/Meeting Rusine.xml
+  - Old Priest
+  - 
+  - Doctor Leo
+  - Old Priest
+  - Doctor Leo
+  - Old Priest
+  Source: Assets/KoM/Meeting Leo1.xml
 --- !u!81 &746194787
 AudioListener:
   m_ObjectHideFlags: 0

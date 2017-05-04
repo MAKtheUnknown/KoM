@@ -322,16 +322,17 @@ MonoBehaviour:
     m_StretchHeight: 0
   NpcName:
   - 
-  - ????
+  - 
+  - 
+  - Gruff Mercenary
+  - Young Mercenary
+  - Gruff Mercenary
+  - 
   - Xander
-  - ????
-  - 
-  - ????
+  - Young Mercenary
   - Xander
-  - 
-  - Llewellyn
-  - 
-  Source: Assets/KoM/Meeting Rusine.xml
+  - Enguerrand
+  Source: Assets/KoM/Meeting Enguerrand.xml
 --- !u!81 &746194787
 AudioListener:
   m_ObjectHideFlags: 0

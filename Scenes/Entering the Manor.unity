@@ -322,16 +322,16 @@ MonoBehaviour:
     m_StretchHeight: 0
   NpcName:
   - 
-  - ????
   - Xander
-  - ????
+  - Old Man
   - 
-  - ????
-  - Xander
   - 
-  - Llewellyn
   - 
-  Source: Assets/KoM/Meeting Rusine.xml
+  - 
+  - Old Man
+  - 
+  - Old Man
+  Source: Assets/KoM/Entering the Manor.xml
 --- !u!81 &746194787
 AudioListener:
   m_ObjectHideFlags: 0

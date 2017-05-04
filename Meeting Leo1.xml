@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<npcs totalentries ="11">
+   <npc name=" " entries="1">
+      <speach>  You are tired after a long day of gathering information, when you realize that the events of the night before have taken their toll on you. You decide to go to the clinic. </speach>
+</npc>
+	  <npc name = " " entries ="1">
+	  <speach> As he waited to be tended to by the doctor, he noticed that the clinic seemed busy than usual as he had been here multiple times over the years recovering from this grievous injury or another. When the time came for the doctor to see you, you heard a familiar voice coming from behind you. </speach>
+</npc>
+	  <npc name = "????" entries ="1">
+      <speach> My gracious gentleman, would you mind me cutting ahead in line? Or I am afraid that the world is going to lose a lovely lady due to a serious injury.  </speach>
+</npc>
+	  <npc name = " " entries ="1">
+	  <speach> You turn around and are surprised to find the thief from the night before standing in line behind you. She recognizes you as well and stifles a surprised gasp. </speach>
+   </npc>
+  <npc name = " " entries ="1">
+	  <speach> After being treated by the doctor, you and the thief, who introduced herself as Rusine, were discussing what they had found out since last night when an argument broke out in the doctor's office.  </speach>
+   </npc>
+  <npc name = "Old Priest" entries ="1">
+	  <speach> How dare you defy your destiny and reside here! </speach>
+   </npc>
+  <npc name = "" entries ="1">
+	  <speach> You remember that it was the priest you had seen at Trina’s funeral. Worried that the guards had already discovered your whereabouts, you and Rusine decide to run. However, you hear the doctor reply to the priest, </speach>
+   </npc>
+   <npc name = " Doctor Leo" entries ="1">
+	  <speach> Papa, I don't want to be a priest. You coming here isn't going to change my mind.  </speach>
+   </npc>
+  <npc name = "Old Priest" entries ="1">
+	  <speach> So you would rather waste your whole life in such a shabby clinic with those...filthy people? </speach>
+   </npc>
+  <npc name = "Doctor Leo" entries ="1">
+	  <speach> They are not filthy people. They are my patients and I am dedicated to help them. As you see, papa, the natural order has been unbalanced. more and more people are going to suffer like this and I am going to get to the bottom of it.</speach>
+   </npc>
+	<npc name = "Old Priest" entries ="1">
+	  <speach> Alright. Let’s see what you can accomplish with those patients of yours. </speach>
+   </npc>
+</npcs>

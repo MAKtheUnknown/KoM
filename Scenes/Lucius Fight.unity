@@ -321,17 +321,18 @@ MonoBehaviour:
     m_StretchWidth: 1
     m_StretchHeight: 0
   NpcName:
-  - 
-  - ????
   - Xander
-  - ????
-  - 
-  - ????
-  - Xander
-  - 
   - Llewellyn
   - 
-  Source: Assets/KoM/Meeting Rusine.xml
+  - Llewellyn
+  - Llewellyn
+  - Xander
+  - Llewellyn
+  - 
+  - Lucius
+  - 
+  - Lucius
+  Source: Assets/KoM/Lucius Fight.xml
 --- !u!81 &746194787
 AudioListener:
   m_ObjectHideFlags: 0
