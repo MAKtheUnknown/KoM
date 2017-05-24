@@ -29,7 +29,7 @@ public class FantasiasReturn : Passive {
 	}
 	public override bool Condition()
 	{
-		return ultCD!=(ultimate.cooldownTimer<=0);
+		return ultCD==(ultimate.cooldownTimer<=0);
 	}
 	public override void Activate()
 	{
