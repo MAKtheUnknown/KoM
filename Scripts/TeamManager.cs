@@ -131,6 +131,7 @@ public class TeamManager : MonoBehaviour {
 		{
 			foreach(CharacterCharacter c in teams[turn].pieces)
 			{
+				if(c!=null)
 				threatDet.Threat(c);
 			}
 			rotate();

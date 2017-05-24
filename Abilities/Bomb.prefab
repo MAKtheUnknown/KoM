@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
-  cooldown: 0
+  cooldown: 3
   cooldownTimer: 0
   ultimate: 0
   map: {fileID: 0}

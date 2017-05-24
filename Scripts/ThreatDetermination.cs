@@ -131,12 +131,20 @@ public class ThreatDetermination : MonoBehaviour {
 				abilityToUse=a;
 		}
 		
-		while(abilityToUse==null||abilityToUse.cooldownTimer>0)
+		for(int i = 0; i<10; i++)
 		{
-			abilityToUse=user.specialAbilities[(int)UnityEngine.Random.Range(0,user.specialAbilities.Length-1)];
+			if(abilityToUse==null||abilityToUse.cooldownTimer>0)
+			{
+				abilityToUse=user.specialAbilities[(int)UnityEngine.Random.Range(0,user.specialAbilities.Length-1)];
+			}
 		}
 		
-		abilityToUse.AIUse(target);
+		if(abilityToUse.cooldownTimer>0)
+		{
+			abilityToUse.AIUse(target);
+		}
+		
+		
 	}
 	
 }

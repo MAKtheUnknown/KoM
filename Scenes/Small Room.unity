@@ -3397,6 +3397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771946464}
   - component: {fileID: 771946465}
+  - component: {fileID: 771946466}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -3431,6 +3432,37 @@ MonoBehaviour:
   source: {fileID: 0}
   turnsLeft: 0
   subject: {fileID: 0}
+--- !u!23 &771946466
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771946463}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 084969b0cfa989d43ba32f52dbe7dcfb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1 &773490560
 GameObject:
   m_ObjectHideFlags: 0
@@ -3749,6 +3781,10 @@ Prefab:
     - target: {fileID: 4075489750629834, guid: 3f194a46e2de92441af75cf343a0f5f8, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249931333168062, guid: 3f194a46e2de92441af75cf343a0f5f8, type: 2}
+      propertyPath: m_Name
+      value: Guard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f194a46e2de92441af75cf343a0f5f8, type: 2}
@@ -7253,6 +7289,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 114735919307626660, guid: 2fd43e46db93ed64d8a03984111eaa07,
+        type: 2}
+      propertyPath: attack
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fd43e46db93ed64d8a03984111eaa07, type: 2}
   m_IsPrefabParent: 0
@@ -9500,6 +9541,10 @@ Prefab:
     - target: {fileID: 4075489750629834, guid: 3f194a46e2de92441af75cf343a0f5f8, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.7628551
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249931333168062, guid: 3f194a46e2de92441af75cf343a0f5f8, type: 2}
+      propertyPath: m_Name
+      value: Guard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f194a46e2de92441af75cf343a0f5f8, type: 2}

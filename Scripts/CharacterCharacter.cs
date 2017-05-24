@@ -142,6 +142,10 @@ public class CharacterCharacter : MonoBehaviour
 		{
 			passive.Finish();
 		}*/
+		if(team.activePieces<=0)
+		{
+			team.manager.RemoveTeam(team);
+		}
 	}
 	
 	public void returnToStart()

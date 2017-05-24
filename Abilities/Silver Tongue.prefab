@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: Executes a non-boss Enemy under 30%
-  cooldown: 0
+  cooldown: 9001
   cooldownTimer: 0
   ultimate: 0
   map: {fileID: 0}

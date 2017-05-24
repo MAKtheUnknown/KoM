@@ -51,6 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5249f72c206f148438d840fe065d56ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Kaiyufication
   description: 
+  cooldown: 9001
+  cooldownTimer: 0
+  ultimate: 0
   map: {fileID: 0}
+  specs: {fileID: 0}

@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 
-  cooldown: 0
+  cooldown: 5
   cooldownTimer: 0
   ultimate: 0
   specs: {fileID: 0}

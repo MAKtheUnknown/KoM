@@ -11,7 +11,7 @@ public class Sheepified : ActiveEffect {
 
 	public Sheepified(CharacterCharacter c)
 	{
-		this.Init(c,8);
+		this.Init(c,2);
 	}
 	
 	public Sheepified(CharacterCharacter c, int r)
